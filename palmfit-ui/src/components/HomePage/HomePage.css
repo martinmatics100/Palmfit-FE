@@ -1,0 +1,56 @@
+* {
+  background-color: #fefffe;
+}
+
+/* =============================================
+** Header section
+================================================ */
+
+.container {
+  position: relative;
+  margin-top: 50px;
+}
+
+.container img {
+  width: 40px;
+  position: absolute;
+  top: -30px;
+  left: 5%;
+  transform: translateX(-50%);
+}
+
+.container .logo-text {
+  color: #1a8d8d;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 39.75px;
+}
+
+.nav-item .nav-link {
+  width: 238px;
+  height: 22px;
+  font-weight: 400;
+  font-size: 22px;
+  top: 58px;
+  color: #334848;
+  line-height: 21.82px;
+  transition: all 0.6s ease;
+}
+
+.nav-item .nav-link:hover {
+  transform: translateY(-30%);
+  color: teal;
+}
+
+.nav-item .btn {
+  color: #ffffff;
+  background-color: #1a8d8d;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  font-size: 18px;
+  top: 20px;
+  transition: all 0.5s ease-in-out;
+}
