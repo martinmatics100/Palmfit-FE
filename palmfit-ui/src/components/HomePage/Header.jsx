@@ -1,6 +1,6 @@
 import React from "react";
 import HomePageLogo from "../../../src/images/HomepageLogo.svg";
-import "./HomePage.css";
+import "../../styles/HomePage.css";
 
 const Header = () => {
   return (

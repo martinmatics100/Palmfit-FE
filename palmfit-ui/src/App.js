@@ -1,7 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Header from "./components/HomePage/Header";
-import "bootstrap/dist/css/bootstrap.min.css";
+import LandingPage from "./components/HomePage/Main";
 
 function App() {
   return (
@@ -21,7 +20,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Header />
+    <LandingPage />
   );
 }
 
