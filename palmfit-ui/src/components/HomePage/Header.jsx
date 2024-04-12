@@ -13,11 +13,6 @@ const Header = () => {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            {/* <li className="nav-item">
-              <a href="#" className="nav-link active">
-                Home
-              </a>
-            </li> */}
             <li className="nav-item">
               <a href="" className="nav-link">
                 Calorie Counter
@@ -29,13 +24,8 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a
-                href=""
-                // className="btn text-white"
-                className="btn"
-                // style={{ backgroundColor: "teal" }}
-              >
-                Proceed
+              <a href="" className="btn">
+                Start Exploring
               </a>
             </li>
           </ul>

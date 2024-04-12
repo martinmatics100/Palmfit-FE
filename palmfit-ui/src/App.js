@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+// import "./styles/HomePage.css";
 import LandingPage from "./components/HomePage/Main";
 
 function App() {
