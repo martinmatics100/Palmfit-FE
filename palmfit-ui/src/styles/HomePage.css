@@ -44,7 +44,6 @@
 }
 
 .nav-item .nav-link:hover {
-  /* transform: translateY(-30%); */
   color: teal;
   text-decoration: underline;
 }
