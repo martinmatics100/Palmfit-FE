@@ -107,13 +107,13 @@ form .register span a:hover {
 }
 
 .password-input-group input[type="password"] {
-  padding-right: 30px; /* Adjust the padding to leave space for the eye icon */
+  padding-right: 30px;
 }
 
 .toggle-password {
   position: absolute;
-  top: 60%; /* Position it vertically in the middle */
-  right: 12%; /* Adjust the distance from the right side */
-  transform: translateY(-50%); /* Center vertically */
+  top: 60%;
+  right: 12%;
+  transform: translateY(-50%);
   cursor: pointer;
 }
