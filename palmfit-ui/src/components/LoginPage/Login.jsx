@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import loginImage from "../../images/login-signup.svg";
 import "../../styles/Login.css";
 
 const Login = () => {
+  // for toggling password
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  // for toggling password Ends here
+
   return (
     <div className="container-fluid vh-100">
       <div className="row h-100">
@@ -14,7 +22,7 @@ const Login = () => {
             <h3>Palmfit</h3>
             <p>Login to your account</p>
             <form action="">
-              <div className="form-group">
+              <div className="form-group input">
                 <label htmlFor="email">Email address</label>
                 <input
                   id="email"
@@ -23,27 +31,33 @@ const Login = () => {
                   placeholder="Enter your email address"
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group input">
                 <label htmlFor="password">Password</label>
                 <input
                   id="password"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   className="form-control"
                   placeholder="Enter your password"
                 />
+                <span
+                  className="toggle-password"
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </span>
               </div>
-              <a href="" className="forgot-password mb-5">
-                Forgot Password?
-              </a>
+              <div className="forgot-password mt-2">
+                <a href="">Forgot Password?</a>
+              </div>
               <br />
               <div className="form-group logs">
                 <input
                   type="button"
                   value={"Login"}
-                  className="mt-3 p-2 form-control log"
+                  className="mt-1 p-2 form-control log"
                 />
               </div>
-              <div>
+              <div className="register">
                 <span>
                   Don't have an account? <a href="">Register</a>
                 </span>
