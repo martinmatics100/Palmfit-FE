@@ -59,7 +59,7 @@ function LandingPage() {
 
             <p className="nav-items">
               <a href="" className="btns">
-                Start Exploring
+                Get Started
               </a>
             </p>
           </div>

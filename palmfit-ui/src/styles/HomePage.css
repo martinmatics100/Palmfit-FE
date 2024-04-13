@@ -199,7 +199,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 3rem;
   /* margin-bottom: 5rem; */
-  padding: 7rem;
+  padding: 3rem 7rem;
 }
 .third-section-container-1 {
   background-color: #f6fbfb;
@@ -253,7 +253,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 3rem;
-  padding: 4rem;
+  padding: 3rem 7rem;
   background-color: #f6fbfb;
 }
 
