@@ -6,18 +6,81 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
-form .forgot-password {
+.login-right-container {
+  justify-content: center;
+  margin-top: 20%;
+}
+
+.login-right-container h3 {
+  color: #001a1a;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #ffffff;
+  font-style: italic;
+}
+
+.login-right-container p {
+  font-size: 25px;
+  color: #001a1a;
+  font-weight: 600;
+}
+
+.input label {
+  color: #001a1a;
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.input input[type="text"],
+.input input[type="password"] {
+  padding: 20px;
+  color: #001a1a;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+
+.input input[type="text"]:focus,
+.input input[type="password"]:focus {
+  border: 3px solid #1a8d8d;
+}
+
+form .forgot-password a {
   text-decoration: none;
   color: #334848;
   font-size: 14px;
   font-weight: 600;
+  opacity: 0.6;
   font-family: "Inter", sans-serif;
   transition: all 0.5s ease-in-out;
 }
 
-form .forgot-password:hover {
+form .forgot-password a:hover {
   text-decoration: underline;
-  color: #1a8d8d;
+  /* color: #1a8d8d; */
+  opacity: 1;
+}
+
+form .register {
+  color: #001a1a;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+form .register span a {
+  color: #001a1a;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0.6;
+  transition: all 0.6s ease-in-out;
+}
+
+form .register span a:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
 
 .logs .log {
@@ -25,4 +88,32 @@ form .forgot-password:hover {
   background-color: #1a8d8d;
   font-size: 22px;
   font-weight: 700;
+  border: none;
+  outline: none;
+  transition: all 0.6s ease-in-out;
+}
+
+.logs .log:hover {
+  background-color: #ffffff;
+  color: #1a8d8d;
+  border: 1px solid #1a8d8d;
+  outline: none;
+}
+
+/* Add this CSS to your Login.css file */
+
+.password-input-group {
+  position: relative;
+}
+
+.password-input-group input[type="password"] {
+  padding-right: 30px; /* Adjust the padding to leave space for the eye icon */
+}
+
+.toggle-password {
+  position: absolute;
+  top: 60%; /* Position it vertically in the middle */
+  right: 12%; /* Adjust the distance from the right side */
+  transform: translateY(-50%); /* Center vertically */
+  cursor: pointer;
 }
