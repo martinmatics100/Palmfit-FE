@@ -25,7 +25,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a href="" className="btn">
-                Start Exploring
+                Get Started
               </a>
             </li>
           </ul>

@@ -59,7 +59,7 @@ function LandingPage() {
 
             <p className="nav-items">
               <a href="" className="btns">
-                Calculate calories
+                Get Started
               </a>
             </p>
           </div>
