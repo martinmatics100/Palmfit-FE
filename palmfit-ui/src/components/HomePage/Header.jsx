@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import HomePageLogo from "../../../src/images/HomepageLogo.svg";
 import "../../styles/HomePage.css";
 
@@ -19,14 +20,14 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="" className="nav-link">
+              <Link to="/login" className="nav-link">
                 Sign-in
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="" className="btn">
+              <Link to={"/register"} className="btn">
                 Get Started
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -6,12 +6,12 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
-.login-right-container {
+.register-right-container {
   justify-content: center;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
-.login-right-container h3 {
+.register-right-container h3 {
   color: #001a1a;
   font-size: 18px;
   font-weight: 400;
@@ -19,7 +19,7 @@
   font-style: italic;
 }
 
-.login-right-container p {
+.register-right-container p {
   font-size: 25px;
   color: #001a1a;
   font-weight: 600;
@@ -28,43 +28,53 @@
 .input label {
   color: #001a1a;
   font-size: 18px;
-  margin: 10px 0;
+  margin: 3px 0;
   font-weight: 600;
 }
 
 .input input[type="text"],
 .input input[type="password"] {
-  padding: 20px;
+  padding: 10px;
   color: #001a1a;
   font-size: 18px;
   border: 1px solid #1a8d8d;
   outline: none;
 }
 
-.input input[type="text"]:focus,
-.input input[type="password"]:focus {
-  border: 3px solid #1a8d8d;
-  outline: none;
-  box-shadow: none;
-}
-
-form .forgot-password a {
-  text-decoration: none;
-  color: #334848;
+form h5 {
+  color: red;
   font-size: 14px;
-  font-weight: 600;
+  opacity: 0.7;
+}
+
+form .terms {
+  color: grey 01;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.terms input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 8px;
+  accent-color: #1a8d8d;
+  mix-blend-mode: multiply;
+}
+
+.terms label a {
+  color: #1a8d8d;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
   opacity: 0.6;
-  font-family: "Inter", sans-serif;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
-form .forgot-password a:hover {
-  text-decoration: underline;
-  /* color: #1a8d8d; */
+.terms label a:hover {
   opacity: 1;
+  text-decoration: underline;
 }
 
-form .register {
+form .registers {
   color: #001a1a;
   text-align: center;
   margin-top: 20px;
@@ -72,7 +82,7 @@ form .register {
   font-weight: 600;
 }
 
-form .register span a {
+form .registers span a {
   color: #001a1a;
   text-decoration: none;
   font-size: 18px;
@@ -80,35 +90,11 @@ form .register span a {
   transition: all 0.6s ease-in-out;
 }
 
-form .register span a:hover {
+form .registers span a:hover {
   opacity: 1;
   text-decoration: underline;
 }
 
-.logs .log {
-  color: #ffffff;
-  background-color: #1a8d8d;
-  font-size: 22px;
-  font-weight: 700;
-  border: none;
-  outline: none;
-  transition: all 0.6s ease-in-out;
-}
-
-.logs .log:hover {
-  background-color: #ffffff;
-  color: #1a8d8d;
-  border: 1px solid #1a8d8d;
-  outline: none;
-  text-decoration: underline;
-}
-
-.toggle-password {
-  cursor: pointer;
-  margin-top: 12px;
-  opacity: 0.7;
-}
-
-.toggle-password:hover {
-  opacity: 1;
+.error {
+  color: red;
 }

@@ -1,44 +1,47 @@
 import React, { useState } from "react";
 import loginImage from "../../images/login-signup.svg";
-import "../../styles/Login.css";
-
-const Login = () => {
-  // for toggling password
+const ForgotPassword = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  // for toggling password Ends here
 
   return (
-    <div className="container-fluid vh-100">
-      <div className="row h-100">
+    <div className="container-fluid">
+      <div className="passwordreset-container row">
         <div className="col-md-6 p-0 d-flex align-items-center">
-          <img src={loginImage} alt="login-image" className="img-fluid" />
+          <img src={loginImage} alt="" />
         </div>
         <div className="col-md-5">
-          <div className="login-right-container">
+          <div className="ForgotPassword-right-container">
             <h3>Palmfit</h3>
-            <p>Login to your account</p>
-            <form action="">
+            <p className="text-two">Create new password</p>
+            <p>
+              Your new password must be different from previous used password
+            </p>
+            <form className="passwordreset-form" action="">
               <div className="form-group input">
-                <label htmlFor="email">Email address</label>
-                <input
-                  id="email"
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter your email address"
-                />
-              </div>
-              <div className="form-group input">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">New Password</label>
                 <input
                   id="password"
                   type={showPassword ? "text" : "password"}
                   className="form-control"
                   placeholder="Enter your password"
                 />
+              </div>
+              <h5>
+                Must have uppercase, lowercase, number and special character
+              </h5>
+              <div className="form-group input">
+                <label htmlFor="verifyPassword">Confirm New Passwor</label>
+                <input
+                  id="verifyPassword"
+                  type={showPassword ? "text" : "password"}
+                  className="form-control"
+                  placeholder="Enter your password"
+                />
+
                 <span
                   className="toggle-password"
                   onClick={togglePasswordVisibility}
@@ -46,21 +49,10 @@ const Login = () => {
                   {showPassword ? "Hide password" : "Show password"}
                 </span>
               </div>
-              <div className="forgot-password mt-2">
-                <a href="">Forgot Password?</a>
-              </div>
-              <br />
               <div className="form-group logs">
-                <input
-                  type="button"
-                  value={"Login"}
-                  className="mt-1 p-2 form-control log"
-                />
-              </div>
-              <div className="register">
-                <span>
-                  Don't have an account? <a href="">Register</a>
-                </span>
+                <button type="submit" className="mt-1 p-2 form-control log">
+                  Reset Password
+                </button>
               </div>
             </form>
           </div>
@@ -70,4 +62,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;
