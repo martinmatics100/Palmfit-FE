@@ -9,6 +9,7 @@ import image4 from "../../images/WhyChooseUS2.svg";
 import image5 from "../../images/WhyChooseUS3.svg";
 import { whyChooseUsData, WordsFromOurUsers } from "../utils/HomePageData";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 function LandingPage() {
   return (
@@ -58,9 +59,9 @@ function LandingPage() {
             </p>
 
             <p className="nav-items">
-              <a href="" className="btns">
+              <Link to={"/register"} className="btns">
                 Get Started
-              </a>
+              </Link>
             </p>
           </div>
         </section>
