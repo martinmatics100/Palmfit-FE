@@ -7,6 +7,8 @@ import LandingPage from "./components/HomePage/Main";
 import Login from "./components/LoginPage/Login";
 import SignUp from "./components/SignUpPage/SignUp";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
+import SendEmail from "./components/ForgotPassword/SendEmail";
+import OTPVerification from "./components/ForgotPassword/OtpVerification";
 
 function App() {
   return (
@@ -15,14 +17,18 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUp />} />
+        <Route path="/search-email" element={<SendEmail />} />
+        <Route path="/verify-email" element={<OTPVerification />} />
+        <Route path="/reset-password" element={<ForgotPassword />} />
       </Routes>
     </Router>
 
     // <div>
-    //   <LandingPage />
-    //   <Login />
     //   <SignUp />
+    //   <Login />
     //   <ForgotPassword />
+    //   <SendEmail />
+    //   <OTPVerification />
     // </div>
   );
 }

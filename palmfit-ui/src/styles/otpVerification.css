@@ -1,0 +1,12 @@
+.OtpVerification-right-container {
+    justify-content: center;
+    margin-top: 20%;
+}
+
+.OtpVerification-right-container h3{
+    color: #001a1a;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #ffffff;
+    font-style: italic;
+}

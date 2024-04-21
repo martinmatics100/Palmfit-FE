@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import loginImage from "../../images/login-signup.svg";
 import "../../styles/Login.css";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   // for toggling password
@@ -47,7 +48,7 @@ const Login = () => {
                 </span>
               </div>
               <div className="forgot-password mt-2">
-                <a href="">Forgot Password?</a>
+                <Link to={"/search-email"}>Forgot Password?</Link>
               </div>
               <br />
               <div className="form-group logs">
@@ -59,7 +60,7 @@ const Login = () => {
               </div>
               <div className="register">
                 <span>
-                  Don't have an account? <a href="">Register</a>
+                  Don't have an account? <Link to={"/register"}>Register</Link>
                 </span>
               </div>
             </form>
