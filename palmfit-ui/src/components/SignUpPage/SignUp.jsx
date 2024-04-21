@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import loginImage from "../../images/login-signup.svg";
 import "../../styles/SignUp.css";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -169,9 +170,10 @@ const SignUp = () => {
                   Register
                 </button>
               </div>
+
               <div className="registers">
                 <span>
-                  Already have an account? <a href="#">Login</a>
+                  Already have an account? <Link to={"/login"}>Login</Link>{" "}
                 </span>
               </div>
             </form>

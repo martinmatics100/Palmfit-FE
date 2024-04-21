@@ -19,7 +19,7 @@ const Footer = () => {
             fontSize: "14px",
           }}
         >
-          © 2021 Palmfit. All rights reserved.
+          © 2024 Palmfit. All rights reserved
         </div>
       </div>
       <div className="footer-container-second">
