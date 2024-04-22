@@ -40,12 +40,15 @@ const OTPVerification = () => {
         <div className="col-md-5">
           <div className="OtpVerification-right-container">
             <h3>Palmfit</h3>
-            <p>Verify your email</p>
-            <p>
+            <p className="title">Verify your email</p>
+            <p className="title-text">
               A verification code was sent to your email, please enter the code
               below.
             </p>
-            <form className="d-flex flex-column align-items-center mb-3">
+            <form
+              action=""
+              className="d-flex flex-column align-items-center mb-3"
+            >
               <div className="form-group input d-flex">
                 {otp.map((value, index) => (
                   <input
@@ -61,7 +64,7 @@ const OTPVerification = () => {
                 ))}
               </div>
 
-              <div className="form-group logs">
+              <div className="form-group input logs">
                 <Link to={"/reset-password"}>
                   <button
                     type="submit"
