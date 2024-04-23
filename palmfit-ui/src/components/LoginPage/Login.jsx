@@ -51,13 +51,15 @@ const Login = () => {
                 <Link to={"/search-email"}>Forgot Password?</Link>
               </div>
               <br />
-              <div className="form-group logs">
-                <input
-                  type="button"
-                  value={"Login"}
-                  className="mt-1 p-2 form-control log"
-                />
-              </div>
+              <Link to={"/dashboard"}>
+                <div className="form-group logs">
+                  <input
+                    type="button"
+                    value={"Login"}
+                    className="mt-1 p-2 form-control log"
+                  />
+                </div>{" "}
+              </Link>
               <div className="register">
                 <span>
                   Don't have an account? <Link to={"/register"}>Register</Link>
