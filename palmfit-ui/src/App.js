@@ -9,6 +9,7 @@ import SignUp from "./components/SignUpPage/SignUp";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import SendEmail from "./components/ForgotPassword/SendEmail";
 import OTPVerification from "./components/ForgotPassword/OtpVerification";
+import VerticalNav from "./components/dashboard/sidebarstyle/vertical-nav";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/search-email" element={<SendEmail />} />
         <Route path="/verify-email" element={<OTPVerification />} />
         <Route path="/reset-password" element={<ForgotPassword />} />
+        <Route path="/dashboard" element={<VerticalNav />} />
       </Routes>
     </Router>
 
