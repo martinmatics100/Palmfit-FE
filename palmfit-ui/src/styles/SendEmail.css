@@ -1,0 +1,19 @@
+.sendEmail-right-container {
+    justify-content: center;
+    margin-top: 20%;
+  }
+  
+  .sendEmail-right-container h3 {
+    color: #001a1a;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #ffffff;
+    font-style: italic;
+  }
+  
+  .sendEmail-right-container p {
+    font-size: 25px;
+    color: #001a1a;
+    font-weight: 600;
+  }
+  
