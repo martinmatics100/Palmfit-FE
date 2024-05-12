@@ -1,9 +1,9 @@
-import logo from "./logo.svg";
+import Dashboard from "./views/Dashboard";
 
 function App() {
   return (
     <div>
-      <div>Hello World</div>
+      <Dashboard />
     </div>
   );
 }
