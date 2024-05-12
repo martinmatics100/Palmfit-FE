@@ -31,3 +31,33 @@
   color: #ffffff;
   border-left: 2px solid #ffffff;
 }
+
+/* -----------------------
+Navbar
+---------------------------- */
+
+.navbar {
+  background-color: #1a8d8d;
+}
+
+.navbar ul li {
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar ul li:hover {
+  background-color: #e4f0f031;
+  border-radius: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid #ffffff;
+}
+
+.navbar ul li:hover a {
+  color: #ffffff;
+}
+
+.active {
+  background-color: #e4f0f031;
+  border-radius: 5px;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
