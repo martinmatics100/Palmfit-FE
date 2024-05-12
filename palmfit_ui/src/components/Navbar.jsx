@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import "../css/style.css";
 
 export default function Navbar() {
+  const [active, SetActive] = useState(1);
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a
+          class="navbar-brand"
+          href="#"
+          className={active === 1 ? "active nav-item" : "nav-item"}
+          onClick={(e) => SetActive(1)}
+        >
           Feedback
         </a>
         <button
@@ -20,17 +27,29 @@ export default function Navbar() {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              className={active === 2 ? "active nav-item" : "nav-item"}
+              onClick={(e) => SetActive(2)}
+            >
               <a class="nav-link active" aria-current="page" href="#">
                 Home
               </a>
             </li>
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              className={active === 3 ? "active nav-item" : "nav-item"}
+              onClick={(e) => SetActive(3)}
+            >
               <a class="nav-link" href="#">
                 Link
               </a>
             </li>
-            <li class="nav-item dropdown">
+            <li
+              class="nav-item dropdown"
+              className={active === 4 ? "active nav-item" : "nav-item"}
+              onClick={(e) => SetActive(4)}
+            >
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -61,7 +80,11 @@ export default function Navbar() {
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              className={active === 5 ? "active nav-item" : "nav-item"}
+              onClick={(e) => SetActive(5)}
+            >
               <a class="nav-link disabled" aria-disabled="true">
                 Disabled
               </a>
