@@ -19,7 +19,7 @@ const HomeFirstPart = () => {
             <div class="swiper-pagination"></div>
           </div>
         </div>
-        <div class="col-lg-4 order-lg-1">
+        <div class="left col-lg-4 order-lg-1">
           <h1 class="mb-4" data-aos="fade-up">
             Your fitness <span>starts</span> with what you eat
           </h1>
@@ -28,11 +28,9 @@ const HomeFirstPart = () => {
             you eat. It requires minimal commitment and the journey starts when
             you say it starts. Click below to register!
           </p>
-          <p class="mt-5" data-aos="fade-up">
-            <a href="#" class="btn btn-get-started">
-              Get Started
-            </a>
-          </p>
+          <a href="#" class="btn btn-get-started mt-3">
+            Get Started
+          </a>
         </div>
       </div>
     </div>

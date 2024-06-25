@@ -135,6 +135,21 @@
         cursor: pointer;
         transition: color 0.3s;
     }
+.left .btn-get-started {
+    background-color: var(--nav-hover-color);
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    border: 2px solid transparent;
+    transition: 0.3s all ease-in-out;
+    font-size: 18px;
+}
+
+.left .btn-get-started:hover {
+    border-color: var(--nav-hover-color);
+    background-color: transparent;
+    color: #000000;
+}
 }
 
 
@@ -217,4 +232,20 @@
     .mobile-nav-active .navmenu>ul {
         display: block;
     }
+.left .btn-get-started {
+    background-color: var(--nav-hover-color);
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    border: 2px solid transparent;
+    transition: 0.3s all ease-in-out;
+    font-size: 15px;
+    /* float: right; */
+}
+
+.left .btn-get-started:hover {
+    border-color: var(--nav-hover-color);
+    background-color: transparent;
+    color: #000000;
+}
 }
