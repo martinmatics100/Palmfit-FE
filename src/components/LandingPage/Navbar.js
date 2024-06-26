@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../../Assets/Logo.png";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +35,7 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="mobile-nav-toggle" onClick={toggleMenu}>
-            <FaBars />
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
           </div>
         </nav>
       </div>
