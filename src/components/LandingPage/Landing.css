@@ -257,11 +257,15 @@
 .card-container {
     width: 70%;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    row-gap: 3rem;
     gap: 1rem;
     font-size: 14px;
-    text-align: center;
+    text-align: justify;
 }
 
 
@@ -270,16 +274,15 @@
 }
 
 .custom-head-class {
-    font-size: 21px;
+    font-size: 15rem;
     color: #1C341A;
     margin-bottom: 20px;
-    line-height: 27.83px;
     font-weight: 700;
 }
 
-.custom-body-class {
+/* .custom-body-class {
     background-color: red;
-}
+} */
 
 /* WhyChooseUs Styling for mobile */
 @media (max-width: 1199px) {
@@ -295,6 +298,5 @@
 
     .custom-body-class {
         background-color: black;
-        opacity: ;
     }
 }

@@ -14,7 +14,7 @@ import WordsFromOurUsers9 from "../Assets/WordsFromOurUsers/WordsFromOurUsers9.s
 
 let whyChooseUs = [
   {
-    bg: "red",
+    bg: "#ffffff",
     img: WhyChooseUs1,
     head: "Calcuate Calorie",
     paragraph:
