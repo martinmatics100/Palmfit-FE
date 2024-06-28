@@ -18,7 +18,7 @@ let whyChooseUs = [
     img: WhyChooseUs1,
     head: "Calcuate Calorie",
     paragraph:
-      "We offer you the chance to browse through our platform for food calories to make your decisions on what to eat and what not to. However this starts by signing up on our platform.",
+      "Join us in your journey towards healthier eating habits. Our platform allows you to easily browse and track the calorie content of various foods, helping you make informed decisions about your diet. Sign up today to start monitoring what you eat and maintain a balanced lifestyle. Your path to better health begins here!",
   },
 
   {
@@ -26,7 +26,7 @@ let whyChooseUs = [
     img: WhyChooseUs2,
     head: "Keep Track of Intake",
     paragraph:
-      "We offer you the chance to browse through our platform for food calories to make your decisions on what to eat and what not to. However this starts by signing up on our platform.",
+      "Stay on top of your dietary habits with our comprehensive tracking tools. Our platform enables you to monitor your daily calorie intake, helping you maintain a balanced diet and achieve your health goals. Sign up now to start tracking your meals and make healthier choices every day. Your journey to a healthier you begins here!",
   },
 
   {
@@ -34,7 +34,7 @@ let whyChooseUs = [
     img: WhyChooseUs3,
     head: "Live Healthier",
     paragraph:
-      "We offer you the chance to browse through our platform for food calories to make your decisions on what to eat and what not to. However this starts by signing up on our platform.",
+      "Empower yourself with the tools to live a healthier life. Explore our platform to access nutritional information and make informed choices about your diet. Sign up today to start your journey towards improved health and well-being. Take control of your lifestyle and embrace healthier habits with us!",
   },
 ];
 
