@@ -1,0 +1,47 @@
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .signup-image {
+    background: url('../../../Assets/authImage.svg');
+    background-size: cover;
+    height: 110vh;
+  }
+  form .btn {
+    background-color: #1A8D8D;
+    color: #fff;
+  }
+
+  form .btn:hover {
+    background-color: #1a8d8dde;
+    color: #fff;
+  }
+  
+  @media (max-width: 767.98px) {
+    .signup-container {
+      flex-direction: column;
+    }
+  
+    .signup-image {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .d-flex a, .d-flex span {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .d-flex a:hover, .d-flex span a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../../Assets/Logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +32,7 @@ const Navbar = () => {
               <a href="#">Sign In</a>
             </li>
             <li>
-              <a href="#">Get Started</a>
+              <Link to="/register">Get Started</Link>
             </li>
           </ul>
           <div className="mobile-nav-toggle" onClick={toggleMenu}>

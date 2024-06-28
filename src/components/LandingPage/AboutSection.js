@@ -1,5 +1,6 @@
 import React from "react";
 import HomePageImage from "../../Assets/aboutImage.svg";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -29,9 +30,9 @@ const AboutSection = () => {
             Take it everywhere; look up foods before you eat, when eating
             choices count the most!
           </p>
-          <a href="#" class="btn btn-get-started mt-3">
+          <Link to="/register" class="btn btn-get-started mt-3">
             Get Started
-          </a>
+          </Link>
         </div>
       </div>
     </div>
