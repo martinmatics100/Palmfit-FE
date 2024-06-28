@@ -29,7 +29,7 @@ const HomeFirstPart = () => {
             you say it starts. Click below to register!
           </p>
           <a href="#" class="btn btn-get-started mt-3">
-            Get Started
+            Calculate Calorie
           </a>
         </div>
       </div>

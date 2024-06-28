@@ -1,0 +1,43 @@
+* {
+    font-family: Nunito sans;
+}
+
+.con {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    z-index: 99;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #083535da;
+}
+
+
+.color_overlay_image {
+    border: 8px solid #fff;
+    border-radius: 8px;
+    width: 10%;
+    display: block;
+   
+}
+
+/* --------------------------------
+** Loader Styling
+--------------------------------- */
+
+.loader-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  

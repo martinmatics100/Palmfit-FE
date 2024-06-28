@@ -18,8 +18,17 @@ const WhyUs = () => {
         Why Choose Us?
       </h2>
 
-      <div className="card-container" style={{ marginBottom: 40 }}>
+      <div
+        className="card-container d-flex justify-content-between"
+        style={{ marginBottom: 40 }}
+      >
         {whyChooseUs.map((items, index) => {
+          const alignmentClass =
+            index === 0
+              ? "align-left"
+              : index === whyChooseUs.length - 1
+              ? "align-right"
+              : "align-center";
           return (
             <WhyChooseUsCard
               key={index}
@@ -28,6 +37,7 @@ const WhyUs = () => {
               paragraph={items.paragraph}
               bg={items.bg}
               headClassName="custom-head-class"
+              alignmentClass={alignmentClass}
             />
           );
         })}

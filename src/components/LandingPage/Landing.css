@@ -262,6 +262,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     row-gap: 3rem;
     gap: 1rem;
     font-size: 14px;
@@ -280,9 +281,19 @@
     font-weight: 700;
 }
 
-/* .custom-body-class {
-    background-color: red;
-} */
+.align-left {
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+.align-center {
+    margin: 0 20px;
+  }
+  
+  .align-right {
+    margin-left: auto;
+    margin-right: 10px;
+  }
 
 /* WhyChooseUs Styling for mobile */
 @media (max-width: 1199px) {
@@ -299,4 +310,110 @@
     .custom-body-class {
         background-color: black;
     }
+}
+
+
+/* -----------------------------------
+** WordsFromOurUsers
+--------------------------------------- */
+
+.Testimonials {
+    background-color: #CDF0E126;
+    min-height: 500px;
+    max-width: 100vw;
+    margin: 0 calc(-50vw + 49%);
+    padding-top: 2rem;
+   /* border: 1px solid red; */
+}
+
+.Testimonials h2{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.testimony-cards {
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.testimonal-card-component-container {
+    box-shadow: 1px 1px 8px #ccc;
+    border: 4px;
+    padding: .75rem;
+    background-color: #fff;
+}
+
+.testimonal-card-component-con p a {
+    text-decoration: none;
+}
+
+
+
+
+
+.testimony-cards-container {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    
+}
+
+.testimony-cards {
+        
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* WordsFromOurUsers Styling for mobile */
+
+@media (max-width: 1199px) {
+    .testimony-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimony-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimony-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .testimony-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* -------------------------------
+** Footer Styling
+---------------------------------- */
+.socials p a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16;
+    opacity: 0.4;
+}
+
+.socials p a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.programs p a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16;
+}
+
+.programs p a:hover {
+    text-decoration: underline;
 }
