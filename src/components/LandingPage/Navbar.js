@@ -29,7 +29,7 @@ const Navbar = () => {
               <a href="#">Calorie Calculator</a>
             </li>
             <li>
-              <a href="#">Sign In</a>
+              <Link to="/login">Sign In</Link>
             </li>
             <li>
               <Link to="/register">Get Started</Link>
