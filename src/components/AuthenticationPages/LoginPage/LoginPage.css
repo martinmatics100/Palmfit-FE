@@ -1,0 +1,58 @@
+form .login-alt span {
+    color: #001A1A;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  form .login-alt span a {
+    color: #1A8D8D;
+    opacity: 0.8;
+  }
+ 
+  form .login-alt span a:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  form .login-alt a{
+    color: #1A8D8D;
+    opacity: 0.8;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  form .login-alt a:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  /* password toggle */
+
+  .position-relative {
+    position: relative;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top: 62%;
+    right: 60px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #001A1A;
+    user-select: none;
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  
+  .password-toggle:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+  
+  @media (max-width: 1199px) {
+    .password-toggle {
+      right: 70px;
+    }
+  }
+  

@@ -8,8 +8,17 @@
   .signup-image {
     background: url('../../../Assets/authImage.svg');
     background-size: cover;
-    height: 110vh;
+    height: 140vh;
   }
+
+  h3 {
+    color: #001A1A;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32.74px;
+  }
+ 
+  
   form .btn {
     background-color: #1A8D8D;
     color: #fff;
@@ -19,6 +28,90 @@
     background-color: #1a8d8dde;
     color: #fff;
   }
+
+  form label {
+    color: #001A1A;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  form .form-check-label a {
+    color: #1A8D8D;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17.73px;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  form .form-check-label a:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  form input[type="checkbox"] {
+    border: 3px solid #1A8D8D;
+
+  }
+
+  form input[type="checkbox"]:checked {
+    background-color: #1A8D8D;
+  }
+
+  form .login-alt span {
+    color: #001A1A;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  form .login-alt span a {
+    color: #1A8D8D;
+    opacity: 0.8;
+  }
+ 
+  form .login-alt span a:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  /* password toggle */
+
+  form .position-relative {
+    position: relative;
+  }
+  
+ form .password-toggle {
+    position: absolute;
+    top: 60%;
+    right: 60px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #001A1A;
+    user-select: none;
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  
+  form .password-toggle:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  /* .error-message styleing */
+
+  .error-message {
+    color: #eb0303a2;
+    font-size: 0.875em; /* Optional: Adjust the size as needed */
+    margin-top: 0.25em; /* Optional: Adjust the spacing as needed */
+  }
+  
+  @media (max-width: 1199px) {
+    .password-toggle {
+      right: 70px;
+    }
+  }
+  
   
   @media (max-width: 767.98px) {
     .signup-container {
