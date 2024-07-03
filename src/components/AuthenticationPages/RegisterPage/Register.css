@@ -8,7 +8,7 @@
   .signup-image {
     background: url('../../../Assets/authImage.svg');
     background-size: cover;
-    height: 140vh;
+    height: 120vh;
   }
 
   h3 {

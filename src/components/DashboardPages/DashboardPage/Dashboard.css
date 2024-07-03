@@ -1,0 +1,9 @@
+.content {
+  overflow-y: auto;
+  height: 100vh;
+  padding-left: 240px; /* Adjust this value according to the sidebar width */
+}
+
+.container {
+  padding-top: 56px; /* Adjust this value according to the navbar height */
+}

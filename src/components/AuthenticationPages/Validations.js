@@ -19,7 +19,7 @@ export default function Validations(values) {
     errors.email =
       "You'll use this when you log in and if you ever need to reset your password";
   } else if (!email_pattern.test(values.email)) {
-    errors.email = "Email didn't match";
+    errors.email = "Email format incorrect";
   }
 
   if (values.password === "") {

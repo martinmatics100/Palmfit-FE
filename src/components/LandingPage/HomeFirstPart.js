@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react";
 import HomePageImage from "../../Assets/homepageimg.svg";
+import CalculateCalorie from "./CalculateCalorieModal/CalculateCalorie";
 
 const HomeFirstPart = () => {
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <div class="container">
       <div class="row align-items-center justify-content-between">
@@ -28,11 +30,16 @@ const HomeFirstPart = () => {
             you eat. It requires minimal commitment and the journey starts when
             you say it starts. Click below to register!
           </p>
-          <a href="#" class="btn btn-get-started mt-3">
+          <a
+            href="#"
+            class="btn btn-get-started mt-3"
+            onClick={() => setModalShow(true)}
+          >
             Calculate Calorie
           </a>
         </div>
       </div>
+      <CalculateCalorie show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 };

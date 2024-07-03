@@ -26,6 +26,12 @@ form .login-alt span {
     text-decoration: underline;
   }
 
+  .signin-image {
+    background: url('../../../Assets/authImage.svg');
+    background-size: cover;
+    height: 100vh;
+  }
+
   /* password toggle */
 
   .position-relative {
