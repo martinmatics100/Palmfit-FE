@@ -1,0 +1,55 @@
+.logo-size {
+    max-width: 100px; /* Adjust the value as needed */
+    height: auto;
+  }
+
+  .sidebar {
+    background-color: #1A8D8D;
+  }
+
+  .sidebar-items a span, .sidebar-items a img {
+    color: #ffffff;
+  }
+
+  .logo-size {
+    filter: brightness(0) invert(1);
+  }
+
+  .sidebar .sidebar-items ul li span {
+    font-weight: 200;
+    letter-spacing: 0.5px;
+  }
+
+  .sidebar .logout div a span, .sidebar .logout div a {
+    color: #ffffff;
+  }
+  
+  .sidebar .sidebar-items ul li span span, .sidebar .sidebar-items ul li span {
+    color: #ffffff;
+  }
+
+  .sidebar .sidebar-items ul li:hover {
+    background-color: #1A8D8D;
+    cursor: pointer;
+  }
+
+  .sidebar .sidebar-items ul li:hover span {
+    color: #ffffff;
+  }
+
+  .active{
+    background-color: rgba(5, 83, 44, 0.637);
+    background-color: #1A8D8D;
+    border-left: 5px solid #ffffff;
+    cursor: pointer;
+  }
+
+  /* --------------------------------
+  ** NavBar Styling
+  --------------------------------- */
+
+  .navbar {
+    background-color: #1A8D8D;
+    width: 100%;
+  }
+

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Logo from "../../Assets/Logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import CalculateCalorie from "./CalculateCalorieModal/CalculateCalorie";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [modalShow, setModalShow] = React.useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,7 +28,9 @@ const Navbar = () => {
         <nav className="navmenu">
           <ul className="d-flex">
             <li>
-              <a href="#">Calorie Calculator</a>
+              <a href="#" onClick={() => setModalShow(true)}>
+                Calorie Calculator
+              </a>
             </li>
             <li>
               <Link to="/login">Sign In</Link>
@@ -40,6 +44,7 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
+      <CalculateCalorie show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 };

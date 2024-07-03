@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+.custom-modal-width .modal-dialog {
+    max-width: 400px; /* Set your desired width */
+  }
+
+  .calorie-display {
+    background-color: #1A8D8D;
+  }
+
+.calorie-display h5 {
+    color: #FFFFFF;
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 17.73px;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .calorie-display h3 {
+    color: #FFFFFF;
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 17.73px;
+    font-weight: 600;
+    line-height: 32.74px;
+    font-size: 24px;
+  }

@@ -4,8 +4,13 @@ import PropagateLoader from "react-spinners/MoonLoader";
 import "./Register.css";
 import { Link } from "react-router-dom";
 import Validations from "../Validations";
+import LoadingPage from "../../LoadingPage/LoadingPage";
 
 const RegisterPage = () => {
+  const [errors, setErrors] = useState({});
+
+  const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
@@ -15,10 +20,6 @@ const RegisterPage = () => {
     termsAccepted: false,
   });
 
-  const [errors, setErrors] = useState({});
-
-  const [Loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -32,6 +33,13 @@ const RegisterPage = () => {
   const handleInput = (e) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
+
+    // Clear error message for the current input field
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: undefined, // Clear the error for this field
+    }));
+
     setValues((prevValues) => ({
       ...prevValues,
       [name]: newValue,
@@ -57,26 +65,8 @@ const RegisterPage = () => {
   };
   return (
     <div className="loader-container">
-      {Loading ? (
-        <div
-          className="loader-container"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-            height: "100vh",
-            backgroundColor: "#f2f2f2",
-          }}
-        >
-          <PropagateLoader
-            color={"#1A8D8D"}
-            loading={Loading}
-            size={150}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-        </div>
+      {loading ? (
+        <LoadingPage loading={loading} />
       ) : (
         <div className="container-fluid">
           <div className="row signup-container">
@@ -86,7 +76,7 @@ const RegisterPage = () => {
               <form onSubmit={handleValidations}>
                 <div className="mb-3">
                   <label htmlFor="firstName" className="form-label">
-                    First Name
+                    First Name <span class="text-danger">*</span>
                   </label>
                   <input
                     type="text"
@@ -102,7 +92,7 @@ const RegisterPage = () => {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="lastName" className="form-label">
-                    Last Name
+                    Last Name <span class="text-danger">*</span>
                   </label>
                   <input
                     type="text"
@@ -118,7 +108,7 @@ const RegisterPage = () => {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
-                    Email address
+                    Email address <span class="text-danger">*</span>
                   </label>
                   <input
                     type="email"
@@ -134,7 +124,7 @@ const RegisterPage = () => {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">
-                    Password
+                    Password <span class="text-danger">*</span>
                   </label>
                   <input
                     type={showPassword ? "text" : "password"}
@@ -156,7 +146,7 @@ const RegisterPage = () => {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="verifyPassword" className="form-label">
-                    Verify Password
+                    Verify Password <span class="text-danger">*</span>
                   </label>
                   <input
                     type={showPassword ? "text" : "password"}
@@ -178,7 +168,8 @@ const RegisterPage = () => {
                     className="form-check-input"
                     id="terms"
                     onChange={handleInput}
-                  />
+                  />{" "}
+                  <span class="text-danger">*</span>
                   <label className="form-check-label ml-1" htmlFor="terms">
                     I have read and understood the <a href="">Privacy Policy</a>{" "}
                     and <a href="">Terms & Conditions</a>.
@@ -187,9 +178,11 @@ const RegisterPage = () => {
                     <p className="error-message">{errors.termsAccepted}</p>
                   )}
                 </div>
-                <button type="submit" className="btn w-100">
-                  Register
-                </button>
+                <Link to="/verify-email">
+                  <button type="submit" className="btn w-100">
+                    Register
+                  </button>
+                </Link>
                 <div className="d-flex justify-content-center mt-2 login-alt">
                   {/* <a href="#">Forgotten Password?</a> */}
                   <span>
