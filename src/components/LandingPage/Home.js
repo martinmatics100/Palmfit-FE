@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./Navbar";
-import "../../App.css";
 import "./Landing.css";
 import HomeFirstPart from "./HomeFirstPart";
 import AboutSection from "./AboutSection";

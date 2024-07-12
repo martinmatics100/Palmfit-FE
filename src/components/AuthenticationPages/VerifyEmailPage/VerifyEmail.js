@@ -41,7 +41,7 @@ const VerifyEmail = () => {
     if (otpValue === "123456") {
       // Replace this condition with actual verification logic
       alert("OTP Verified Successfully!");
-      navigate("/dashboard"); // Redirect to the dashboard after successful verification
+      navigate("/login"); // Redirect to the login page after successful verification
     } else {
       alert("Invalid OTP. Please try again.");
     }

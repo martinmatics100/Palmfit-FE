@@ -33,34 +33,64 @@ const LoginPage = () => {
                   <label htmlFor="email" className="form-label">
                     Email address
                   </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    placeholder="Enter your email address"
-                  />
+                  <div className="input-group">
+                    <span className="input-group-text">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        className="bi bi-envelope"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                      </svg>
+                    </span>
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="email"
+                      placeholder="Enter your email address"
+                    />
+                  </div>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">
                     Password
                   </label>
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    className="form-control"
-                    id="password"
-                    placeholder="Enter your password"
-                  />
-                  <span
-                    className="password-toggle"
-                    onClick={togglePasswordVisibility}
-                  >
-                    {showPassword ? "Hide" : "Show"}
-                  </span>
+                  <div className="input-group">
+                    <span className="input-group-text">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        className="bi bi-lock"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M8 1a4 4 0 0 0-4 4v2H3a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1V5a4 4 0 0 0-4-4zM4 5V4a4 4 0 1 1 8 0v1H4zm4 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                      </svg>
+                    </span>
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      className="form-control"
+                      id="password"
+                      placeholder="Enter your password"
+                    />
+                    <span
+                      className="password-toggle"
+                      onClick={togglePasswordVisibility}
+                    >
+                      {showPassword ? "Hide" : "Show"}
+                    </span>
+                  </div>
                 </div>
 
-                <button type="submit" className="btn w-100">
-                  Log In
-                </button>
+                <Link to="/dashboard">
+                  <button type="submit" className="btn w-100">
+                    Log In
+                  </button>
+                </Link>
 
                 <div className="d-flex justify-content-between mt-2 login-alt">
                   <Link to="/reset-password">Having trouble loggin in?</Link>

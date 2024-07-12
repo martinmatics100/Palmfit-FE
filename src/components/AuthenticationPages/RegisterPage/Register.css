@@ -83,7 +83,7 @@
  form .password-toggle {
     position: absolute;
     top: 60%;
-    right: 60px;
+    right: 75px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #001A1A;
@@ -102,8 +102,44 @@
 
   .error-message {
     color: #eb0303a2;
-    font-size: 0.875em; /* Optional: Adjust the size as needed */
-    margin-top: 0.25em; /* Optional: Adjust the spacing as needed */
+    font-size: 0.875em; 
+    margin-top: 0.25em;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .error-message {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    font-size: 18px;
+    transform: translateX(-50%);
+    width: fit-content;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #1A8D8D;
+    animation: slideIn 1s ease forwards;
+    z-index: 1000;
+  }
+  
+  .error-message.hide {
+    animation: slideOut 0.3s ease forwards;
   }
   
   @media (max-width: 1199px) {
