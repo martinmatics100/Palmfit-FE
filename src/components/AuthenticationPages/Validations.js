@@ -8,16 +8,16 @@ export default function Validations(values) {
     /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
 
   if (values.firstName === "") {
-    errors.firstName = "What's your name";
+    errors.firstName = "What's your first name";
   }
 
   if (values.lastName === "") {
-    errors.lastName = "What's your name";
+    errors.lastName = "What's your last name";
   }
 
   if (values.email === "") {
     errors.email =
-      "You'll use this when you log in and if you ever need to reset your password";
+      "You'll use your email when you log in and if you ever need to reset your password";
   } else if (!email_pattern.test(values.email)) {
     errors.email = "Email format incorrect";
   }

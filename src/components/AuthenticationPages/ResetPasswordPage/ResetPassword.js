@@ -84,14 +84,12 @@ const ResetPassword = () => {
                       </div>
                       <div class="col-12">
                         <div class="d-grid">
-                          <Link to="/new-password">
-                            <button
-                              class="btn btn-primary w-100 btn-lg"
-                              type="submit"
-                            >
-                              Reset Password
-                            </button>
-                          </Link>
+                          <button
+                            class="btn btn-primary w-100 btn-lg"
+                            type="submit"
+                          >
+                            Reset Password
+                          </button>
                         </div>
                       </div>
                     </div>

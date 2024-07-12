@@ -1,6 +1,5 @@
 import React from "react";
 import { whyChooseUs } from "../../utils/LandingPageData";
-import { Opacity } from "@mui/icons-material";
 
 let style = {
   marginTop: 45,

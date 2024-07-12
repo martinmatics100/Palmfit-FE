@@ -7,7 +7,7 @@ import LoginPage from "./components/AuthenticationPages/LoginPage/LoginPage";
 import VerifyEmail from "./components/AuthenticationPages/VerifyEmailPage/VerifyEmail";
 import ResetPassword from "./components/AuthenticationPages/ResetPasswordPage/ResetPassword";
 import NewPassword from "./components/AuthenticationPages/ResetPasswordPage/NewPassword";
-import Dashboard from "./components/DashboardPages/DashboardPage/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 function App() {
   return (
