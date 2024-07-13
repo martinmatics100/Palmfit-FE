@@ -1,0 +1,201 @@
+.app.dark {
+    background-color: #222;
+    color: #ffffff;
+
+    .calorie-form {
+
+        p {
+            color: #fff;
+        }
+
+        .age-height-weight {
+            label {
+                color: #fff;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 24.55px;
+            }
+
+            input {
+                background-color: #222;
+                color: #fff;
+
+                &::placeholder {
+                    color: #fff;
+                }
+            }
+        }
+
+        .gender {
+
+            h5 {
+                color: #fff;
+            }
+
+            button {
+                border: 1px solid #fff;
+                background-color: #222;
+                color: #fff;
+                font-weight: 600;
+
+                &.selected {
+                    background-color: #fff;
+                    color: #222;
+                }
+            }
+        }
+
+        .goal {
+
+            h5 {
+                color: #fff;
+            }
+
+            .goal-buttons {
+
+                .goal-button {
+                    border: 1px solid #fff;
+                    background-color: #222;
+                    color: #fff;
+                    font-weight: 600;
+
+
+                    &.selected {
+                        background-color: #fff;
+                        color: #222;
+                    }
+                }
+            }
+        }
+
+        .activity-level {
+
+            h5 {
+                color: #fff;
+            }
+
+            .activity-buttons {
+                display: flex;
+                text-align: center;
+                justify-content: space-between;
+                gap: 3;
+
+                .activity-button {
+                    border: 1px solid #fff;
+                    background-color: #222;
+                    color: #fff;
+                    font-weight: 600;
+
+
+                    &.selected {
+                        background-color: #fff;
+                        color: #222;
+                    }
+                }
+            }
+        }
+
+        .submit-button {
+
+            .submit {
+                background-color: #222;
+                color: #fff;
+                font-weight: 700;
+                border: 1px solid #fff;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: #fff;
+                    color: #222;
+                }
+            }
+        }
+    }
+
+    .calorie-estimate {
+
+        p {
+            color: #fff;
+        }
+
+        h5 {
+            color: #fff;
+        }
+
+        .estimate-display {
+            border: 7px solid #fff;
+
+            .estimate-content {
+
+                span {
+                    color: #fff;
+
+                    &:nth-child(2) {
+                        font-size: 30px;
+                        color: #fff;
+                        font-weight: 900;
+                    }
+                }
+            }
+        }
+
+        .calorie-buttons {
+
+            .calorie-button {
+                border: 1px solid #fff;
+                background-color: #222;
+                color: #fff;
+                transition: background-color 0.3s, color 0.3s;
+
+                &.selected {
+                    background-color: #fff;
+                    color: #222;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .navbar {
+        background-color: #222;
+        border-bottom: 0.5px solid #222;
+
+        .wrapper {
+
+            .search {
+                border: 1px solid #fff;
+
+                input {
+                    background-color: transparent;
+                    color: #fff;
+                }
+
+                .search-icon {
+                    color: #fff;
+                }
+            }
+
+            .items {
+
+                .item {
+                    color: #fff;
+
+                    .icon {
+                        font-size: 20px;
+                        color: #fff;
+                    }
+
+                    .counter {
+                        background-color: #222;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar {
+        background-color: #222;
+        border-right: 0.5px solid #fff;
+    }
+}
