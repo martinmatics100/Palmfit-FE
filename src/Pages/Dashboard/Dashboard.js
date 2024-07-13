@@ -1,5 +1,6 @@
 import React from "react";
 import "./dashboard.scss";
+import "../../components/Calorie/CalorieForm/CalorieForm.scss";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Navbar from "../../components/DashboardNavbar/Navbar";
 import CalorieForm from "../../components/Calorie/CalorieForm/CalorieForm";

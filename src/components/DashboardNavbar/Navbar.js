@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.scss";
 import SearchIcon from "@mui/icons-material/Search";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -7,15 +7,34 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ChatIcon from "@mui/icons-material/Chat";
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import FormatListNumberedRtlIcon from "@mui/icons-material/FormatListNumberedRtl";
-import Propic from "../../Assets/martinProfilePic.jpg";
+import defaultProfilePic from "../../Assets/profilePicAvatar.svg";
+import { DarkModeContext } from "../../Context/darkModeContext";
+import { type } from "@testing-library/user-event/dist/type";
 
 const Navbar = () => {
+  const { dispatch } = useContext(DarkModeContext);
+  const [profilePic, setProfilePic] = useState(defaultProfilePic);
+
+  // useEffect(() => {
+  //   // Example: Fetch profile picture URL from backend
+  //   axios
+  //     .get("/api/profile/picture")
+  //     .then((response) => {
+  //       setProfilePic(response.data.profilePicUrl); // Assuming backend returns profilePicUrl
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching profile picture:", error);
+  //       // Handle error gracefully or set a default profile picture
+  //       setProfilePic(defaultProfilePic);
+  //     });
+  // }, []); // Empty dependency array to run effect only once
+
   return (
     <div className="navbar">
       <div className="wrapper">
         <div className="search">
           <input type="text" placeholder="Search..." />
-          <SearchIcon />
+          <SearchIcon className="search-icon" />
         </div>
 
         <div className="items">
@@ -24,7 +43,10 @@ const Navbar = () => {
             English
           </div>
           <div className="item">
-            <DarkModeIcon className="icon" />
+            <DarkModeIcon
+              className="icon"
+              onClick={() => dispatch({ type: "TOGGLE" })}
+            />
           </div>
           <div className="item">
             <FullscreenExitIcon className="icon" />
@@ -41,7 +63,7 @@ const Navbar = () => {
             <FormatListNumberedRtlIcon className="icon" />
           </div>
           <div className="item">
-            <img src={Propic} alt="img" className="avatar" />
+            <img src={profilePic} alt="img" className="avatar" />
           </div>
         </div>
       </div>
