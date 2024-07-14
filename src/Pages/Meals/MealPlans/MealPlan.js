@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../../components/Sidebar/Sidebar";
 import Navbar from "../../../components/DashboardNavbar/Navbar";
 import "./MealPlan.scss";
@@ -13,8 +13,17 @@ import LowCarbImage from "../../../Assets/mealplans/LowCarbImage.jpg";
 import GlutenFreeImage from "../../../Assets/mealplans/GlutenFreeImage.jpg";
 import DashDietImage from "../../../Assets/mealplans/DashDietImage.jpg";
 import IntermittentFastingImage from "../../../Assets/mealplans/IntermittentFastingImage.jpg";
+import LoadingPage from "../../../components/LoadingPage/LoadingPage";
 
 const MealPlan = () => {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
   const [mealPlans, setMealPlans] = useState([
     {
       id: 1,
@@ -79,16 +88,23 @@ const MealPlan = () => {
       <Sidebar />
       <div className="meal-container">
         <Navbar />
-        <div className="meal-plan-grid">
-          {mealPlans.map((plan) => (
-            <MealPlanItems
-              key={plan.id}
-              id={plan.id}
-              image={plan.image}
-              name={plan.name}
-              title={plan.title}
-            />
-          ))}
+        <div className="loader-container">
+          {loading ? (
+            <LoadingPage loading={loading} />
+          ) : (
+            <div className="meal-plan-grid">
+              {mealPlans.map((plan) => (
+                <MealPlanItems
+                  key={plan.id}
+                  id={plan.id}
+                  image={plan.image}
+                  name={plan.name}
+                  title={plan.title}
+                />
+              ))}
+            </div>
+          )}
+          ;
         </div>
       </div>
     </div>

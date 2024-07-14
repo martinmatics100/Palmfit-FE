@@ -1,5 +1,5 @@
 import React from "react";
-import PropagateLoader from "react-spinners/MoonLoader";
+import PropagateLoader from "react-spinners/RingLoader";
 
 const LoadingPage = ({ loading }) => {
   return (
