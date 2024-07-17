@@ -3,10 +3,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Footer = () => {
   return (
-    <footer
-      className="text-white pt-5 pb-4 mt-5"
-      style={{ backgroundColor: "#1A8D8D" }}
-    >
+    <footer className="text-white pt-5 pb-4 mt-5">
       <div className="container text-md-left">
         <div className="row" style={{ textAlign: "left" }}>
           <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">

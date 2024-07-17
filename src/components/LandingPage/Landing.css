@@ -398,6 +398,10 @@
 /* -------------------------------
 ** Footer Styling
 ---------------------------------- */
+
+footer {
+    background-color: #1A8D8D;
+}
 .socials p a {
     color: #fff;
     text-decoration: none;

@@ -4,12 +4,13 @@ import { whyChooseUs } from "../../utils/LandingPageData";
 let style = {
   marginTop: 45,
   marginBottom: 65,
-  backgroundColor: "#F6FBFB",
+  // backgroundColor: "#F6FBFB",
+  border: "none",
 };
 
 const WhyUs = () => {
   return (
-    <div className="container-sm" style={style}>
+    <div className="container-sm card" style={style}>
       <h2
         className="text-center"
         style={{ marginBottom: "40px", paddingTop: "50px" }}
@@ -50,7 +51,7 @@ const WhyChooseUsCard = (props) => {
     <div
       className="whyChooseUs card mb-sm-2 mx-sm-auto fs-md-6 mb-sm-4 border border-0 custom-body-class"
       style={{
-        backgroundColor: props.bg,
+        // backgroundColor: props.bg,
         padding: "20px 40px",
         borderRadius: "8px",
       }}
