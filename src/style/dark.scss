@@ -1,201 +1,379 @@
 .app.dark {
+  background-color: #222;
+  color: #ffffff;
+
+  // Calorie Form dark styling
+  .calorie-form {
+    p {
+      color: #fff;
+    }
+
+    .age-height-weight {
+      label {
+        color: #fff;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24.55px;
+      }
+
+      input {
+        background-color: #222;
+        color: #fff;
+
+        &::placeholder {
+          color: #fff;
+        }
+      }
+    }
+
+    .gender {
+      h5 {
+        color: #fff;
+      }
+
+      button {
+        border: 1px solid #fff;
+        background-color: #222;
+        color: #fff;
+        font-weight: 600;
+
+        &.selected {
+          background-color: #fff;
+          color: #222;
+        }
+      }
+    }
+
+    .goal {
+      h5 {
+        color: #fff;
+      }
+
+      .goal-buttons {
+        .goal-button {
+          border: 1px solid #fff;
+          background-color: #222;
+          color: #fff;
+          font-weight: 600;
+
+          &.selected {
+            background-color: #fff;
+            color: #222;
+          }
+        }
+      }
+    }
+
+    .activity-level {
+      h5 {
+        color: #fff;
+      }
+
+      .activity-buttons {
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        gap: 3;
+
+        .activity-button {
+          border: 1px solid #fff;
+          background-color: #222;
+          color: #fff;
+          font-weight: 600;
+
+          &.selected {
+            background-color: #fff;
+            color: #222;
+          }
+        }
+      }
+    }
+
+    .submit-button {
+      .submit {
+        background-color: #222;
+        color: #fff;
+        font-weight: 700;
+        border: 1px solid #fff;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: #fff;
+          color: #222;
+        }
+      }
+    }
+  }
+  //   ends here for calorie form
+
+  // Calorie Estimate dar styling
+  .calorie-estimate {
+    p {
+      color: #fff;
+    }
+
+    h5 {
+      color: #fff;
+    }
+
+    .estimate-display {
+      border: 7px solid #fff;
+
+      .estimate-content {
+        span {
+          color: #fff;
+
+          &:nth-child(2) {
+            font-size: 30px;
+            color: #fff;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+
+    .calorie-buttons {
+      .calorie-button {
+        border: 1px solid #fff;
+        background-color: #222;
+        color: #fff;
+        transition: background-color 0.3s, color 0.3s;
+
+        &.selected {
+          background-color: #fff;
+          color: #222;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  //   ends here for calorie estimate
+
+  // Navbar begins
+
+  .navbar {
     background-color: #222;
-    color: #ffffff;
+    border-bottom: 0.5px solid #222;
 
-    .calorie-form {
+    .wrapper {
+      .search {
+        border: 1px solid #fff;
 
-        p {
+        input {
+          background-color: transparent;
+          color: #fff;
+        }
+
+        .search-icon {
+          color: #fff;
+        }
+      }
+
+      .items {
+        .item {
+          color: #fff;
+
+          .icon {
+            font-size: 20px;
             color: #fff;
+          }
+
+          .counter {
+            background-color: #222;
+            color: #fff;
+          }
         }
+      }
+    }
+  }
+  //   ends here for nav bar
 
-        .age-height-weight {
-            label {
-                color: #fff;
-                font-weight: 600;
-                font-size: 18px;
-                line-height: 24.55px;
-            }
+  // sidebar begins here
+  .sidebar {
+    background-color: #222;
+    border-right: 0.5px solid #fff;
+  }
+  //   ends here for sidebar
 
-            input {
-                background-color: #222;
-                color: #fff;
+  // Landingpage begins here
 
-                &::placeholder {
-                    color: #fff;
-                }
-            }
-        }
+  .header {
+    background-color: #222;
+    box-shadow: 2px 4px 30px #233;
 
-        .gender {
-
-            h5 {
-                color: #fff;
-            }
-
-            button {
-                border: 1px solid #fff;
-                background-color: #222;
-                color: #fff;
-                font-weight: 600;
-
-                &.selected {
-                    background-color: #fff;
-                    color: #222;
-                }
-            }
-        }
-
-        .goal {
-
-            h5 {
-                color: #fff;
-            }
-
-            .goal-buttons {
-
-                .goal-button {
-                    border: 1px solid #fff;
-                    background-color: #222;
-                    color: #fff;
-                    font-weight: 600;
-
-
-                    &.selected {
-                        background-color: #fff;
-                        color: #222;
-                    }
-                }
-            }
-        }
-
-        .activity-level {
-
-            h5 {
-                color: #fff;
-            }
-
-            .activity-buttons {
-                display: flex;
-                text-align: center;
-                justify-content: space-between;
-                gap: 3;
-
-                .activity-button {
-                    border: 1px solid #fff;
-                    background-color: #222;
-                    color: #fff;
-                    font-weight: 600;
-
-
-                    &.selected {
-                        background-color: #fff;
-                        color: #222;
-                    }
-                }
-            }
-        }
-
-        .submit-button {
-
-            .submit {
-                background-color: #222;
-                color: #fff;
-                font-weight: 700;
-                border: 1px solid #fff;
-                transition: all 0.3s ease-in-out;
-
-                &:hover {
-                    background-color: #fff;
-                    color: #222;
-                }
-            }
-        }
+    .logo h1 {
+      color: #ffffff;
     }
 
-    .calorie-estimate {
-
-        p {
-            color: #fff;
-        }
-
-        h5 {
-            color: #fff;
-        }
-
-        .estimate-display {
-            border: 7px solid #fff;
-
-            .estimate-content {
-
-                span {
-                    color: #fff;
-
-                    &:nth-child(2) {
-                        font-size: 30px;
-                        color: #fff;
-                        font-weight: 900;
-                    }
-                }
-            }
-        }
-
-        .calorie-buttons {
-
-            .calorie-button {
-                border: 1px solid #fff;
-                background-color: #222;
-                color: #fff;
-                transition: background-color 0.3s, color 0.3s;
-
-                &.selected {
-                    background-color: #fff;
-                    color: #222;
-                    font-weight: 700;
-                }
-            }
-        }
+    .logo:hover {
+      text-decoration: none;
     }
 
-    .navbar {
+    .navmenu a {
+      color: #fff;
+    }
+
+    .navmenu ul li .icon {
+      color: #fff;
+    }
+
+    .navmenu li:last-child a {
+      background-color: #222;
+      border: 1px solid #fff;
+    }
+
+    .navmenu li:last-child a:hover {
+      background-color: #fff;
+      color: #222;
+      font-weight: 700;
+    }
+  }
+  //   navbar ends here
+
+  // HomeFirst Section begins here
+
+  .container {
+    .left {
+      .btn-get-started {
+        border: 1px solid #fff;
         background-color: #222;
-        border-bottom: 0.5px solid #222;
+        font-weight: 600;
 
-        .wrapper {
-
-            .search {
-                border: 1px solid #fff;
-
-                input {
-                    background-color: transparent;
-                    color: #fff;
-                }
-
-                .search-icon {
-                    color: #fff;
-                }
-            }
-
-            .items {
-
-                .item {
-                    color: #fff;
-
-                    .icon {
-                        font-size: 20px;
-                        color: #fff;
-                    }
-
-                    .counter {
-                        background-color: #222;
-                        color: #fff;
-                    }
-                }
-            }
+        &:hover {
+          background-color: #fff;
+          font-weight: 700;
         }
+      }
+    }
+  }
+  //   ends here
+
+  //   Why choose us begins
+  .card {
+    background-color: #222;
+
+    h2 {
+      color: #fff;
     }
 
-    .sidebar {
-        background-color: #222;
-        border-right: 0.5px solid #fff;
+    .card-container {
+      .whyChooseUs {
+        background-color: #ffffff23;
+
+        .custom-head-class {
+          color: #fff;
+        }
+
+        .card-body {
+          color: #fff;
+        }
+      }
     }
+  }
+  //   ends here
+
+  .Testimonials {
+    background-color: #222;
+
+    .testimonal-card-component-container {
+      background-color: #ffffff23;
+    }
+  }
+
+  //   footer begins here
+  footer {
+    background-color: #ffffff23;
+  }
+
+  //   Login begins here
+  .login {
+    background-color: #ffffff69;
+
+    .signup-container {
+      .left-login {
+        h3 {
+          color: #fff;
+        }
+
+        form {
+          label {
+            color: #fff;
+          }
+
+          button {
+            background-color: #ffffff69;
+            border: 1px solid #fff;
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+
+            &:hover {
+              background-color: #fff;
+              color: #222;
+            }
+          }
+
+          .login-alt {
+            span {
+              color: #222;
+              font-weight: 800;
+            }
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  //   ends here
+
+  // Register begins here
+
+  .signup-container {
+    background-color: #ffffff69;
+
+    h3 {
+      color: #fff;
+    }
+
+    form {
+      label {
+        color: #fff;
+      }
+
+      a {
+        color: #222;
+        font-weight: 600;
+
+        &:hover {
+          color: #fff;
+          text-decoration: underline;
+        }
+      }
+
+      button {
+        background-color: #ffffff69;
+        border: 1px solid #fff;
+        color: #fff;
+        font-weight: 600;
+
+        &:hover {
+          background-color: #fff;
+          color: #222;
+          font-weight: 700;
+        }
+      }
+
+      .login-alt {
+        span {
+            color: #fff;
+          }
+      }
+    }
+
+    input[type="checkbox"]:checked {
+        background-color: #ffffff69;
+    }
+  }
 }

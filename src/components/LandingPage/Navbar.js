@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Logo from "../../Assets/Logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CalculateCalorie from "./CalculateCalorieModal/CalculateCalorie";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { DarkModeContext } from "../../Context/darkModeContext";
 
 const Navbar = () => {
+  const { dispatch } = useContext(DarkModeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [modalShow, setModalShow] = React.useState(false);
 
@@ -27,6 +30,14 @@ const Navbar = () => {
         </a>
         <nav className="navmenu">
           <ul className="d-flex">
+            <li>
+              <div className="item">
+                <DarkModeIcon
+                  className="icon"
+                  onClick={() => dispatch({ type: "TOGGLE" })}
+                />
+              </div>
+            </li>
             <li>
               <a href="#" onClick={() => setModalShow(true)}>
                 Calorie Calculator

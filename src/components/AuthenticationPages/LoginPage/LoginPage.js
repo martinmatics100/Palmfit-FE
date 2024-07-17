@@ -23,10 +23,10 @@ const LoginPage = () => {
       {loading ? (
         <LoadingPage loading={loading} />
       ) : (
-        <div className="container-fluid">
+        <div className="container-fluid login">
           <div className="row signup-container">
             <div className="col-md-6 signin-image"></div>
-            <div className="col-md-6 p-5">
+            <div className="col-md-6 p-5 left-login">
               <h3 className="text-center mb-4">Login into your account</h3>
               <form>
                 <div className="mb-3">
