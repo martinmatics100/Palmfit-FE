@@ -10,7 +10,7 @@ const LoadingPage = ({ loading }) => {
         alignItems: "center",
         width: "100%",
         height: "100vh",
-        backgroundColor: "#f2f2f2",
+        backgroundColor: "#fff",
       }}
     >
       <PropagateLoader

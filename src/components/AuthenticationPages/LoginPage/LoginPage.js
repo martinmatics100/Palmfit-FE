@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 import LoadingPage from "../../LoadingPage/LoadingPage";
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -16,6 +17,12 @@ const LoginPage = () => {
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Your login logic here
+    navigate("/dashboard");
   };
 
   return (
@@ -28,7 +35,7 @@ const LoginPage = () => {
             <div className="col-md-6 signin-image"></div>
             <div className="col-md-6 p-5 left-login">
               <h3 className="text-center mb-4">Login into your account</h3>
-              <form>
+              <form onSubmit={handleLogin}>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
                     Email address
@@ -86,11 +93,9 @@ const LoginPage = () => {
                   </div>
                 </div>
 
-                <Link to="/dashboard">
-                  <button type="submit" className="btn w-100">
-                    Log In
-                  </button>
-                </Link>
+                <button type="submit" className="btn w-100">
+                  Log In
+                </button>
 
                 <div className="d-flex justify-content-between mt-2 login-alt">
                   <Link to="/reset-password">Having trouble loggin in?</Link>

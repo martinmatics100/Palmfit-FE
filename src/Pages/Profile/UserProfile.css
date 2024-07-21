@@ -1,0 +1,46 @@
+.profile-picture {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card {
+  border: none;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.label {
+  color: #1a8d8d;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.custom-input {
+  font-size: 1.2rem;
+  background-color: red;
+}
+
+.custom-input:focus {
+  outline: none;
+  border-color: none;
+  overlay: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.referral-section .referral-text h4,
+.referral-section .referral-link h4 {
+  color: #001A1A;
+  font-weight: 600;
+  font-size: 18px;
+}

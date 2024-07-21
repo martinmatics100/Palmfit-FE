@@ -8,11 +8,15 @@ import VerifyEmail from "./components/AuthenticationPages/VerifyEmailPage/Verify
 import ResetPassword from "./components/AuthenticationPages/ResetPasswordPage/ResetPassword";
 import NewPassword from "./components/AuthenticationPages/ResetPasswordPage/NewPassword";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import MealPlan from "./Pages/Meals/MealPlans/MealPlan";
-import Mealdiary from "./Pages/Meals/MealDiary/Mealdiary";
 import "../src/style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./Context/darkModeContext";
+import Sidebar from "./components/Sidebar/Sidebar";
+import UserProfile from "./Pages/Profile/UserProfile";
+import Mealdiary from "./Pages/Meals/MealDiary/Mealdiary";
+import MealPlan from "./Pages/Meals/MealPlans/MealPlan";
+import Setting from "./Pages/Setting/Setting";
+import Subscription from "./Pages/Payment/Subscription";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -25,9 +29,15 @@ function App() {
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/new-password" element={<NewPassword />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/meal-plans" element={<MealPlan />} />
-        <Route path="/meal-diary" element={<Mealdiary />} />
+
+        <Route element={<Sidebar />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/meal-plan" element={<MealPlan />} />
+          <Route path="/meal-diary" element={<Mealdiary />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/settings" element={<Setting />} />
+          <Route path="/subscription" element={<Subscription />} />
+        </Route>
       </Routes>
     </div>
   );
