@@ -27,7 +27,7 @@ const UserProfile = () => {
     lastName: "Nwatu",
     email: "martinchukwuemeka67@gmail.com",
     userName: "martinmatics",
-    userBio: "I love to dance",
+    userBio: "I love mathematics",
     phoneNumber: "091-3151-8262",
     address: "No 9 shola ademodi street, Ejigbo, Lagos State",
     gender: "",
@@ -244,13 +244,13 @@ const UserProfile = () => {
                   </Col>
                 </Row>
               </Form>
-              <Button variant="primary" className="mt-3" onClick={handleShow}>
+              <Button className="mt-3" onClick={handleShow}>
                 Edit Profile
               </Button>
             </div>
           </div>
 
-          <div className="referral-section mb-5 mt-4 p-4">
+          <div className="referral-section p-4">
             <Row>
               <Col md={6} className="referral-text">
                 <h4>Referral</h4>
@@ -268,14 +268,14 @@ const UserProfile = () => {
                     Copy Link
                   </Button>
                 </InputGroup>
-                <div className="mt-4">
-                  <span className="mr-4">
+                <div className="mt-4 referral-icons">
+                  <span className="mr-4 whatsapp">
                     <WhatsAppIcon />
                   </span>
-                  <span className="mr-4">
+                  <span className="mr-4 facebook">
                     <FacebookIcon />
                   </span>
-                  <span className="mr-4">
+                  <span className="mr-4 twitter">
                     <TwitterIcon />
                   </span>
                 </div>

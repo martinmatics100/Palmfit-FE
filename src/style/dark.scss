@@ -104,6 +104,7 @@
       }
     }
   }
+
   //   ends here for calorie form
 
   // Calorie Estimate dar styling
@@ -147,6 +148,7 @@
       }
     }
   }
+
   //   ends here for calorie estimate
 
   // Navbar begins
@@ -186,6 +188,7 @@
       }
     }
   }
+
   //   ends here for nav bar
 
   // sidebar begins here
@@ -193,6 +196,7 @@
     background-color: #222;
     border-right: 0.5px solid #fff;
   }
+
   //   ends here for sidebar
 
   // Landingpage begins here
@@ -228,6 +232,7 @@
       font-weight: 700;
     }
   }
+
   //   navbar ends here
 
   // HomeFirst Section begins here
@@ -246,6 +251,7 @@
       }
     }
   }
+
   //   ends here
 
   //   Why choose us begins
@@ -270,6 +276,7 @@
       }
     }
   }
+
   //   ends here
 
   .Testimonials {
@@ -318,6 +325,7 @@
               color: #222;
               font-weight: 800;
             }
+
             a {
               color: #fff;
             }
@@ -326,6 +334,7 @@
       }
     }
   }
+
   //   ends here
 
   // Register begins here
@@ -367,13 +376,57 @@
 
       .login-alt {
         span {
-            color: #fff;
-          }
+          color: #fff;
+        }
       }
     }
 
     input[type="checkbox"]:checked {
-        background-color: #ffffff69;
+      background-color: #ffffff69;
     }
   }
+
+
+  // "./Modal.scss";
+  // CalorieCalculatorModal styling
+
+  .modal-overlay {
+
+    .modal-content {
+      background-color: #222 !important;
+      border: 1px solid #fff;
+
+      .modal-header {
+
+        h2 {
+          color: #fff !important;
+
+          .unit {
+            color: #fff;
+          }
+        }
+      }
+
+      .modal-body {
+
+        .calculate-button {
+          background-color: #222;
+          border: 1px solid #fff;
+
+          &:hover {
+            background-color: #fff;
+            border: 1px solid #222;
+            font-weight: 600;
+            color: #000;
+          }
+
+        }
+      }
+    }
+
+    .close-button {
+      color: #fff;
+    }
+  }
+
 }

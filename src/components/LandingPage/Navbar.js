@@ -5,11 +5,15 @@ import { Link } from "react-router-dom";
 import CalculateCalorie from "./CalculateCalorieModal/CalculateCalorie";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { DarkModeContext } from "../../Context/darkModeContext";
+import CalorieCalculatorModal from "../Modal/CalorieCalculator/CalorieCalculatorModal";
 
 const Navbar = () => {
   const { dispatch } = useContext(DarkModeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [modalShow, setModalShow] = React.useState(false);
+
+  const handleClose = () => setModalShow(false);
+  const handleShow = () => setModalShow(true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,7 +30,7 @@ const Navbar = () => {
       <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         <a href="#" class="logo d-flex align-items-center">
           <img src={Logo} alt="logo-image" />
-          <h1 class="sitename">Palmfit.</h1>
+          <h1 className="sitename">Palmfit.</h1>
         </a>
         <nav className="navmenu">
           <ul className="d-flex">
@@ -39,7 +43,7 @@ const Navbar = () => {
               </div>
             </li>
             <li>
-              <a href="#" onClick={() => setModalShow(true)}>
+              <a href="#" onClick={handleShow}>
                 Calorie Calculator
               </a>
             </li>
@@ -55,7 +59,7 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
-      <CalculateCalorie show={modalShow} onHide={() => setModalShow(false)} />
+      <CalorieCalculatorModal show={modalShow} onHide={handleClose} />
     </div>
   );
 };
