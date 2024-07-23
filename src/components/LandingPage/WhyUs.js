@@ -4,8 +4,9 @@ import { whyChooseUs } from "../../utils/LandingPageData";
 let style = {
   marginTop: 45,
   marginBottom: 65,
-  // backgroundColor: "#F6FBFB",
   border: "none",
+  height: "auto",
+  overflow: "hidden",
 };
 
 const WhyUs = () => {
@@ -49,10 +50,9 @@ const WhyUs = () => {
 const WhyChooseUsCard = (props) => {
   return (
     <div
-      className="whyChooseUs card mb-sm-2 mx-sm-auto fs-md-6 mb-sm-4 border border-0 custom-body-class"
+      className={`whyChooseUs card mb-sm-2 mx-sm-auto fs-md-6 mb-sm-4 border border-0 custom-body-class ${props.alignmentClass}`}
       style={{
-        // backgroundColor: props.bg,
-        padding: "20px 40px",
+        padding: "20px",
         borderRadius: "8px",
       }}
     >

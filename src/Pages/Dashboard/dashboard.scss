@@ -1,0 +1,49 @@
+.toggle-buttons {
+    .toggle-group {
+        label {
+            color: #001A1A;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24.55px;
+        }
+
+        .gender-toggle-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            .gender-button {
+                background-color: #fff;
+                padding: 10px 10px;
+                color: #1a8d8d;
+                font-size: 22px;
+                font-weight: 700;
+                border: 1px solid #1a8d8d;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+        
+                &.selected {
+                  background-color: #1a8d8d;
+                  color: #fff;
+                }
+              }
+
+            .male {
+                background-color: #fff;
+                padding: 5px 5px;
+                color: #1a8d8d;
+                font-size: 22px;
+                font-weight: 700; 
+            }
+            .female {
+                background-color: #fff;
+                padding: 5px 5px;
+                color: #1a8d8d;
+                font-size: 22px;
+                font-weight: 700;
+            }
+        }
+    }
+    
+}

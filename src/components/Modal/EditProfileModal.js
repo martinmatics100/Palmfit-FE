@@ -28,6 +28,7 @@ const EditProfileModal = ({
                     name="firstName"
                     value={profile.firstName}
                     onChange={handleChange}
+                    readOnly
                   />
                 </InputGroup>
               </Form.Group>
@@ -44,6 +45,7 @@ const EditProfileModal = ({
                     name="lastName"
                     value={profile.lastName}
                     onChange={handleChange}
+                    readOnly
                   />
                 </InputGroup>
               </Form.Group>
@@ -62,6 +64,7 @@ const EditProfileModal = ({
                     name="email"
                     value={profile.email}
                     onChange={handleChange}
+                    readOnly
                   />
                 </InputGroup>
               </Form.Group>
