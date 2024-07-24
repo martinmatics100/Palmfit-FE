@@ -1,0 +1,48 @@
+.message {
+    position: fixed;
+    top: 0;
+    /* Center from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1em;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .message.visible {
+    opacity: 0.5;
+    transform: translateY(0);
+    border-bottom: 2px solid transparent; /* Start with transparent border */
+    animation: borderAnimation 5s linear forwards; /* Apply border animation */
+  }
+  
+  .message.hidden {
+    opacity: 0;
+    border-bottom: none; /* Remove border when hidden */
+  }
+  
+  .message.success {
+    background-color: #4caf50; /* Green for success */
+  }
+  
+  .message.error {
+    background-color: #f44336; /* Red for error */
+  }
+  
+  @keyframes borderAnimation {
+    from {
+      border-bottom-color: transparent;
+      transform: scaleX(1); /* Start with full width */
+    }
+    to {
+      border-bottom-color: transparent;
+      transform: scaleX(0); /* Scale down to zero width */
+      transform-origin: right; /* Scale from right to left */
+    }
+  }
+  

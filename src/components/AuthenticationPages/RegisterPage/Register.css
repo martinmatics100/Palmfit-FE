@@ -76,34 +76,17 @@
 
   /* password toggle */
 
-  form .position-relative {
-    position: relative;
-  }
-  
- form .password-toggle {
-    position: absolute;
-    top: 60%;
-    right: 75px;
-    transform: translateY(-50%);
+  .input-group .password-toggle {
     cursor: pointer;
-    color: #001A1A;
-    user-select: none;
-    font-weight: 500;
-    font-size: 14px;
-    opacity: 0.7;
-  }
-  
-  form .password-toggle:hover {
-    text-decoration: none;
-    opacity: 1;
-  }
-
-  /* .error-message styleing */
-
-  .error-message {
-    color: #eb0303a2;
-    font-size: 0.875em; 
-    margin-top: 0.25em;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
   }
 
   @keyframes slideIn {
