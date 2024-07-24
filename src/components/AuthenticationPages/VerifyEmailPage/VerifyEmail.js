@@ -1,13 +1,82 @@
 import React, { useEffect, useState } from "react";
 import LoadingPage from "../../LoadingPage/LoadingPage";
-import { Link, useNavigate } from "react-router-dom";
-import "./VerifyEmail.css";
+import "./VerifyEmail.scss";
+import Message from "../../Messages/Message";
+import { useNavigate } from "react-router-dom";
 
 const VerifyEmail = () => {
   const [loading, setLoading] = useState(false);
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]); // Array to store each OTP digit
-  const inputRefs = []; // Array to store refs for each input field
-  const navigate = useNavigate();
+  const [otp, setOtp] = useState(new Array(5).fill(""));
+  const [message, setMessage] = useState(null);
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  function handleChange(element, index) {
+    if (isNaN(element.target.value)) return false;
+
+    setOtp([
+      ...otp.map((data, indx) =>
+        indx === index ? element.target.value : data
+      ),
+    ]);
+
+    if (element.target.value && element.target.nextSibling) {
+      element.target.nextSibling.focus();
+    }
+  }
+
+  function handleKeyDown(element, index) {
+    if (element.key === "Backspace" && !element.target.value && index > 0) {
+      element.target.previousSibling.focus();
+    }
+  }
+
+  function handlePaste(element) {
+    const value = element.clipboardData.getData("text");
+
+    if (isNaN(value)) return false;
+    const updatedValue = value.toString().split("").slice(0, otp.length);
+    setOtp(updatedValue);
+
+    const focusedInput = element.target.parentNode.querySelector("input:focus");
+
+    if (focusedInput) {
+      focusedInput.blur();
+    }
+
+    // const lastInput = element.target.parentNode.querySelector(
+    //   'input[type="password"]:last-child'
+    // );
+
+    // if (lastInput) {
+    //   lastInput.focus();
+    // }
+  }
+
+  const handleVerify = () => {
+    const otpValue = otp.join("");
+    if (otpValue.length !== otp.length) {
+      // Do nothing if OTP is not fully inputted
+      return;
+    }
+
+    // Reset message before setting a new one
+    setMessage(null);
+
+    // Simulate an API call
+    setTimeout(() => {
+      if (otpValue === "12345") {
+        setMessage({ type: "success", content: "OTP verified successfully!" });
+        setTimeout(() => {
+          navigate("/login"); // Redirect to the login page
+        }, 3000); // Short delay to allow the message to be visible
+      } else {
+        setMessage({
+          type: "error",
+          content: "Invalid OTP. Please try again.",
+        });
+      }
+    }, 1000); // Simulate API delay
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -16,93 +85,43 @@ const VerifyEmail = () => {
     }, 3000);
   }, []);
 
-  const handleInputChange = (index, event) => {
-    const value = event.target.value;
-    if (!isNaN(value) && value.length <= 1) {
-      // Allow only numeric input
-      const newOtp = [...otp];
-      newOtp[index] = value;
-      setOtp(newOtp);
-
-      // Move focus to the next input field if available
-      if (index < otp.length - 1 && value !== "") {
-        inputRefs[index + 1].focus();
-      }
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const otpValue = otp.join(""); // Join array into a single string
-    // Handle OTP verification logic here (e.g., API call)
-    console.log("Verifying OTP:", otpValue);
-
-    // Example: Simulate success after verifying
-    if (otpValue === "123456") {
-      // Replace this condition with actual verification logic
-      alert("OTP Verified Successfully!");
-      navigate("/login"); // Redirect to the login page after successful verification
-    } else {
-      alert("Invalid OTP. Please try again.");
-    }
-  };
-
-  const handleResendOTP = () => {
-    // Implement resend OTP logic here (e.g., resend API call)
-    console.log("Resend OTP requested");
-    // Show a message or update state indicating OTP has been resent
-  };
-
   return (
     <div>
       {loading ? (
         <LoadingPage loading={loading} />
       ) : (
-        <div className="container-fluid">
-          <div className="row signup-container">
-            <div className="col-md-6 verify-image d-none d-md-block"></div>
-            <div className="col-md-6 p-5 form">
-              <h3 className="text-justify mb-4">Verify your email</h3>
-              <h6>
-                A verification code was sent to your email, please enter the
-                code below.
-              </h6>
-              <form onSubmit={handleSubmit} className="otp-form-container">
-                <div className="form-group mt-4 d-flex justify-content-between">
-                  {otp.map((digit, index) => (
-                    <input
-                      key={index}
-                      ref={(ref) => (inputRefs[index] = ref)}
-                      type="text"
-                      maxLength="1"
-                      className="form-control otp-input"
-                      style={{
-                        width: "60px",
-                        textAlign: "center",
-                        marginRight: "30px",
-                      }}
-                      value={digit}
-                      onChange={(e) => handleInputChange(index, e)}
-                    />
-                  ))}
-                </div>
-                <div className="mt-3 resend">
-                  <p>
-                    Didn't receive the code?{" "}
-                    <a href="" onClick={handleResendOTP}>
-                      Resend
-                    </a>
-                  </p>
-                </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary w-100 mt-3 submit"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
+        <div className="otp">
+          <h2>Verify your email</h2>
+          <p>
+            A verification code was sent to your email. Please enter the code
+            below
+          </p>
+          {message && <Message type={message.type} message={message.content} />}
+          <div className="otp-container">
+            {otp.map((data, index) => {
+              return (
+                <input
+                  type="password"
+                  value={data}
+                  maxLength={1}
+                  onChange={(element) => handleChange(element, index)}
+                  onKeyDown={(element) => handleKeyDown(element, index)}
+                  onPaste={(element) => {
+                    handlePaste(element);
+                  }}
+                />
+              );
+            })}
           </div>
+
+          <center>
+            <p className="mt-4">
+              Didn’t get a code? <a href="#">Resend</a>
+            </p>
+            <button className="mt-4" onClick={handleVerify}>
+              Verify
+            </button>
+          </center>
         </div>
       )}
     </div>

@@ -1,64 +1,66 @@
-.verify-image {
-    background: url('../../../Assets/authImage.svg');
-    background-size: cover;
-    height: 100vh;
-    width: 50%;
-  }
-
-  .otp-form-container {
-    width: 100%;
-    max-width: 600px; /* Adjust this value as needed */
-    margin: 0;
-  }
-  .form h3 {
-    color: #001A1A;
-    font-weight: 600;
-    font-size: 25px;
-    line-height: 32.74px;
-  }
-
-  .form h6 {
-    color: #4D5F5F;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-  }
-
-  .form .resend p {
-    color: #6E767E;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-  }
-
-  .form .resend p a {
-    color: teal;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .form .resend p a:hover {
-    text-decoration: underline;
-  }
-
-  .form .submit {
-    background-color: #1A8D8D;
-    color: #ffffff;
-    font-size: 18px;
-    border-radius: 5px;
-    font-weight: 700;
-  }
-
-  .form .submit:hover {
-    background-color: #1a8d8dbb;
-    text-decoration: underline;
-  }
- 
-  
-  @media (max-width: 1199px) {
-    .otp-form-container {
-      max-width: 200px; /* Adjust this value as needed */
-    }
-  }
+.otp {
+  text-align: center;
+  margin: auto;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+}
+.otp h2 {
+  color: #001A1A;
+  font-size: 24px;
+  font-weight: 700;
+}
+.otp p {
+  color: #001A1A;
+  font-size: 16px;
+  font-weight: 400;
+}
+.otp .otp-container {
+  width: 65%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.otp .otp-container input {
+  width: 50px;
+  padding: 10px;
+  outline: none;
+  text-align: center;
+  font-size: 22px;
+  color: #1a8d8d;
+  border: none;
+  border-bottom: 3px solid #000;
+  outline: none;
+}
+.otp .otp-container input:focus {
+  border-bottom: 3px solid #1a8d8d;
+}
+.otp center p {
+  color: #001A1A;
+  font-size: 16px;
+  font-weight: 600;
+}
+.otp center p a {
+  color: #1a8d8d;
+  font-weight: 700;
+  opacity: 0.6;
+  text-decoration: none;
+}
+.otp center p a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+.otp center button {
+  background-color: #1a8d8d;
+  border-radius: 5px;
+  padding: 7px 5rem;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+}/*# sourceMappingURL=VerifyEmail.css.map */

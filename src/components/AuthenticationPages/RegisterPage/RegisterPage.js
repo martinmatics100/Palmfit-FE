@@ -1,16 +1,16 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import { Link } from "react-router-dom";
 import Validations from "../Validations";
 import LoadingPage from "../../LoadingPage/LoadingPage";
+import Message from "../../Messages/Message";
 
 const RegisterPage = () => {
   const [errors, setErrors] = useState({});
-
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [globalError, setGlobalError] = useState(""); // New state for global error message
   const [values, setValues] = useState({
     firstName: "",
@@ -20,6 +20,7 @@ const RegisterPage = () => {
     verifyPassword: "",
     termsAccepted: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false); // State for tracking submission
 
   const navigate = useNavigate();
 
@@ -33,6 +34,11 @@ const RegisterPage = () => {
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword((prevState) => !prevState);
+  };
+
   const handleInput = (e) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
@@ -48,9 +54,16 @@ const RegisterPage = () => {
       [name]: newValue,
     }));
   };
-  const handleValidations = (e) => {
+
+  const handleValidations = async (e) => {
     e.preventDefault();
     const validationErrors = Validations(values);
+
+    // Additional validation for password match
+    if (values.password !== values.verifyPassword) {
+      validationErrors.verifyPassword = "Passwords do not match";
+    }
+
     // Find the first field that has an error
     for (const key in validationErrors) {
       if (validationErrors.hasOwnProperty(key)) {
@@ -64,6 +77,7 @@ const RegisterPage = () => {
         return; // Stop at the first error found
       }
     }
+
     // Additional validation for termsAccepted
     if (!values.termsAccepted) {
       setErrors((prevErrors) => ({
@@ -78,12 +92,26 @@ const RegisterPage = () => {
 
       return; // Stop if terms are not accepted
     }
+
     // Clear global error message if validations pass
     setGlobalError("");
 
-    // If no validation errors, navigate to verify-email page
-    navigate("/verify-email");
+    setIsSubmitting(true); // Start loading
+
+    try {
+      // Simulate an API call
+      await new Promise((resolve) => setTimeout(resolve, 5000)); // Simulate delay
+      navigate("/verify-email"); // Navigate on success
+    } catch (error) {
+      setGlobalError("Registration failed. Please try again.");
+      setTimeout(() => {
+        setGlobalError("");
+      }, 5000);
+    } finally {
+      setIsSubmitting(false); // Stop loading
+    }
   };
+
   return (
     <div className="loader-container">
       {loading ? (
@@ -94,16 +122,12 @@ const RegisterPage = () => {
             <div className="col-md-6 signup-image"></div>
             <div className="col-md-6 p-5">
               <h3 className="text-center mb-4">Register For Palmfit</h3>
-              {/* Global error message rendering with animation */}
-              {globalError && (
-                <div className={`error-message ${globalError ? "" : "hide"}`}>
-                  {globalError}
-                </div>
-              )}
+              {/* Display global error message using Message component */}
+              {globalError && <Message type="error" message={globalError} />}
               <form onSubmit={handleValidations}>
                 <div className="mb-3">
                   <label htmlFor="firstName" className="form-label">
-                    First Name <span class="text-danger">*</span>
+                    First Name <span className="text-danger">*</span>
                   </label>
                   <div className="input-group">
                     <span className="input-group-text">
@@ -124,13 +148,17 @@ const RegisterPage = () => {
                       className="form-control"
                       id="firstName"
                       placeholder="Enter your first name"
+                      value={values.firstName}
                       onChange={handleInput}
                     />
                   </div>
+                  {errors.firstName && (
+                    <Message type="error" message={errors.firstName} />
+                  )}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="lastName" className="form-label">
-                    Last Name <span class="text-danger">*</span>
+                    Last Name <span className="text-danger">*</span>
                   </label>
                   <div className="input-group">
                     <span className="input-group-text">
@@ -151,13 +179,17 @@ const RegisterPage = () => {
                       className="form-control"
                       id="lastName"
                       placeholder="Enter your last name"
+                      value={values.lastName}
                       onChange={handleInput}
                     />
                   </div>
+                  {errors.lastName && (
+                    <Message type="error" message={errors.lastName} />
+                  )}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
-                    Email address <span class="text-danger">*</span>
+                    Email address <span className="text-danger">*</span>
                   </label>
                   <div className="input-group">
                     <span className="input-group-text">
@@ -178,13 +210,17 @@ const RegisterPage = () => {
                       className="form-control"
                       id="email"
                       placeholder="Enter your email address"
+                      value={values.email}
                       onChange={handleInput}
                     />
                   </div>
+                  {errors.email && (
+                    <Message type="error" message={errors.email} />
+                  )}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">
-                    Password <span class="text-danger">*</span>
+                    Password <span className="text-danger">*</span>
                   </label>
                   <div className="input-group">
                     <span className="input-group-text">
@@ -196,7 +232,7 @@ const RegisterPage = () => {
                         className="bi bi-lock"
                         viewBox="0 0 16 16"
                       >
-                        <path d="M8 1a4 4 0 0 0-4 4v2H3a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1V5a4 4 0 0 0-4-4zM4 5V4a4 4 0 1 1 8 0v1H4zm4 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                        <path d="M8 1a3 3 0 0 0-3 3v3H3.5A1.5 1.5 0 0 0 2 8.5v6A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 12.5 7H11V4a3 3 0 0 0-3-3zM5 4a3 3 0 0 1 6 0v3H5V4zm8 4.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h9z" />
                       </svg>
                     </span>
                     <input
@@ -205,19 +241,24 @@ const RegisterPage = () => {
                       className="form-control"
                       id="password"
                       placeholder="Enter your password"
+                      value={values.password}
                       onChange={handleInput}
                     />
-                    <span
-                      className="password-toggle"
+                    <button
+                      type="button"
+                      className="btn btn-outline-secondary"
                       onClick={togglePasswordVisibility}
                     >
                       {showPassword ? "Hide" : "Show"}
-                    </span>
+                    </button>
                   </div>
+                  {errors.password && (
+                    <Message type="error" message={errors.password} />
+                  )}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="verifyPassword" className="form-label">
-                    Verify Password <span class="text-danger">*</span>
+                    Confirm Password <span className="text-danger">*</span>
                   </label>
                   <div className="input-group">
                     <span className="input-group-text">
@@ -229,45 +270,57 @@ const RegisterPage = () => {
                         className="bi bi-lock"
                         viewBox="0 0 16 16"
                       >
-                        <path d="M8 1a4 4 0 0 0-4 4v2H3a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1V5a4 4 0 0 0-4-4zM4 5V4a4 4 0 1 1 8 0v1H4zm4 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                        <path d="M8 1a3 3 0 0 0-3 3v3H3.5A1.5 1.5 0 0 0 2 8.5v6A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 12.5 7H11V4a3 3 0 0 0-3-3zM5 4a3 3 0 0 1 6 0v3H5V4zm8 4.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h9z" />
                       </svg>
                     </span>
                     <input
-                      type={showPassword ? "text" : "password"}
+                      type={showConfirmPassword ? "text" : "password"}
                       name="verifyPassword"
                       className="form-control"
                       id="verifyPassword"
-                      placeholder="Enter your password"
+                      placeholder="Confirm your password"
+                      value={values.verifyPassword}
                       onChange={handleInput}
                     />
+                    <button
+                      type="button"
+                      className="btn btn-outline-secondary"
+                      onClick={toggleConfirmPasswordVisibility}
+                    >
+                      {showConfirmPassword ? "Hide" : "Show"}
+                    </button>
                   </div>
+                  {errors.verifyPassword && (
+                    <Message type="error" message={errors.verifyPassword} />
+                  )}
                 </div>
-
-                <div className="form-check mb-3">
+                <div className="mb-3 form-check">
                   <input
                     type="checkbox"
-                    name="termsAccepted"
                     className="form-check-input"
-                    id="terms"
+                    id="termsAccepted"
+                    name="termsAccepted"
+                    checked={values.termsAccepted}
                     onChange={handleInput}
-                  />{" "}
-                  <span class="text-danger">*</span>
-                  <label className="form-check-label ml-1" htmlFor="terms">
-                    I have read and understood the <a href="">Privacy Policy</a>{" "}
-                    and <a href="">Terms & Conditions</a>.
+                  />
+                  <label className="form-check-label" htmlFor="termsAccepted">
+                    I accept the <a href="#">terms and conditions</a>{" "}
+                    <span className="text-danger">*</span>
                   </label>
+                  {errors.termsAccepted && (
+                    <Message type="error" message={errors.termsAccepted} />
+                  )}
                 </div>
-
-                <button type="submit" className="btn w-100">
-                  Register
+                <button
+                  type="submit"
+                  className="btn btn-primary w-100"
+                  disabled={isSubmitting} // Disable button during submission
+                >
+                  {isSubmitting ? "Submitting..." : "Register"}
                 </button>
-
-                <div className="d-flex justify-content-center mt-2 login-alt">
-                  {/* <a href="#">Forgotten Password?</a> */}
-                  <span>
-                    Existing member? <Link to="/login">Login</Link>
-                  </span>
-                </div>
+                <p className="mt-3 text-center">
+                  Already have an account? <Link to="/login">Login</Link>
+                </p>
               </form>
             </div>
           </div>

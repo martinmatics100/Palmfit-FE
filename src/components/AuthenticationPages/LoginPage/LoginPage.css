@@ -38,18 +38,19 @@ form .login-alt span {
     position: relative;
   }
   
-  .password-toggle {
-    position: absolute;
-    top: 62%;
-    right: 60px;
-    transform: translateY(-50%);
+  .input-group .password-toggle {
     cursor: pointer;
-    color: #001A1A;
-    user-select: none;
-    font-weight: 500;
-    font-size: 14px;
-    opacity: 0.7;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background-color: #1A8D8D;
+    padding: 10px;
   }
+  
   
   .password-toggle:hover {
     text-decoration: none;
