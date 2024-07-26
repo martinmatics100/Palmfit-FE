@@ -23,9 +23,10 @@ const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   const { user } = useUser();
   const [show, setShow] = useState(false);
+  const [role, setRole] = useState(localStorage.getItem("userRole")); // Retrieve role from local storage
   const location = useLocation();
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => location.pathname.startsWith(path);
 
   const userLinks = (
     <>
@@ -162,7 +163,7 @@ const Sidebar = () => {
             </Link>
 
             <div className="nav-list">
-              {user.role === "admin" ? adminLinks : userLinks}
+              {role === "admin" ? adminLinks : userLinks}
             </div>
           </div>
 

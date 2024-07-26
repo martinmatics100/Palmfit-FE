@@ -48,38 +48,42 @@ const LoginPage = () => {
         email: "admin@gmail.com",
         password: "85465955",
         role: "admin",
+        id: "01",
+        status: "online",
       },
       {
         email: "user@gmail.com",
-        password: "85465955",
+        password: "986575555",
         role: "user",
+        id: "02",
+        status: "offline",
       },
     ];
 
-    try {
-      // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+    // Simulate backend login check
+    const user = backendData.find(
+      (u) => u.email === email && u.password === password
+    );
 
-      // Validate login details
-      const user = backendData.find(
-        (u) => u.email === email && u.password === password
-      );
+    if (user) {
+      loginUser(user);
+      localStorage.setItem("userRole", user.role); // Store user role in local storage
+      setMessage({ type: "success", text: "Login successful!" });
 
-      if (user) {
-        setMessage({ type: "success", text: "Login successful" });
-        loginUser(user.role); // Set user role in context
-        setTimeout(() => {
-          navigate(user.role === "admin" ? "/admin-dashboard" : "/dashboard");
-        }, 3000); // Redirect to the appropriate dashboard after 3 seconds
+      // Redirect based on user role
+      if (user.role === "admin") {
+        navigate("/admin-dashboard");
       } else {
-        setMessage({ type: "error", text: "Invalid details" });
+        navigate("/dashboard");
       }
-    } catch (error) {
-      console.error("Login failed:", error);
-      setMessage({ type: "error", text: "An error occurred" });
-    } finally {
-      setButtonLoading(false); // Hide loading indicator on button
+    } else {
+      setMessage({
+        type: "error",
+        text: "Invalid email or password",
+      });
     }
+
+    setButtonLoading(false); // Hide loading indicator on button
   };
 
   return (
