@@ -386,18 +386,15 @@
     }
   }
 
-
   // "./Modal.scss";
   // CalorieCalculatorModal styling
 
   .modal-overlay {
-
     .modal-content {
       background-color: #222 !important;
       border: 1px solid #fff;
 
       .modal-header {
-
         h2 {
           color: #fff !important;
 
@@ -408,7 +405,6 @@
       }
 
       .modal-body {
-
         .calculate-button {
           background-color: #222;
           border: 1px solid #fff;
@@ -419,7 +415,6 @@
             font-weight: 600;
             color: #000;
           }
-
         }
       }
     }
@@ -429,4 +424,28 @@
     }
   }
 
+  // Admin Dashboard styling
+
+  .dashboard-container {
+    background-color: #222;
+
+    .row {
+      .adminHome-item {
+        background-color: #222;
+        border: 1px solid #fff;
+
+        span, h2 {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .line-chart {
+    background-color: #f2f2f21a;
+  }
+
+  .pie-chart {
+    background-color: #f2f2f21a;
+}
 }

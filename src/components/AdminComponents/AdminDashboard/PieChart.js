@@ -19,7 +19,7 @@ const data = {
 
 const PieChart = () => {
   return (
-    <div className="bg-white border border-secondary">
+    <div className="border border-secondary pie-chart">
       <Pie data={data}></Pie>
     </div>
   );

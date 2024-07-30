@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
+import "./AdminDashboard.scss";
 
 const labels = [
   "January",
@@ -32,7 +33,7 @@ const data = {
 
 const LineChart = () => {
   return (
-    <div className="bg-white border border-secondary">
+    <div className="border border-secondary line-chart">
       <Line data={data}></Line>
     </div>
   );

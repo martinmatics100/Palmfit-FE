@@ -10,6 +10,7 @@ import AssessmentIcon from "@mui/icons-material/Assessment";
 import NairaIcon from "./NairaIcon";
 import LineChart from "./LineChart";
 import PieChart from "./PieChart";
+import "./AdminDashboard.scss";
 
 const AdminHome = () => {
   const [stats, setStats] = useState({
@@ -39,11 +40,11 @@ const AdminHome = () => {
   // }, []);
 
   return (
-    <div className="p-3 bg-light">
+    <div className="p-3 dashboard-container">
       <div className="container-fluid">
         <div className="row">
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3 bg-light">
-            <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3">
+            <div className="d-flex justify-content-between p-4 align-items-center shadow-sm adminHome-item">
               <GroupIcon className="fs-1 text-primary" />
               <div>
                 <span>Total users</span>
@@ -52,7 +53,7 @@ const AdminHome = () => {
             </div>
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3">
-            <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
+            <div className="d-flex justify-content-between p-4 align-items-center shadow-sm adminHome-item">
               <PersonAddIcon className="fs-1 text-success" />
               <div>
                 <span>Active Users</span>
@@ -61,7 +62,7 @@ const AdminHome = () => {
             </div>
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3">
-            <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
+            <div className="d-flex justify-content-between p-4 align-items-center shadow-sm adminHome-item">
               <SubscriptionsIcon className="fs-1 text-warning" />
               <div>
                 <span>Total Subscriptions</span>
@@ -70,7 +71,7 @@ const AdminHome = () => {
             </div>
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3">
-            <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
+            <div className="d-flex justify-content-between p-4 align-items-center shadow-sm adminHome-item">
               <NairaIcon className="fs-1 text-success" />
               <div>
                 <span>Monthly Revenue</span>
@@ -79,7 +80,7 @@ const AdminHome = () => {
             </div>
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3">
-            <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
+            <div className="d-flex justify-content-between p-4 align-items-center shadow-sm adminHome-item">
               <SupportAgentIcon className="fs-1 text-danger" />
               <div>
                 <span>Pending Support Tickets</span>
@@ -88,7 +89,7 @@ const AdminHome = () => {
             </div>
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3">
-            <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
+            <div className="d-flex justify-content-between p-4 align-items-center shadow-sm adminHome-item">
               <FeedbackIcon className="fs-1 text-primary" />
               <div>
                 <span>User Feedback</span>
@@ -97,7 +98,7 @@ const AdminHome = () => {
             </div>
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3">
-            <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
+            <div className="d-flex justify-content-between p-4 align-items-center shadow-sm adminHome-item">
               <CloudUploadIcon className="fs-1 text-info" />
               <div>
                 <span>Content Uploaded</span>
@@ -106,7 +107,7 @@ const AdminHome = () => {
             </div>
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3">
-            <div className="d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm">
+            <div className="d-flex justify-content-between p-4 align-items-center shadow-sm adminHome-item">
               <AssessmentIcon className="fs-1 text-warning" />
               <div>
                 <span>Reports Generated</span>
