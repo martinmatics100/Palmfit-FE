@@ -32,6 +32,22 @@ form .login-alt span {
     height: 100vh;
   }
 
+  /* Hide background image on smaller screens */
+@media (max-width: 768px) {
+  .signin-image {
+    display: none;
+  }
+
+  .left-login {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .signup-container {
+    justify-content: center;
+  }
+}
+
   /* password toggle */
 
   .position-relative {

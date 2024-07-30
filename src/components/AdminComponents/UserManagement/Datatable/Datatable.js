@@ -4,7 +4,6 @@ import { DataGrid } from "@mui/x-data-grid";
 import { userRows, userColumns } from "../../../../utils/DatatableSource";
 import DeleteIcon from "@mui/icons-material/Delete";
 import BlockIcon from "@mui/icons-material/Block";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import EditIcon from "@mui/icons-material/Edit";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
@@ -57,12 +56,18 @@ const Datatable = () => {
   ];
   return (
     <div className="datatable">
+      <div className="datatableTitle">
+        Add New User
+        <Link to="new-user" className="link">
+          Add New
+        </Link>
+      </div>
       <DataGrid
         rows={userRows}
         columns={userColumns.concat(actionColumn)}
         initialState={{
           pagination: {
-            paginationModel: { page: 10, pageSize: 10 },
+            paginationModel: { page: 0, pageSize: 10 },
           },
         }}
         pageSizeOptions={[10, 25, 50]}
