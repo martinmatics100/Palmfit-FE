@@ -1,78 +1,157 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Datatable.scss";
-import { DataGrid } from "@mui/x-data-grid";
-import { userRows, userColumns } from "../../../../utils/DatatableSource";
-import DeleteIcon from "@mui/icons-material/Delete";
-import BlockIcon from "@mui/icons-material/Block";
-import EditIcon from "@mui/icons-material/Edit";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VpnKeyIcon from "@mui/icons-material/VpnKey";
-import EmailIcon from "@mui/icons-material/Email";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import PauseCircleIcon from "@mui/icons-material/PauseCircle";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import { Link } from "react-router-dom";
+import DatatableSource from "../../../../utils/DatatableSource";
 
 const Datatable = () => {
-  const actionColumn = [
-    {
-      field: "action",
-      headerName: "Action",
-      width: 400,
-      sortable: false,
-      renderCell: (params) => {
-        return (
-          <div className="cellAction">
-            <div className="deleteButton">
-              <DeleteIcon titleAccess="Delete" />
-            </div>
-            <div className="editButton">
-              <EditIcon titleAccess="Edit" />
-            </div>
-            <Link to={`user/${params.row.id}`}>
-              <div className="viewButton">
-                <VisibilityIcon titleAccess="View" />
-              </div>
-            </Link>
-            <div className="resetButton">
-              <VpnKeyIcon titleAccess="Reset Password" />
-            </div>
-            <div className="emailButton">
-              <EmailIcon titleAccess="Send Email" />
-            </div>
-            <div className="promoteToAdminButton">
-              <AdminPanelSettingsIcon titleAccess="Promote to admin" />
-            </div>
-            <div className="deactivateButton">
-              <BlockIcon titleAccess="Deactivate" />
-            </div>
-            <div className="activateButton">
-              <PlayCircleIcon titleAccess="Activate" />
-            </div>
-          </div>
-        );
-      },
-    },
-  ];
+  const [users, setUsers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
+  useEffect(() => {
+    // Simulate fetching data from an API
+    const fetchData = async () => {
+      // Using dummy data for now
+      const result = await new Promise((resolve) =>
+        setTimeout(
+          () =>
+            resolve(
+              DatatableSource.map((user, index) => ({
+                ...user,
+                id: index + 1,
+              }))
+            ),
+          1000
+        )
+      );
+      setUsers(result);
+    };
+
+    fetchData();
+  }, []);
+
+  // Calculate the indices for the users to be displayed
+  const indexOfLastUser = currentPage * itemsPerPage;
+  const indexOfFirstUser = indexOfLastUser - itemsPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+  // Handle next page
+  const nextPage = () => {
+    if (currentPage < Math.ceil(users.length / itemsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  // Handle previous page
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  // Generate page numbers with ellipsis logic
+  const totalPages = Math.ceil(users.length / itemsPerPage);
+  const pageNumbers = [];
+  if (totalPages <= 6) {
+    for (let i = 1; i <= totalPages; i++) {
+      pageNumbers.push(i);
+    }
+  } else {
+    if (currentPage <= 3) {
+      pageNumbers.push(1, 2, 3, "...", totalPages);
+    } else if (currentPage >= totalPages - 2) {
+      pageNumbers.push(
+        1,
+        "...",
+        // totalPages - 3,
+        totalPages - 2,
+        totalPages - 1,
+        totalPages
+      );
+    } else {
+      pageNumbers.push(
+        1,
+        "...",
+        currentPage - 1,
+        currentPage,
+        currentPage + 1,
+        "...",
+        totalPages
+      );
+    }
+  }
+
   return (
-    <div className="datatable">
-      <div className="datatableTitle">
-        Add New User
-        <Link to="new-user" className="link">
-          Add New
-        </Link>
+    <div className="table">
+      <div className="table-header">
+        <p>Palmfit Users</p>
+        <div>
+          <input type="search" placeholder="search..." />
+          <button className="add-new">+ Add New</button>
+        </div>
       </div>
-      <DataGrid
-        rows={userRows}
-        columns={userColumns.concat(actionColumn)}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 10 },
-          },
-        }}
-        pageSizeOptions={[10, 25, 50]}
-        checkboxSelection
-      />
+      <div className="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>S No</th>
+              <th>Image</th>
+              <th>Full name</th>
+              <th>Email</th>
+              <th>Gender</th>
+              <th>Username</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentUsers.map((user, index) => (
+              <tr key={user.id}>
+                <td>{indexOfFirstUser + index + 1}</td>
+                <td>
+                  <img src={user.avatar} alt="avatar" />
+                </td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.gender}</td>
+                <td>{user.username}</td>
+                <td>
+                  <button>
+                    <i className="fa-solid fa-pen-to-square"></i>
+                  </button>
+                  <button>
+                    <i className="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="pagination">
+        <div onClick={prevPage}>
+          <i className="fa-solid fa-angles-left"></i>
+        </div>
+        {pageNumbers.map((number) => {
+          if (number === "...") {
+            return (
+              <span key={number} className="ellipsis">
+                {number}
+              </span>
+            ); // Render ellipsis as a non-clickable span
+          }
+          return (
+            <div
+              key={number}
+              onClick={() => setCurrentPage(number)}
+              className={number === currentPage ? "active" : ""}
+            >
+              {number}
+            </div>
+          );
+        })}
+        <div onClick={nextPage}>
+          <i className="fa-solid fa-angles-right"></i>
+        </div>
+      </div>
     </div>
   );
 };
