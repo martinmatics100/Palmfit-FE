@@ -62,7 +62,7 @@ const CalorieCalculatorForm = () => {
           </div>
         </div>
       </div>
-      <div className="row mt-4">
+      <div className="row mt-1">
         <div className="col-12 col-sm-6 mb-3">
           <h5>You're a</h5>
           <button
@@ -85,7 +85,7 @@ const CalorieCalculatorForm = () => {
           </button>
         </div>
       </div>
-      <div className="row mt-4">
+      <div className="row mt-1">
         <div className="col-12 col-sm-6 mb-3">
           <h5>What is your weight goal?</h5>
           <div className="btn-group" role="group">
@@ -161,8 +161,8 @@ const CalorieCalculatorForm = () => {
           </div>
         </div>
       </div>
-      <button type="submit" className="btn btn-primary">
-        Submit
+      <button type="submit" className="btn btn-primary mt-4">
+        Calculate Calorie
       </button>
     </form>
   );

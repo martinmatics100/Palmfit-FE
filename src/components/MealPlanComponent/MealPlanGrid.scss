@@ -1,0 +1,21 @@
+.meal-plan-grid {
+  .meal-plan-card {
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

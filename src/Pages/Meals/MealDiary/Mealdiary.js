@@ -1,9 +1,10 @@
 import React from "react";
+import MealDiaryComponent from "../../../components/MealDiaryComponent/MealDiaryComponent";
 
 const Mealdiary = () => {
   return (
     <div>
-      <h1>Meal diary</h1>
+      <MealDiaryComponent />
     </div>
   );
 };
