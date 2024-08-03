@@ -1,9 +1,9 @@
 .left,
 .right {
-  min-height: 90vh;
+  min-height: 95vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  //   align-items: center;
   background-color: #f5f5f5;
 }
 
@@ -32,29 +32,53 @@
 
 // CalorieResult.scss
 
-// .calorie-result-container {
-//   width: 200px; // Set the width of the circle
-//   height: 200px; // Set the height of the circle
-//   border: 10px solid #1A8D8D; // Green border
-//   border-radius: 50%; // Make it circular
-//   display: flex; // Use flexbox to center content
-//   flex-direction: column; // Align children in a column
-//   justify-content: center; // Center vertically
-//   align-items: center; // Center horizontally
-//   text-align: center; // Center text
-//   background-color: #f8f9fa; // Optional: light background color
-//   margin-top: 20px; // Add some space from the top
-// }
-
 .calorie-result-container {
-    border: 10px solid #1A8D8D; // Green border
-    border-radius: 50%; // Make it circular
-    padding: 20px; // Add some padding
-    width: 150px; // Set a width for the circular container
-    height: 150px; // Set a height for the circular container
-    display: flex;
-    flex-direction: column;
-    align-items: center; // Center align items horizontally
-    justify-content: flex-start; // Align items to the top
-    margin: 20px; // Optional: space around the container
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Center align items horizontally
+  margin: 20px; // Optional: space around the container
+
+  h4 {
+    font-weight: 600;
   }
+
+  p {
+    color: #0000009d;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .recommendation {
+
+    text-align: center;
+    color: #000000;
+    
+    h5 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .p {
+        font-size: 14px;
+        color: #374D4D;
+        font-weight: 400;
+    }
+  }
+}
+
+.rounded-display {
+  border: 10px solid #1a8d8d;
+  border-radius: 50%;
+  padding: 30px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}

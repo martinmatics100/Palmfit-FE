@@ -153,11 +153,18 @@ const Sidebar = () => {
         <div className="sidebar-toggle" onClick={() => setShow(!show)}>
           <MenuIcon />
         </div>
-        <div className="item">
-          <DarkModeIcon
-            className="icon notShowOnMobile"
-            onClick={() => dispatch({ type: "TOGGLE" })}
-          />
+        <div className="items">
+          <div className="item">
+            <h5>
+              Welcome <span>Martin{user?.firstName}</span>
+            </h5>
+          </div>
+          <div className="item">
+            <DarkModeIcon
+              className="icon notShowOnMobile"
+              onClick={() => dispatch({ type: "TOGGLE" })}
+            />
+          </div>
         </div>
       </header>
 

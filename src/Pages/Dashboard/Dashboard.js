@@ -8,7 +8,6 @@ import CalorieResult from "../../components/CalorieCalculatorForm/CalorieResult"
 const Dashboard = () => {
   const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate();
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -26,7 +25,7 @@ const Dashboard = () => {
             <div className="col-12 col-md-6 left p-3">
               <CalorieCalculatorForm />
             </div>
-            <div className="col-12 col-md-6 right d-flex justify-content-center align-items-center">
+            <div className="col-12 col-md-6 right p-3">
               <CalorieResult />
             </div>
           </div>
