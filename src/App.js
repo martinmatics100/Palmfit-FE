@@ -28,6 +28,7 @@ import Support from "./AdminPages/Support/Support";
 import SinglePage from "./AdminPages/UserSinglePage/SinglePage";
 import AddNewUser from "./components/New/NewUser/AddNewUser";
 import { mealPlanInputs, userInputs } from "./utils/FormSource";
+import ChatAdmin from "./Pages/ChatAdmin/ChatAdmin";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -59,13 +60,14 @@ function App() {
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/support" element={<Support />} />
             <Route path="/support" element={<Support />} />
-            
+
             <Route
               path="/new-meal-plan"
               element={
                 <AddNewUser inputs={mealPlanInputs} title="Add meal plan" />
               }
             />
+            <Route path="/admin-chat" element={<ChatAdmin />} />
           </Route>
         </Routes>
       </div>

@@ -1,14 +1,14 @@
-// Support.js
+// ChatAdmin.js
 import React from "react";
 import ChatComponent from "../../components/Chat/ChatComponent";
 import { ChatProvider } from "../../Context/ChatContext"; // Import the provider
 
-const Support = () => {
+const ChatAdmin = () => {
   return (
     <ChatProvider>
-      <ChatComponent senderType="admin" /> {/* Admin sends messages */}
+      <ChatComponent senderType="user" /> {/* User sends messages */}
     </ChatProvider>
   );
 };
 
-export default Support;
+export default ChatAdmin;
