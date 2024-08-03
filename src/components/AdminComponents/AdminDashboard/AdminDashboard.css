@@ -1,0 +1,21 @@
+.dashboard-container {
+  background-color: #fff;
+}
+.dashboard-container .row .adminHome-item {
+  background-color: #f2f2f2;
+  border: 1px solid #000;
+  outline: none;
+  border-radius: 8px;
+}
+.dashboard-container .row .adminHome-item span, .dashboard-container .row .adminHome-item h2 {
+  color: #000;
+  font-weight: 600;
+}
+
+.line-chart {
+  background-color: #fff;
+}
+
+.pie-chart {
+  background-color: #fff;
+}/*# sourceMappingURL=AdminDashboard.css.map */

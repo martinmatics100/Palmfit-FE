@@ -4,7 +4,7 @@ const DatatableSource = [
   {
     id: 1,
     name: "Martin Nwatu",
-    email: "martinchukwuemeka67@gmail.com",
+    email: "martin@gmail.com",
     gender: "Male",
     username: "martinmatics",
     avatar: avatar,

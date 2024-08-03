@@ -1,0 +1,294 @@
+.app.dark {
+  background-color: #222;
+  color: #ffffff;
+}
+.app.dark .calorie-form p {
+  color: #fff;
+}
+.app.dark .calorie-form .age-height-weight label {
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24.55px;
+}
+.app.dark .calorie-form .age-height-weight input {
+  background-color: #222;
+  color: #fff;
+}
+.app.dark .calorie-form .age-height-weight input::-moz-placeholder {
+  color: #fff;
+}
+.app.dark .calorie-form .age-height-weight input::placeholder {
+  color: #fff;
+}
+.app.dark .calorie-form .gender h5 {
+  color: #fff;
+}
+.app.dark .calorie-form .gender button {
+  border: 1px solid #fff;
+  background-color: #222;
+  color: #fff;
+  font-weight: 600;
+}
+.app.dark .calorie-form .gender button.selected {
+  background-color: #fff;
+  color: #222;
+}
+.app.dark .calorie-form .goal h5 {
+  color: #fff;
+}
+.app.dark .calorie-form .goal .goal-buttons .goal-button {
+  border: 1px solid #fff;
+  background-color: #222;
+  color: #fff;
+  font-weight: 600;
+}
+.app.dark .calorie-form .goal .goal-buttons .goal-button.selected {
+  background-color: #fff;
+  color: #222;
+}
+.app.dark .calorie-form .activity-level h5 {
+  color: #fff;
+}
+.app.dark .calorie-form .activity-level .activity-buttons {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  gap: 3;
+}
+.app.dark .calorie-form .activity-level .activity-buttons .activity-button {
+  border: 1px solid #fff;
+  background-color: #222;
+  color: #fff;
+  font-weight: 600;
+}
+.app.dark .calorie-form .activity-level .activity-buttons .activity-button.selected {
+  background-color: #fff;
+  color: #222;
+}
+.app.dark .calorie-form .submit-button .submit {
+  background-color: #222;
+  color: #fff;
+  font-weight: 700;
+  border: 1px solid #fff;
+  transition: all 0.3s ease-in-out;
+}
+.app.dark .calorie-form .submit-button .submit:hover {
+  background-color: #fff;
+  color: #222;
+}
+.app.dark .calorie-estimate p {
+  color: #fff;
+}
+.app.dark .calorie-estimate h5 {
+  color: #fff;
+}
+.app.dark .calorie-estimate .estimate-display {
+  border: 7px solid #fff;
+}
+.app.dark .calorie-estimate .estimate-display .estimate-content span {
+  color: #fff;
+}
+.app.dark .calorie-estimate .estimate-display .estimate-content span:nth-child(2) {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 900;
+}
+.app.dark .calorie-estimate .calorie-buttons .calorie-button {
+  border: 1px solid #fff;
+  background-color: #222;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+.app.dark .calorie-estimate .calorie-buttons .calorie-button.selected {
+  background-color: #fff;
+  color: #222;
+  font-weight: 700;
+}
+.app.dark .navbar {
+  background-color: #222;
+  border-bottom: 0.5px solid #222;
+}
+.app.dark .navbar .wrapper .search {
+  border: 1px solid #fff;
+}
+.app.dark .navbar .wrapper .search input {
+  background-color: transparent;
+  color: #fff;
+}
+.app.dark .navbar .wrapper .search .search-icon {
+  color: #fff;
+}
+.app.dark .navbar .wrapper .items .item {
+  color: #fff;
+}
+.app.dark .navbar .wrapper .items .item .icon {
+  font-size: 20px;
+  color: #fff;
+}
+.app.dark .navbar .wrapper .items .item .counter {
+  background-color: #222;
+  color: #fff;
+}
+.app.dark .sidebar {
+  background-color: #222;
+  border-right: 0.5px solid #fff;
+}
+.app.dark .header {
+  background-color: #222;
+  box-shadow: 2px 4px 30px #233;
+}
+.app.dark .header .logo h1 {
+  color: #ffffff;
+}
+.app.dark .header .logo:hover {
+  text-decoration: none;
+}
+.app.dark .header .navmenu a {
+  color: #fff;
+}
+.app.dark .header .navmenu ul li .icon {
+  color: #fff;
+}
+.app.dark .header .navmenu li:last-child a {
+  background-color: #222;
+  border: 1px solid #fff;
+}
+.app.dark .header .navmenu li:last-child a:hover {
+  background-color: #fff;
+  color: #222;
+  font-weight: 700;
+}
+.app.dark .container .left .btn-get-started {
+  border: 1px solid #fff;
+  background-color: #222;
+  font-weight: 600;
+}
+.app.dark .container .left .btn-get-started:hover {
+  background-color: #fff;
+  font-weight: 700;
+}
+.app.dark .card {
+  background-color: #222;
+}
+.app.dark .card h2 {
+  color: #fff;
+}
+.app.dark .card .card-container .whyChooseUs {
+  background-color: rgba(255, 255, 255, 0.137254902);
+}
+.app.dark .card .card-container .whyChooseUs .custom-head-class {
+  color: #fff;
+}
+.app.dark .card .card-container .whyChooseUs .card-body {
+  color: #fff;
+}
+.app.dark .Testimonials {
+  background-color: #222;
+}
+.app.dark .Testimonials .testimonal-card-component-container {
+  background-color: rgba(255, 255, 255, 0.137254902);
+}
+.app.dark footer {
+  background-color: rgba(255, 255, 255, 0.137254902);
+}
+.app.dark .login {
+  background-color: rgba(255, 255, 255, 0.4117647059);
+}
+.app.dark .login .signup-container .left-login h3 {
+  color: #fff;
+}
+.app.dark .login .signup-container .left-login form label {
+  color: #fff;
+}
+.app.dark .login .signup-container .left-login form button {
+  background-color: rgba(255, 255, 255, 0.4117647059);
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+}
+.app.dark .login .signup-container .left-login form button:hover {
+  background-color: #fff;
+  color: #222;
+}
+.app.dark .login .signup-container .left-login form .login-alt span {
+  color: #222;
+  font-weight: 800;
+}
+.app.dark .login .signup-container .left-login form .login-alt a {
+  color: #fff;
+}
+.app.dark .signup-container {
+  background-color: rgba(255, 255, 255, 0.4117647059);
+}
+.app.dark .signup-container h3 {
+  color: #fff;
+}
+.app.dark .signup-container form label {
+  color: #fff;
+}
+.app.dark .signup-container form a {
+  color: #222;
+  font-weight: 600;
+}
+.app.dark .signup-container form a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.app.dark .signup-container form button {
+  background-color: rgba(255, 255, 255, 0.4117647059);
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 600;
+}
+.app.dark .signup-container form button:hover {
+  background-color: #fff;
+  color: #222;
+  font-weight: 700;
+}
+.app.dark .signup-container form .login-alt span {
+  color: #fff;
+}
+.app.dark .signup-container input[type=checkbox]:checked {
+  background-color: rgba(255, 255, 255, 0.4117647059);
+}
+.app.dark .modal-overlay .modal-content {
+  background-color: #222 !important;
+  border: 1px solid #fff;
+}
+.app.dark .modal-overlay .modal-content .modal-header h2 {
+  color: #fff !important;
+}
+.app.dark .modal-overlay .modal-content .modal-header h2 .unit {
+  color: #fff;
+}
+.app.dark .modal-overlay .modal-content .modal-body .calculate-button {
+  background-color: #222;
+  border: 1px solid #fff;
+}
+.app.dark .modal-overlay .modal-content .modal-body .calculate-button:hover {
+  background-color: #fff;
+  border: 1px solid #222;
+  font-weight: 600;
+  color: #000;
+}
+.app.dark .modal-overlay .close-button {
+  color: #fff;
+}
+.app.dark .dashboard-container {
+  background-color: #222;
+}
+.app.dark .dashboard-container .row .adminHome-item {
+  background-color: #222;
+  border: 1px solid #fff;
+}
+.app.dark .dashboard-container .row .adminHome-item span, .app.dark .dashboard-container .row .adminHome-item h2 {
+  color: #fff;
+}
+.app.dark .line-chart {
+  background-color: rgba(242, 242, 242, 0.1019607843);
+}
+.app.dark .pie-chart {
+  background-color: rgba(242, 242, 242, 0.1019607843);
+}/*# sourceMappingURL=dark.css.map */

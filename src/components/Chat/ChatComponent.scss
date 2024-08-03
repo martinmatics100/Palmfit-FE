@@ -1,0 +1,80 @@
+.chat-container {
+    width: 100%; /* Full width of the application */
+    height: 90vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column; /* Align children in a column */
+    border: 1px solid #1A8D8D;
+    border-radius: 10px;
+    overflow: hidden; /* Prevent overflow from the chat container */
+}
+
+.chat-box {
+    flex: 1; /* Take up remaining space */
+    overflow-y: auto; /* Allow scrolling only for messages */
+    padding: 10px;
+    background: url("../../Assets/chat.jpg");
+}
+
+.chat-message {
+    margin: 5px; /* Space between messages */
+    padding: 10px; /* Padding inside each message */
+    border-radius: 4px; /* Rounded corners */
+    max-width: 70%; /* Limit the message width to avoid overflow */
+    position: relative; /* For absolute positioning of timestamps */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+}
+
+.chat-message.user {
+    background-color: #e1f7d5; /* User message background color */
+    border: 1px solid #9cc39c; /* User message border color */
+    align-self: flex-start; /* Align to the left */
+}
+
+.chat-message.admin {
+    background-color: #d5e1f7; /* Admin message background color */
+    border: 1px solid #9ca3f9; /* Admin message border color */
+    align-self: flex-end; /* Align to the right */
+}
+
+.chat-timestamp {
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+    position: absolute; /* Position timestamp absolutely */
+    bottom: 5px; /* Position it at the bottom of the message */
+    right: 10px; /* Align to the right */
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.chat-input button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .chat-message {
+        max-width: 90%; /* Increase message width on smaller screens */
+    }
+}

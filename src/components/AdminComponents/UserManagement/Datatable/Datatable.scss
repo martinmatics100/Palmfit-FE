@@ -2,7 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+
+  .table-container {
+    overflow-x: auto;
+  }
 
   .table {
     width: 100%;
@@ -44,9 +47,17 @@
       }
 
       .add-new {
+        position: relative;
         padding: 10px 20px;
         color: #fff;
         background-color: #1a8d8d;
+
+        &:disabled {
+          border: 1px solid #1a8d8d48;
+          background-color: #1a8d8d48;
+          color: #ffffff7a;
+          cursor: not-allowed;
+        }
         
       }
     }
@@ -61,11 +72,17 @@
         min-width: 900px;
         border-collapse: collapse;
 
-        thead th {
+        thead {
           position: sticky;
-          top: 0;
-          color: #1a8d8d;
-          font-size: 15px;
+          top: -3px;
+          background-color: rgb(240, 240, 240);
+          z-index: 1;
+  
+          th {
+            color: #1a8d8d;
+            font-size: 15px;
+            background-color: rgb(240, 240, 240);
+          }
         }
 
         th,
@@ -74,6 +91,10 @@
           padding: 10px 20px;
           word-break: break-all;
           text-align: center;
+
+          a {
+            color: #334fa8;
+          }
         }
 
         td img {
@@ -106,7 +127,7 @@
           &:hover {
             td {
               color: #1a8d8d;
-              cursor: pointer;
+              // cursor: pointer;
               background-color: #f2f2f2;
             }
           }
@@ -168,7 +189,7 @@
           transition: 0.6s;
 
           &.active {
-            background-color: #fff; /* Change to your desired active color */
+            background-color: #fff; 
             color: #1a8d8d;
             font-weight: 700;
           }
@@ -184,6 +205,29 @@
         font-size: 18px;
         color: #1a8d8d; 
       }
+    }
+
+
+    
+    .custom-checkbox {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #1a8d8d;
+
+    }
+    
+    .custom-checkbox:checked {
+      background-color: #1a8d8d;
+      border-color: #1a8d8d;
+      
+    }
+    
+    
+    
+    .custom-checkbox:checked + label {
+      background-color: #1a8d8d;
+      border-color: #1a8d8d;
     }
   }
 }
