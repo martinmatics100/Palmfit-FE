@@ -10,7 +10,7 @@ const ChatComponent = ({ senderType }) => {
   const handleSendMessage = () => {
     if (newMessage.trim() === "") return;
     sendMessage(newMessage, senderType);
-    setNewMessage("");
+    setNewMessage(""); 
   };
 
   return (

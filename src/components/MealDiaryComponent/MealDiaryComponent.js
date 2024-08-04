@@ -16,7 +16,7 @@ const MealDiaryComponent = () => {
         <input
           type="text"
           className="search-input"
-          placeholder="Enter food or category"
+          placeholder="Enter food or category" 
           value={searchQuery}
           onChange={handleSearch}
         />
