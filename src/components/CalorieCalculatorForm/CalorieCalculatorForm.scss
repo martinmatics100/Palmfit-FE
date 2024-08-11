@@ -1,29 +1,111 @@
-// .left,
-// .right {
-//   min-height: 95vh;
-//   display: flex;
-//   justify-content: center;
-//   //   align-items: center;
-//   background-color: #f5f5f5;
-// }
+form {
+  h4 {
+    color: #000000;
+    font-size: 24px;
+    line-height: 32.74px;
+    font-weight: 600;
+    font-family: Nunito Sans;
+  }
 
-.bg-secondary {
-  padding: 20px;
-}
+  .row {
+    label {
+      color: #001a1a;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24.55px;
+      font-family: Nunito Sans;
+    }
 
-.input-group-text {
-  background-color: #e9ecef;
-  border-left: 0;
-}
+    h5 {
+      color: #001a1a;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: Nunito Sans;
+    }
 
-.btn-outline-secondary {
-  width: auto;
-  flex: 1;
-}
+    .gender-btn {
+      color: #000000;
+      background-color: #fff;
+      padding: 5px 40px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      transition: background-color 0.3s;
 
-.btn-danger {
-  width: auto;
-  flex: 1;
+      &.male {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      &.female {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 0px;
+      }
+
+      &.selected {
+        background-color: #1a8d8d;
+        color: #fff;
+      }
+    }
+
+    .goal-btn {
+      color: #000000;
+      background-color: #fff;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+
+      &.lose {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      &.gain {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      &.selected {
+        background-color: #1a8d8d;
+        color: #fff;
+      }
+    }
+
+    .activity-btn {
+      color: #000000;
+      background-color: #fff;
+      padding: 5px 20px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      width: 100%;
+
+      &.inactive {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      &.active {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      &.selected {
+        background-color: #1a8d8d;
+        color: #fff;
+      }
+    }
+  }
 }
 
 // CalorieResult.scss
@@ -46,19 +128,36 @@
   }
 
   .recommendation {
-
     text-align: center;
     color: #000000;
-    
+
     h5 {
       font-size: 18px;
       font-weight: 700;
     }
 
     .p {
-        font-size: 14px;
-        color: #374D4D;
-        font-weight: 400;
+      font-size: 14px;
+      color: #374d4d;
+      font-weight: 400;
+    }
+  }
+
+  .activity-buttons {
+    display: flex;
+
+    .btn {
+      flex: 1;
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+
+      &.selected {
+        background-color: #1a8d8d;
+        color: #fff;
+      }
     }
   }
 }

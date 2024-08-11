@@ -59,8 +59,10 @@
 .header .logo h1 {
   font-size: 30px;
   margin: 0;
-  font-weight: 300;
-  color: var(--heading-color);
+  font-weight: 700;
+  color: var(--nav-hover-color);
+  font-style: italic;
+  font-family: PT Serif;
 }
 
 .header nav a {

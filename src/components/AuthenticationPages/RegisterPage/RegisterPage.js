@@ -246,7 +246,7 @@ const RegisterPage = () => {
                     />
                     <button
                       type="button"
-                      className="btn btn-outline-secondary"
+                      className="btn btn-outline-secondary toggle-button"
                       onClick={togglePasswordVisibility}
                     >
                       {showPassword ? "Hide" : "Show"}
@@ -284,7 +284,7 @@ const RegisterPage = () => {
                     />
                     <button
                       type="button"
-                      className="btn btn-outline-secondary"
+                      className="btn btn-outline-secondary toggle-button"
                       onClick={toggleConfirmPasswordVisibility}
                     >
                       {showConfirmPassword ? "Hide" : "Show"}
@@ -314,7 +314,7 @@ const RegisterPage = () => {
                 <button
                   type="submit"
                   className="btn btn-primary w-100"
-                  disabled={isSubmitting} // Disable button during submission
+                  disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Register"}
                 </button>

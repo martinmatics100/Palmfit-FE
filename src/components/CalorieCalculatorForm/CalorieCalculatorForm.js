@@ -67,18 +67,16 @@ const CalorieCalculatorForm = () => {
           <h5>You're a</h5>
           <button
             type="button"
-            className={`btn ${
-              gender === "male" ? "btn-danger" : "btn-outline-secondary"
-            } me-2`}
+            className={`gender-btn ${gender === "male" ? "selected" : ""} male`}
             onClick={() => handleGenderSelect("male")}
           >
             Male
           </button>
           <button
             type="button"
-            className={`btn ${
-              gender === "female" ? "btn-danger" : "btn-outline-secondary"
-            }`}
+            className={`gender-btn ${
+              gender === "female" ? "selected" : ""
+            } female`}
             onClick={() => handleGenderSelect("female")}
           >
             Female
@@ -91,29 +89,27 @@ const CalorieCalculatorForm = () => {
           <div className="btn-group" role="group">
             <button
               type="button"
-              className={`btn ${
-                weightGoal === "lose" ? "btn-danger" : "btn-outline-transparent"
-              } me-2`}
+              className={`goal-btn ${
+                weightGoal === "lose" ? "selected" : ""
+              } lose`}
               onClick={() => handleWeightGoalSelect("lose")}
             >
               Lose
             </button>
             <button
               type="button"
-              className={`btn ${
-                weightGoal === "maintain"
-                  ? "btn-danger"
-                  : "btn-outline-transparent"
-              } me-2`}
+              className={`goal-btn ${
+                weightGoal === "maintain" ? "selected" : ""
+              } maintain`}
               onClick={() => handleWeightGoalSelect("maintain")}
             >
               Maintain
             </button>
             <button
               type="button"
-              className={`btn ${
-                weightGoal === "gain" ? "btn-danger" : "btn-outline-transparent"
-              }`}
+              className={`goal-btn ${
+                weightGoal === "gain" ? "selected" : ""
+              } gain`}
               onClick={() => handleWeightGoalSelect("gain")}
             >
               Gain
@@ -127,33 +123,27 @@ const CalorieCalculatorForm = () => {
           <div className="btn-group w-100" role="group">
             <button
               type="button"
-              className={`btn w-100 ${
-                activityLevel === "inactive"
-                  ? "btn-danger"
-                  : "btn-outline-transparent"
-              } me-2`}
+              className={`activity-btn ${
+                activityLevel === "inactive" ? "selected" : ""
+              } inactive`}
               onClick={() => handleActivityLevelSelect("inactive")}
             >
               Inactive <br /> (No exercise)
             </button>
             <button
               type="button"
-              className={`btn w-100 ${
-                activityLevel === "somewhat_active"
-                  ? "btn-danger"
-                  : "btn-outline-transparent"
-              } me-2`}
+              className={`activity-btn ${
+                activityLevel === "somewhat_active" ? "selected" : ""
+              } somewhat_active`}
               onClick={() => handleActivityLevelSelect("somewhat_active")}
             >
               Somewhat active <br /> (3x to 4x per week)
             </button>
             <button
               type="button"
-              className={`btn w-100 ${
-                activityLevel === "active"
-                  ? "btn-danger"
-                  : "btn-outline-transparent"
-              }`}
+              className={`activity-btn ${
+                activityLevel === "active" ? "selected" : ""
+              } active`}
               onClick={() => handleActivityLevelSelect("active")}
             >
               Active <br /> (5x+ per week)

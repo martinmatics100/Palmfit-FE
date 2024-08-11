@@ -2,155 +2,6 @@
   background-color: #222;
   color: #ffffff;
 
-  // Calorie Form dark styling
-  .calorie-form {
-    p {
-      color: #fff;
-    }
-
-    .age-height-weight {
-      label {
-        color: #fff;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 24.55px;
-      }
-
-      input {
-        background-color: #222;
-        color: #fff;
-
-        &::placeholder {
-          color: #fff;
-        }
-      }
-    }
-
-    .gender {
-      h5 {
-        color: #fff;
-      }
-
-      button {
-        border: 1px solid #fff;
-        background-color: #222;
-        color: #fff;
-        font-weight: 600;
-
-        &.selected {
-          background-color: #fff;
-          color: #222;
-        }
-      }
-    }
-
-    .goal {
-      h5 {
-        color: #fff;
-      }
-
-      .goal-buttons {
-        .goal-button {
-          border: 1px solid #fff;
-          background-color: #222;
-          color: #fff;
-          font-weight: 600;
-
-          &.selected {
-            background-color: #fff;
-            color: #222;
-          }
-        }
-      }
-    }
-
-    .activity-level {
-      h5 {
-        color: #fff;
-      }
-
-      .activity-buttons {
-        display: flex;
-        text-align: center;
-        justify-content: space-between;
-        gap: 3;
-
-        .activity-button {
-          border: 1px solid #fff;
-          background-color: #222;
-          color: #fff;
-          font-weight: 600;
-
-          &.selected {
-            background-color: #fff;
-            color: #222;
-          }
-        }
-      }
-    }
-
-    .submit-button {
-      .submit {
-        background-color: #222;
-        color: #fff;
-        font-weight: 700;
-        border: 1px solid #fff;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          background-color: #fff;
-          color: #222;
-        }
-      }
-    }
-  }
-
-  //   ends here for calorie form
-
-  // Calorie Estimate dar styling
-  .calorie-estimate {
-    p {
-      color: #fff;
-    }
-
-    h5 {
-      color: #fff;
-    }
-
-    .estimate-display {
-      border: 7px solid #fff;
-
-      .estimate-content {
-        span {
-          color: #fff;
-
-          &:nth-child(2) {
-            font-size: 30px;
-            color: #fff;
-            font-weight: 900;
-          }
-        }
-      }
-    }
-
-    .calorie-buttons {
-      .calorie-button {
-        border: 1px solid #fff;
-        background-color: #222;
-        color: #fff;
-        transition: background-color 0.3s, color 0.3s;
-
-        &.selected {
-          background-color: #fff;
-          color: #222;
-          font-weight: 700;
-        }
-      }
-    }
-  }
-
-  //   ends here for calorie estimate
-
   // Navbar begins
 
   .navbar {
@@ -294,7 +145,7 @@
 
   //   Login begins here
   .login {
-    background-color: #ffffff69;
+    background-color: #222;
 
     .signup-container {
       .left-login {
@@ -308,7 +159,7 @@
           }
 
           button {
-            background-color: #ffffff69;
+            background-color: #222;
             border: 1px solid #fff;
             color: #fff;
             font-weight: 600;
@@ -322,12 +173,12 @@
 
           .login-alt {
             span {
-              color: #222;
+              color: #fff;
               font-weight: 800;
             }
 
             a {
-              color: #fff;
+              color: #ffffff7a;
             }
           }
         }
@@ -340,7 +191,7 @@
   // Register begins here
 
   .signup-container {
-    background-color: #ffffff69;
+    background-color: #222;
 
     h3 {
       color: #fff;
@@ -352,7 +203,7 @@
       }
 
       a {
-        color: #222;
+        color: #ffffff7a;
         font-weight: 600;
 
         &:hover {
@@ -362,7 +213,7 @@
       }
 
       button {
-        background-color: #ffffff69;
+        background-color: #222;
         border: 1px solid #fff;
         color: #fff;
         font-weight: 600;
@@ -434,7 +285,8 @@
         background-color: #222;
         border: 1px solid #fff;
 
-        span, h2 {
+        span,
+        h2 {
           color: #fff;
         }
       }
@@ -447,5 +299,30 @@
 
   .pie-chart {
     background-color: #f2f2f21a;
-}
+  }
+
+  // LoadingPage
+
+  .loading-page-container {
+    background-color: #222;
+  }
+
+  // Calorie Form dark styling
+  
+  form {
+    h4 {
+      color: #fff
+    }
+
+    .row {
+
+      label {
+        color: #fff;
+      }
+  
+      h5 {
+        color: #fff;
+      }
+    }
+  }
 }

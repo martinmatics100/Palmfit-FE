@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         <a href="#" class="logo d-flex align-items-center">
           <img src={Logo} alt="logo-image" />
-          <h1 className="sitename">Palmfit.</h1>
+          <h1 className="sitename">Palmfit</h1>
         </a>
         <nav className="navmenu">
           <ul className="d-flex">

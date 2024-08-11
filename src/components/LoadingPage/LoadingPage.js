@@ -1,18 +1,10 @@
 import React from "react";
 import PropagateLoader from "react-spinners/RingLoader";
+import "./LoadingPage.css"; // Import the CSS file
 
 const LoadingPage = ({ loading }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        height: "100vh",
-        backgroundColor: "#fff",
-      }}
-    >
+    <div className="loading-page-container">
       <PropagateLoader
         color={"#1A8D8D"}
         loading={loading}
