@@ -76,6 +76,18 @@
 
   /* password toggle */
 
+  .input-group .toggle-button {
+    padding: 5px 10px;
+    font-size: 17px;
+    width: auto;
+    background-color: #1A8D8D;
+  }
+
+  .input-group .form-control {
+    flex: 6;
+    min-width: 0;
+  }
+
   .input-group .password-toggle {
     cursor: pointer;
     position: absolute;
@@ -89,7 +101,7 @@
     padding: 10px;
   }
 
-  @keyframes slideIn {
+  @keyframes slideIn { 
     from {
       transform: translateY(-100%);
     }

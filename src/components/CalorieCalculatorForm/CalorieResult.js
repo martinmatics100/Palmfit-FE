@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CalorieCalculatorForm.scss";
 
 const CalorieResult = ({
@@ -8,9 +8,14 @@ const CalorieResult = ({
   activeCalories,
   recommendation,
 }) => {
+  const [selectedActivityLevel, setSelectedActivityLevel] = useState(null);
+
+  const handleActivityLevelSelect = (activityLevel) => {
+    setSelectedActivityLevel(activityLevel);
+  };
   return (
     <div className="calorie-result-container">
-      <h4 className="mb-3">Calorie Estimate</h4> {/* Added title here */}
+      <h4 className="mb-3">Calorie Estimate</h4>
       <div className="rounded-display">
         <h5 className="mb-2">Total</h5>
         <h5>
@@ -22,14 +27,32 @@ const CalorieResult = ({
         level:
       </p>{" "}
       {/* Activity Level Buttons */}
-      <div className="btn-group w-100 mt-5" role="group">
-        <button type="button" className="btn btn-outline-secondary me-2 w-100">
+      <div className="activity-buttons w-100 mt-5" role="group">
+        <button
+          type="button"
+          className={`btn me-2 ${
+            selectedActivityLevel === "inactive" ? "selected" : ""
+          }`}
+          onClick={() => handleActivityLevelSelect("inactive")}
+        >
           {inactiveCalories || "1900"} <br /> Kcal <br /> Inactive
         </button>
-        <button type="button" className="btn btn-outline-secondary me-2 w-100">
+        <button
+          type="button"
+          className={`btn me-2 ${
+            selectedActivityLevel === "somewhat_active" ? "selected" : ""
+          }`}
+          onClick={() => handleActivityLevelSelect("somewhat_active")}
+        >
           {somewhatActiveCalories || "1900"} <br /> Kcal <br /> Somewhat active
         </button>
-        <button type="button" className="btn btn-outline-secondary w-100">
+        <button
+          type="button"
+          className={`btn ${
+            selectedActivityLevel === "active" ? "selected" : ""
+          }`}
+          onClick={() => handleActivityLevelSelect("active")}
+        >
           {activeCalories || "1900"} <br /> Kcal <br /> Active
         </button>
       </div>
