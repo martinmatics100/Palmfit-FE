@@ -22,12 +22,12 @@ const CalorieResult = ({
           {calories || "1900"} <br /> Kcal
         </h5>
       </div>
-      <p className="mt-3">
+      <p className="mt-5">
         See how your daily calorie needs change if you alter your activity
         level:
       </p>{" "}
       {/* Activity Level Buttons */}
-      <div className="activity-buttons w-100 mt-5" role="group">
+      <div className="activity-buttons w-100 mt-3" role="group">
         <button
           type="button"
           className={`btn me-2 ${

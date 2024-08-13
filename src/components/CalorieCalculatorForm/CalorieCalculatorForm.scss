@@ -1,108 +1,174 @@
 form {
   h4 {
     color: #000000;
-    font-size: 24px;
-    line-height: 32.74px;
+    font-size: 1.5rem;
+    line-height: 2.05rem;
     font-weight: 600;
     font-family: Nunito Sans;
+    text-wrap: nowrap;
+    overflow-x: auto;
+    // white-space: nowrap;
   }
 
-  .row {
-    label {
-      color: #001a1a;
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 24.55px;
-      font-family: Nunito Sans;
-    }
+  .form-container {
+    margin: 0 !important;
+    padding: 1rem;
 
-    h5 {
-      color: #001a1a;
-      font-size: 18px;
-      font-weight: 600;
-      font-family: Nunito Sans;
-    }
-
-    .gender-btn {
-      color: #000000;
-      background-color: #fff;
-      padding: 5px 40px;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: 600;
-      transition: background-color 0.3s;
-
-      &.male {
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+    .row {
+      label {
+        color: #001a1a;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.53rem;
+        font-family: Nunito Sans;
       }
 
-      &.female {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+      .input-group {
+        .input {
+          background-color: #fff;
+
+          &::placeholder {
+            color: #001a1a8c;
+          }
+        }
+        span {
+          color: #001a1a;
+          font-weight: 700;
+        }
       }
 
-      &:not(:last-child) {
-        margin-right: 0px;
+      input {
+        background-color: #fff;
+
+        &::placeholder {
+          color: #001a1a8c;
+        }
       }
 
-      &.selected {
-        background-color: #1a8d8d;
-        color: #fff;
-      }
-    }
-
-    .goal-btn {
-      color: #000000;
-      background-color: #fff;
-      padding: 10px 20px;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: 600;
-      transition: background-color 0.3s;
-
-      &.lose {
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+      h5 {
+        color: #001a1a;
+        font-size: 1.125rem;
+        font-weight: 600;
+        font-family: Nunito Sans;
       }
 
-      &.gain {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+      .gender {
+        display: flex;
+        flex-wrap: nowrap;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 400px;
+        padding: 0.5rem;
+        overflow-x: auto;
+        white-space: nowrap;
+
+        .gender-btn {
+          color: #000000;
+          background-color: #fff;
+          padding: 0.3125rem 2.5rem;
+          border: 0.0625rem solid #ccc;
+          cursor: pointer;
+          flex: 0.5;
+          min-width: 100px;
+          font-size: 1.125rem;
+          font-weight: 600;
+          transition: background-color 0.3s;
+
+          &.male {
+            border-top-left-radius: 0.3125rem;
+            border-bottom-left-radius: 0.3125rem;
+          }
+
+          &.female {
+            border-top-right-radius: 0.3125rem;
+            border-bottom-right-radius: 0.3125rem;
+          }
+
+          &:not(:last-child) {
+            margin-right: 0px;
+          }
+
+          &.selected {
+            background-color: #1a8d8d;
+            color: #fff;
+          }
+        }
       }
 
-      &.selected {
-        background-color: #1a8d8d;
-        color: #fff;
+      .weight-goal {
+        display: flex;
+        flex-wrap: nowrap;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.5rem;
+        overflow-x: auto;
+        white-space: nowrap;
+
+        .goal-btn {
+          color: #000000;
+          background-color: #fff;
+          padding: 0.625rem 1.25rem;
+          border: 0.0625rem solid #ccc;
+          cursor: pointer;
+          flex: 1;
+          font-size: 1.125rem;
+          font-weight: 600;
+          transition: background-color 0.3s;
+
+          &.lose {
+            border-top-left-radius: 0.3125rem;
+            border-bottom-left-radius: 0.3125rem;
+          }
+
+          &.gain {
+            border-top-right-radius: 0.3125rem;
+            border-bottom-right-radius: 0.3125rem;
+          }
+
+          &.selected {
+            background-color: #1a8d8d;
+            color: #fff;
+          }
+        }
       }
-    }
 
-    .activity-btn {
-      color: #000000;
-      background-color: #fff;
-      padding: 5px 20px;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: 600;
-      transition: background-color 0.3s;
-      width: 100%;
+      .activity-group {
+        display: flex;
+        flex-wrap: nowrap;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        padding: 0.5rem;
+        overflow-x: auto;
+        white-space: nowrap;
 
-      &.inactive {
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-      }
+        .activity-btn {
+          color: #000000;
+          background-color: #fff;
+          padding: 0.3125rem 1.25rem;
+          border: 0.0625rem solid #ccc;
+          cursor: pointer;
+          font-size: 1.125rem;
+          font-weight: 600;
+          transition: background-color 0.3s;
+          width: 100%;
+          max-width: 100%;
 
-      &.active {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-      }
+          // &.inactive {
+          //   border-top-left-radius: 0.3125rem;
+          //   border-bottom-left-radius: 0.3125rem;
+          // }
 
-      &.selected {
-        background-color: #1a8d8d;
-        color: #fff;
+          // &.active {
+          //   border-top-right-radius: 0.3125rem;
+          //   border-bottom-right-radius: 0.3125rem;
+          // }
+
+          &.selected {
+            background-color: #1a8d8d;
+            color: #fff;
+          }
+        }
       }
     }
   }
@@ -114,7 +180,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 1.25rem;
 
   h4 {
     font-weight: 600;
@@ -123,7 +189,7 @@ form {
   p {
     color: #0000009d;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1rem;
     text-align: center;
   }
 
@@ -132,12 +198,12 @@ form {
     color: #000000;
 
     h5 {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: 700;
     }
 
     .p {
-      font-size: 14px;
+      font-size: 0.875rem;
       color: #374d4d;
       font-weight: 400;
     }
@@ -145,13 +211,20 @@ form {
 
   .activity-buttons {
     display: flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
 
     .btn {
       flex: 1;
       background-color: #fff;
       color: #000;
-      border: 1px solid #ccc;
-      padding: 10px;
+      border: 0.0625rem solid #ccc;
+      padding: 0.625rem;
       text-align: center;
 
       &.selected {
@@ -163,11 +236,11 @@ form {
 }
 
 .rounded-display {
-  border: 10px solid #1a8d8d;
+  border: 0.625rem solid #1a8d8d;
   border-radius: 50%;
-  padding: 30px;
-  width: 150px;
-  height: 150px;
+  padding: 1.875rem;
+  width: 13.375rem;
+  height: 13.375rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,4 +249,10 @@ form {
 
 .mt-4 {
   margin-top: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .gender {
+    min-width: 80px;
+  }
 }

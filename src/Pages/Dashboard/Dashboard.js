@@ -20,12 +20,12 @@ const Dashboard = () => {
       {loading ? (
         <LoadingPage loading={loading} />
       ) : (
-        <div className="container mt-5">
+        <div className="container mt-5 dashboard">
           <div className="row">
-            <div className="col-12 col-md-6 left p-3">
+            <div className="col-12 col-md-6 left">
               <CalorieCalculatorForm />
             </div>
-            <div className="col-12 col-md-6 right p-3">
+            <div className="col-12 col-md-6 right">
               <CalorieResult />
             </div>
           </div>
