@@ -308,21 +308,127 @@
   }
 
   // Calorie Form dark styling
-  
+
   form {
     h4 {
-      color: #fff
+      color: #fff;
     }
 
-    .row {
+    .form-container {
+      .row {
+        label {
+          color: #fff;
+        }
+        .input-group {
+          .input {
+            background-color: #222;
 
-      label {
-        color: #fff;
+            &::placeholder {
+              color: #ffffff81;
+            }
+          }
+          span {
+            color: #fff;
+            background-color: #222;
+            font-weight: 700;
+          }
+        }
+        .input {
+          background-color: #222;
+
+          &::placeholder {
+            color: #ffffff81;
+          }
+        }
+        h5 {
+          color: #fff;
+        }
+
+        .gender {
+          .gender-btn {
+            color: #fff;
+            background-color: #222;
+            border: 0.0625rem solid #fff;
+
+            &.selected {
+              background-color: #fff;
+              color: #222;
+            }
+          }
+        }
+
+        .weight-goal {
+          .goal-btn {
+            color: #fff;
+            background-color: #222;
+            border: 0.0625rem solid #fff;
+
+            &.selected {
+              background-color: #fff;
+              color: #222;
+            }
+          }
+        }
+
+        .activity-group {
+          .activity-btn {
+            color: #fff;
+            background-color: #222;
+            border: 0.0625rem solid #fff;
+
+            &.selected {
+              background-color: #fff;
+              color: #222;
+            }
+          }
+        }
       }
-  
+    }
+  }
+
+  // CalorieResult.scss
+
+  .calorie-result-container {
+    h4 {
+      font-weight: 600;
+    }
+
+    p {
+      color: #fff;
+    }
+
+    .recommendation {
+      color: #fff;
+
       h5 {
+        font-size: 1.125rem;
+        font-weight: 700;
+      }
+
+      .p {
         color: #fff;
       }
     }
+
+    .activity-buttons {
+      .btn {
+        color: #fff;
+        background-color: #222;
+        border: 0.0625rem solid #fff;
+
+        &.selected {
+          background-color: #fff;
+          color: #222;
+        }
+      }
+    }
+  }
+
+  .rounded-display {
+    border: 0.625rem solid #fff;
+  }
+
+  .mt-4 {
+    margin-top: 1.5rem;
   }
 }
