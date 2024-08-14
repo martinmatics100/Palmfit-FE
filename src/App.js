@@ -28,7 +28,6 @@ import Support from "./AdminPages/Support/Support";
 import SinglePage from "./AdminPages/UserSinglePage/SinglePage";
 import AddNewUser from "./components/New/NewUser/AddNewUser";
 import { mealPlanInputs, userInputs } from "./utils/FormSource";
-import ChatAdmin from "./Pages/ChatAdmin/ChatAdmin";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -67,7 +66,6 @@ function App() {
                 <AddNewUser inputs={mealPlanInputs} title="Add meal plan" />
               }
             />
-            <Route path="/admin-chat" element={<ChatAdmin />} />
           </Route>
         </Routes>
       </div>

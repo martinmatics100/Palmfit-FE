@@ -7,7 +7,6 @@ form {
     font-family: Nunito Sans;
     text-wrap: nowrap;
     overflow-x: auto;
-    // white-space: nowrap;
   }
 
   .form-container {
@@ -31,9 +30,42 @@ form {
             color: #001a1a8c;
           }
         }
-        span {
-          color: #001a1a;
-          font-weight: 700;
+
+        .custom-dropdown {
+          position: relative;
+          width: 70px;
+          cursor: pointer;
+          border-left: 1px solid #ced4da;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .custom-dropdown-selected {
+            padding: 6px 5px;
+            background-color: #1a8d8d;
+            border-radius: 0 0.375rem 0.375rem 0;
+            width: 100%;
+            text-align: center;
+          }
+
+          .custom-dropdown-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            z-index: 10;
+          }
+          .custom-dropdown-option {
+            padding: 2px;
+            text-align: center;
+            background-color: transparent;
+
+            &:hover {
+              background-color: #1a8d8d;
+            }
+          }
         }
       }
 
