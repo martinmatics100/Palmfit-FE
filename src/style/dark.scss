@@ -48,6 +48,19 @@
     border-right: 0.5px solid #fff;
   }
 
+  .sidebar-header {
+    background-color: #222;
+    border-bottom: 1px solid #fff;
+  }
+
+  .sidebar-toggle {
+    color: #fff;
+  }
+
+  .sidebar-header .items {
+    color: #fff;
+  }
+
   //   ends here for sidebar
 
   // Landingpage begins here
@@ -327,10 +340,27 @@
               color: #ffffff81;
             }
           }
-          span {
-            color: #fff;
-            background-color: #222;
-            font-weight: 700;
+
+          .custom-dropdown {
+            border-left: 1px solid #fff;
+
+            .custom-dropdown-selected {
+              background-color: #222;
+              border: 1px solid #fff;
+            }
+
+            .custom-dropdown-options {
+              background-color: #222;
+              border: 1px solid #ced4da;
+            }
+            .custom-dropdown-option {
+              background-color: transparent;
+
+              &:hover {
+                background-color: #fff;
+                color: #222;
+              }
+            }
           }
         }
         .input {

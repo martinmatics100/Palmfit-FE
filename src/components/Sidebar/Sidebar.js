@@ -72,13 +72,6 @@ const Sidebar = () => {
         <CreditCardIcon className="nav-link-logo" />
         <span className="nav-link-name">Subscription</span>
       </Link>
-      <Link
-        to="/admin-chat"
-        className={`nav-link ${isActive("/admin-chat") ? "active" : ""}`}
-      >
-        <CreditCardIcon className="nav-link-logo" />
-        <span className="nav-link-name">Chat Admin</span>
-      </Link>
     </>
   );
 

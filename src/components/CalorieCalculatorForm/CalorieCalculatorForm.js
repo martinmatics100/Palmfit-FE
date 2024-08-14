@@ -5,6 +5,12 @@ const CalorieCalculatorForm = () => {
   const [gender, setGender] = useState(null);
   const [weightGoal, setWeightGoal] = useState(null);
   const [activityLevel, setActivityLevel] = useState(null);
+  const [selectedHeightUnit, setSelectedHeightUnit] = useState("cm");
+  const [height, setHeight] = useState("");
+  const [selectedWeightUnit, setSelectedWeightUnit] = useState("kg");
+  const [weight, setWeight] = useState("");
+  const [heightDropdownOpen, setHeightDropdownOpen] = useState(false);
+  const [weightDropdownOpen, setWeightDropdownOpen] = useState(false);
 
   const handleGenderSelect = (selectedGender) => {
     setGender(selectedGender);
@@ -22,6 +28,32 @@ const CalorieCalculatorForm = () => {
     setActivityLevel(null);
     setGender(null);
     setWeightGoal(null);
+  };
+
+  const handleHeightUnitSelect = (unit) => {
+    setSelectedHeightUnit(unit);
+    setHeightDropdownOpen(false);
+  };
+
+  const handleWeightUnitSelect = (unit) => {
+    setSelectedWeightUnit(unit);
+    setWeightDropdownOpen(false);
+  };
+
+  const toggleHeightDropdown = () => {
+    setHeightDropdownOpen(!heightDropdownOpen);
+  };
+
+  const handleHeightChange = (e) => {
+    setHeight(e.target.value);
+  };
+
+  const toggleWeightDropdown = () => {
+    setWeightDropdownOpen(!weightDropdownOpen);
+  };
+
+  const handleWeightChange = (e) => {
+    setWeight(e.target.value);
   };
 
   return (
@@ -51,8 +83,31 @@ const CalorieCalculatorForm = () => {
                 className="form-control input"
                 id="height"
                 placeholder="Height"
+                value={height}
+                onChange={handleHeightChange}
               />
-              <span className="input-group-text">cm</span>
+
+              <div className="custom-dropdown">
+                <div
+                  className="custom-dropdown-selected"
+                  onClick={toggleHeightDropdown}
+                >
+                  {selectedHeightUnit}
+                </div>
+                {heightDropdownOpen && (
+                  <div className="custom-dropdown-options">
+                    {["cm", "m", "ft", "in", "mm"].map((unit) => (
+                      <div
+                        key={unit}
+                        className="custom-dropdown-option"
+                        onClick={() => handleHeightUnitSelect(unit)}
+                      >
+                        {unit}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <div className="col-12 col-sm-4 mb-3 d-flex flex-column">
@@ -65,8 +120,30 @@ const CalorieCalculatorForm = () => {
                 className="form-control input"
                 id="weight"
                 placeholder="Weight"
+                value={weight}
+                onChange={handleWeightChange}
               />
-              <span className="input-group-text">kg</span>
+              <div className="custom-dropdown">
+                <div
+                  className="custom-dropdown-selected"
+                  onClick={toggleWeightDropdown}
+                >
+                  {selectedWeightUnit}
+                </div>
+                {weightDropdownOpen && (
+                  <div className="custom-dropdown-options">
+                    {["mg", "g", "kg", "lb", "oz"].map((unit) => (
+                      <div
+                        key={unit}
+                        className="custom-dropdown-option"
+                        onClick={() => handleWeightUnitSelect(unit)}
+                      >
+                        {unit}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

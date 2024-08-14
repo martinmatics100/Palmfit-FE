@@ -46,7 +46,7 @@ main {
 }
 
 .sidebar-header .items {
-  color: #000000;
+  color: #222;
   display: flex;
   justify-content: space-between;
   text-align: center;
