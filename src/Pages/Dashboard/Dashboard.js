@@ -4,7 +4,6 @@ import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import { useNavigate } from "react-router-dom";
 import CalorieCalculatorForm from "../../components/CalorieCalculatorForm/CalorieCalculatorForm";
 import CalorieResult from "../../components/CalorieCalculatorForm/CalorieResult";
-import Index from "../../SupportEngine/Index";
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(false);
@@ -30,9 +29,9 @@ const Dashboard = () => {
               <CalorieResult />
             </div>
           </div>
-          <div>
+          {/* <div>
             <Index />
-          </div>
+          </div> */}
         </div>
       )}
     </div>
