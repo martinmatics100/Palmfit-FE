@@ -240,6 +240,7 @@ const CalorieCalculatorForm = () => {
             </div>
           </div>
         </div>
+        <button>Calculate Calorie</button>
       </div>
     </form>
   );

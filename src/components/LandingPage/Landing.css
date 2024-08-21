@@ -78,6 +78,9 @@
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .navmenu ul {
@@ -150,10 +153,99 @@
     background-color: transparent;
     color: #000000;
   }
+
+  .toggle-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+
+  .navmenu {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    padding: 18px 15px;
+    font-size: 18px;
+    font-family: var(--nav-font);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu li:last-child a {
+    background-color: var(--nav-hover-color);
+    border-radius: 5px;
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navmenu li:last-child a:hover {
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid var(--nav-hover-color);
+  }
+
+  .navmenu li:hover > a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+
+  .left .btn-get-started {
+    background-color: var(--nav-hover-color);
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    border: 2px solid transparent;
+    transition: 0.3s all ease-in-out;
+    font-size: 15px;
+  }
+
+  .left .btn-get-started:hover {
+    border-color: var(--nav-hover-color);
+    background-color: transparent;
+    color: #000000;
+  }
+
+
+  .toggle-icon {
+    display: block;
+  }
+
+  .navmenu ul {
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 10px 0;
+    background-color: #f2f2f2;
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    top: -800px;
+    right: 0;
+    z-index: 999;
+    transition: all 0.7s;
+  }
+
+  .navmenu ul.active {
+    top: 125%;
+    transition: all 0.7s ease-in;
+  }
 }
 
 /* Navmenu - Mobile */
-@media (max-width: 1199px) {
+/* @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 40px;
@@ -241,7 +333,6 @@
     border: 2px solid transparent;
     transition: 0.3s all ease-in-out;
     font-size: 15px;
-    /* float: right; */
   }
 
   .left .btn-get-started:hover {
@@ -249,7 +340,7 @@
     background-color: transparent;
     color: #000000;
   }
-}
+} */
 /* ---------------------------------------------
 ** WhyChooseUs Styling
 ----------------------------------------------- */

@@ -33,7 +33,7 @@ const Navbar = () => {
           <h1 className="sitename">Palmfit</h1>
         </a>
         <nav className="navmenu">
-          <ul className="d-flex">
+          <ul className={`d-flex ${isMenuOpen ? "active" : ""}`}>
             <li>
               <div className="item">
                 <DarkModeIcon
@@ -54,9 +54,12 @@ const Navbar = () => {
               <Link to="/register">Get Started</Link>
             </li>
           </ul>
-          <div className="mobile-nav-toggle" onClick={toggleMenu}>
+          <div className="toggle-icon" onClick={toggleMenu}>
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </div>
+          {/* <div className="mobile-nav-toggle" onClick={toggleMenu}>
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </div> */}
         </nav>
       </div>
       <CalorieCalculatorModal show={modalShow} onHide={handleClose} />
