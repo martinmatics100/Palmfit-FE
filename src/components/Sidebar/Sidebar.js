@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Sidebar.css";
 import MenuIcon from "@mui/icons-material/Menu";
+import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import CalculateIcon from "@mui/icons-material/Calculate";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
@@ -23,6 +24,7 @@ const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   const { user } = useUser();
   const [show, setShow] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [role, setRole] = useState(localStorage.getItem("userRole")); // Retrieve role from local storage
   const location = useLocation();
 
@@ -143,8 +145,21 @@ const Sidebar = () => {
   return (
     <main className={show ? `space-toggle` : null}>
       <header className={`sidebar-header ${show ? `space-toggle` : null}`}>
-        <div className="sidebar-toggle" onClick={() => setShow(!show)}>
-          <MenuIcon />
+        <div
+          className="sidebar-toggle"
+          onClick={() => setShow(!show)}
+          // title={show ? "Collapse sidebar" : "Expand sidebar"}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <DoubleArrowIcon
+            style={{ transform: show ? "rotate(180deg)" : "rotate(0deg)" }}
+          />
+          {isHovered && (
+            <span className="custom-tooltip">
+              {show ? "Collapse sidebar" : "Expand sidebar"}
+            </span>
+          )}
         </div>
         <div className="items">
           <div className="item">

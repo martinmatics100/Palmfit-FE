@@ -57,7 +57,7 @@ main {
   margin: 0 10px;
 }
 
-.sidebar-header .items .item h5 {
+.sidebar-header .items .item h5 { 
   color: #fff;
   font-weight: 700;
 }
@@ -70,6 +70,28 @@ main {
   font-size: 1.25rem;
   color: #fff;
   cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.custom-tooltip {
+  position: absolute;
+  top: 40px;
+  left: 120%;
+  transform: translateX(-50%);
+  background-color: #1a8d8d;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar-toggle:hover .custom-tooltip {
+  opacity: 1;
 }
 
 .sidebar {

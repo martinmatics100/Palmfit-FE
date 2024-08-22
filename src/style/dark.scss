@@ -81,6 +81,20 @@
       color: #fff;
     }
 
+    @media (max-width: 1199px) {
+
+      .toggle-icon {
+        color: #fff;
+      }
+      
+      .navmenu ul {
+        background-color: #222;
+        border: 2px solid #fff;
+      }
+  
+    }
+    
+
     .navmenu ul li .icon {
       color: #fff;
     }
@@ -414,6 +428,13 @@
         }
       }
     }
+  
+  
+      button {
+        background-color: #222;
+        color: #fff;
+        border: 1px solid #fff;
+      }
   }
 
   // CalorieResult.scss
@@ -461,4 +482,12 @@
   .mt-4 {
     margin-top: 1.5rem;
   }
+
+  // Meal diary
+
+  .meal-diary-container {
+
+    width: 100%;
+    height: 100vh;
+  }  
 }
