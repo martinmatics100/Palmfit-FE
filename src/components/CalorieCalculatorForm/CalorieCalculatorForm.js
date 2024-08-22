@@ -56,8 +56,22 @@ const CalorieCalculatorForm = () => {
     setWeight(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevents default form submission behavior
+    // Handle form data here
+    console.log("Form Submitted with values:", {
+      gender,
+      weightGoal,
+      activityLevel,
+      selectedHeightUnit,
+      height,
+      selectedWeightUnit,
+      weight,
+    });
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input type="reset" onClick={handleReset} />
       <h4 className="pt-2 pb-2">Calculate your calorie</h4>
       <div className="form-container">
@@ -71,6 +85,7 @@ const CalorieCalculatorForm = () => {
               className="form-control input"
               id="age"
               placeholder="Age"
+              required
             />
           </div>
           <div className="col-12 col-sm-4 mb-3 d-flex flex-column">
@@ -83,6 +98,7 @@ const CalorieCalculatorForm = () => {
                 className="form-control input"
                 id="height"
                 placeholder="Height"
+                required
                 value={height}
                 onChange={handleHeightChange}
               />
@@ -120,6 +136,7 @@ const CalorieCalculatorForm = () => {
                 className="form-control input"
                 id="weight"
                 placeholder="Weight"
+                required
                 value={weight}
                 onChange={handleWeightChange}
               />
@@ -240,7 +257,7 @@ const CalorieCalculatorForm = () => {
             </div>
           </div>
         </div>
-        <button>Calculate Calorie</button>
+        <button type="submit">Calculate Calorie</button>
       </div>
     </form>
   );
