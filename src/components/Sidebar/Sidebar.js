@@ -12,20 +12,20 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
 import ArticleIcon from "@mui/icons-material/Article";
-import ReportIcon from "@mui/icons-material/Assessment"; // Use AssessmentIcon for Reports Admin
-import FeedbackIcon from "@mui/icons-material/Feedback"; // FeedbackIcon for Feedback
-import SupportAgentIcon from "@mui/icons-material/SupportAgent"; // SupportAgentIcon for Support
-import DashboardIcon from "@mui/icons-material/Dashboard"; // DashboardIcon for Dashboard
+import ReportIcon from "@mui/icons-material/Assessment";
+import FeedbackIcon from "@mui/icons-material/Feedback";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import DashboardIcon from "@mui/icons-material/Dashboard";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { DarkModeContext } from "../../Context/darkModeContext";
-import { useUser } from "../../Context/UserContext"; // Adjust import based on your actual file path
+import { useUser } from "../../Context/UserContext";
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   const { user } = useUser();
   const [show, setShow] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [role, setRole] = useState(localStorage.getItem("userRole")); // Retrieve role from local storage
+  const [role, setRole] = useState(localStorage.getItem("userRole"));
   const location = useLocation();
 
   const isActive = (path) => location.pathname.startsWith(path);
@@ -164,7 +164,8 @@ const Sidebar = () => {
         <div className="items">
           <div className="item">
             <h5>
-              Welcome <span>Martin{user?.firstName}</span>
+              Welcome
+              {/* <span>Martin{user?.firstName}</span> */}
             </h5>
           </div>
           <div className="item">

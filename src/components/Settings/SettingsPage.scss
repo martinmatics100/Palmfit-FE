@@ -1,0 +1,41 @@
+.settings-page {
+  padding: 1rem;
+  height: 100%;
+}
+
+.settings-nav {
+  margin-bottom: 1rem;
+  border: none !important;
+
+  button {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #1A8D8D;
+    background: none;
+    border: none;
+    font-weight: bold;
+    text-decoration: none !important;
+
+    &:hover {
+        color: #1A8D8D;
+      text-decoration: underline;
+    }
+
+    &.active {
+      color: #fff !important;
+      background-color: #1A8D8D;
+    }
+  }
+}
+
+.settings-content {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  height: 100%;
+
+  h2 {
+    margin-top: 0;
+  }
+}

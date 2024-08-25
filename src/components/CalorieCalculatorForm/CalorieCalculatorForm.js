@@ -24,11 +24,11 @@ const CalorieCalculatorForm = () => {
     setActivityLevel(selectedLevel);
   };
 
-  const handleReset = (selectedLevel) => {
-    setActivityLevel(null);
-    setGender(null);
-    setWeightGoal(null);
-  };
+  // const handleReset = (selectedLevel) => {
+  //   setActivityLevel(null);
+  //   setGender(null);
+  //   setWeightGoal(null);
+  // };
 
   const handleHeightUnitSelect = (unit) => {
     setSelectedHeightUnit(unit);
@@ -72,7 +72,7 @@ const CalorieCalculatorForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="reset" onClick={handleReset} />
+      {/* <input type="reset" onClick={handleReset} /> */}
       <h4 className="pt-2 pb-2">Calculate your calorie</h4>
       <div className="form-container">
         <div className="row d-flex flex-column flex-sm-row">

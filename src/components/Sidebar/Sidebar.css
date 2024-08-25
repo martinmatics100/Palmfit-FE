@@ -117,7 +117,7 @@ main {
 .nav-logo,
 .nav-link {
   display: grid;
-  grid-template-columns: max-content max-content;
+  grid-template-columns: max-content max-content; 
   column-gap: 2rem;
   padding: 0.5rem 0 0.5rem 1.5rem;
 }
@@ -150,7 +150,7 @@ main {
 }
 
 .active {
-  color: #fff;
+  color: #fff !important;
   background-color: rgba(0, 0, 0, 0.5);
 }
 

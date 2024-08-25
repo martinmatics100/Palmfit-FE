@@ -1,14 +1,13 @@
 .meal-diary-container {
   margin-top: 1rem;
   text-align: center;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 
   .fixed-header {
     position: sticky;
     top: 0;
-    z-index: -888;
     background-color: #fff;
     padding-top: 4px;
 

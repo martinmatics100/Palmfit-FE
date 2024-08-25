@@ -1,0 +1,107 @@
+.subscription-container {
+    height: 100vh;
+    max-height: 95vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem; 
+  }
+  
+  .active-plan-section {
+    flex: 0 1 auto;
+    text-align: right;
+    margin-bottom: 0.5rem; // Adjust this value as needed
+  
+    .active-plan-card {
+      border: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem; 
+      margin-bottom: 0.5rem; 
+      width: 100%;
+      height: 35vh;
+      overflow: auto;
+      background-color: #1a8d8d;
+      color: #fff;
+    }
+  
+    .subscribe-button {
+      background-color: #fff;
+      border-color: 1px solid #fff;
+      color: #1a8d8d;
+      margin-top: 0.25rem; 
+      padding: 0.25rem 0.75rem; 
+      outline: none;
+  
+      &:hover {
+        background-color: #f2f2f2;
+        color: #1a8d8d;
+      }
+    }
+  }
+  
+  .wallet-section {
+    flex: 0 1 auto; 
+    text-align: center;
+    margin-top: -2rem !important;
+
+    
+    .wallet-card {
+      background-color: #1a8d8d;
+      color: white;
+      padding: 0.75rem; 
+      border-radius: 5px;
+      height: 35vh;
+  
+      .wallet-title {
+        font-size: 1rem; 
+        margin-bottom: 0.25rem;
+      }
+  
+      .wallet-balance {
+        font-size: 1.5rem; 
+        font-weight: bold;
+      }
+  
+      .wallet-status {
+        margin-top: 0.25rem; 
+        color: #e0e0e0;
+        font-size: 0.8rem; 
+      }
+    }
+  
+    .fund-wallet-button {
+      border-color: #1a8d8d;
+      color: #1a8d8d;
+      margin-top: 0.5rem; 
+      padding: 0.25rem 0.75rem; 
+  
+      &:hover {
+        background-color: #1a8d8d;
+        color: white;
+        border-color: #1a8d8d;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .active-plan-section {
+      text-align: center;
+    }
+  
+    .subscribe-button {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  
+    .wallet-section {
+      .wallet-card {
+        padding: 0.5rem;
+      }
+  
+      .fund-wallet-button {
+        width: 100%;
+      }
+    }
+  }
+  

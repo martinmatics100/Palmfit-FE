@@ -1,9 +1,10 @@
 import React from "react";
+import SettingsPage from "../../components/Settings/SettingComponent";
 
 const Setting = () => {
   return (
     <div>
-      <h1>Setting</h1>
+      <SettingsPage />
     </div>
   );
 };
