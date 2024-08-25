@@ -346,7 +346,7 @@ const FoodCategories = [
   },
   {
     name: "Beverages",
-    image: "/images/beverages.jpg",
+    image: image1,
     foods: [
       // Water
       "Still Water",
@@ -389,7 +389,7 @@ const FoodCategories = [
   },
   {
     name: "Sweets and Confectioneries",
-    image: "/images/sweets-snacks.jpg",
+    image: image1,
     foods: [
       // Candies
       "Hard Candy",
@@ -414,7 +414,7 @@ const FoodCategories = [
   },
   {
     name: "Condiments and Sauces",
-    image: "/images/condiments.jpg",
+    image: image1,
     foods: [
       // Dressings
       "Ranch",
@@ -442,7 +442,7 @@ const FoodCategories = [
   },
   {
     name: "Herbs and Spices",
-    image: "/images/herbs-spices.jpg",
+    image: image1,
     foods: [
       // Herbs
       "Basil",
@@ -469,7 +469,7 @@ const FoodCategories = [
   },
   {
     name: "Processed Foods",
-    image: "/images/processed.jpg",
+    image: image1,
     foods: [
       // Canned Goods
       "Canned Beans",
@@ -495,7 +495,7 @@ const FoodCategories = [
   },
   {
     name: "Fermented Foods",
-    image: "/images/fermented.jpg",
+    image: image1,
     foods: [
       // Dairy
       "Yogurt",
@@ -516,7 +516,7 @@ const FoodCategories = [
   },
   {
     name: "Alternative and Specialty Diet Foods",
-    image: "/images/specialty.jpg",
+    image: image1,
     foods: [
       // Gluten-Free
       "Gluten-Free Bread",

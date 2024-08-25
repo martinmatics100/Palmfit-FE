@@ -1,0 +1,171 @@
+.daily-meal-plan-details {
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+  
+      thead {
+        background-color: #1a8d8d;
+        color: #ffffff;
+  
+        tr {
+          th {
+            padding: 12px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+      }
+  
+      tbody {
+        tr {
+          border-bottom: 1px solid #f0f0f0;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: #f5f5f5;
+          }
+  
+          td {
+            padding: 12px;
+            font-size: 14px;
+            color: #333333;
+  
+            &:first-child {
+              font-weight: bold;
+              color: #1a8d8d;
+            }
+  
+            &:last-child {
+              text-align: right;
+            }
+          }
+        }
+      }
+  
+      .meal-details {
+        background-color: #f9f9f9;
+        padding: 10px 20px;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+        opacity: 1;
+        max-height: 1000px;
+  
+        .food-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0;
+          border-bottom: 1px solid #e0e0e0;
+
+          span {
+            &:first-child {
+              flex: 1;
+              text-align: left;
+              color: #1a8d8d;
+            }
+            &:nth-child(2) {
+              flex: 1;
+              text-align: center;
+            }
+            &:last-child {
+              flex: 1;
+              text-align: right;
+            }
+          }
+  
+          &:last-child {
+            border-bottom: none;
+          }
+  
+          span {
+            font-size: 14px;
+            color: #555555;
+          }
+        }
+      }
+  
+      .collapsed .meal-details {
+        opacity: 0;
+        max-height: 0;
+      }
+    }
+  }
+  
+
+  .weekly-meal-plan-details {
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+  
+      tbody {
+        tr {
+          border-bottom: 1px solid #f0f0f0;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: #f5f5f5;
+          }
+  
+          td {
+            padding: 12px;
+            font-size: 14px;
+            color: #333333;
+  
+            &:first-child {
+              font-weight: bold;
+              color: #1a8d8d;
+            }
+  
+            &:last-child {
+              text-align: right;
+            }
+          }
+        }
+  
+        .meal-details {
+          background-color: #f9f9f9;
+          padding: 10px 20px;
+          transition: max-height 0.5s ease, opacity 0.5s ease;
+          opacity: 1;
+          max-height: 1000px;
+  
+          .food-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+  
+            &:last-child {
+              border-bottom: none;
+            }
+  
+            span {
+              font-size: 14px;
+              color: #555555;
+            }
+          }
+        }
+  
+        .collapsed .meal-details {
+          opacity: 0;
+          max-height: 0;
+        }
+      }
+    }
+  }
+  

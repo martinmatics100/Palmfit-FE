@@ -43,7 +43,7 @@ function App() {
           <Route path="/new-password" element={<NewPassword />} />
           <Route element={<Sidebar />}>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/meal-plan" element={<MealPlan />} />
+            <Route path="/meal-plan/*" element={<MealPlan />} />
             <Route path="/meal-diary" element={<Mealdiary />} />
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/settings" element={<Setting />} />
