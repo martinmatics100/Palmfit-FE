@@ -3,24 +3,17 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import "./SettingsPage.scss";
 import Subscrpition from "../MealPlanComponent/MealPlanPage";
 import NotificationSettings from "./Notification/NotificationSettings";
-import AccountSettings from "./Account/AccountSettings";
 import SupportHelp from "./SupportHelp/SupportHelp";
+import PrivacySettings from "./Privacy/PrivacySettings";
 
 const SettingsPage = () => {
-  const [activeSection, setActiveSection] = useState("account");
+  const [activeSection, setActiveSection] = useState("notifications");
 
   return (
     <Container className="settings-page">
       {/* Navigation Links */}
       <Row className="settings-nav">
         <Col>
-          <Button
-            variant="link"
-            className={activeSection === "account" ? "active" : ""}
-            onClick={() => setActiveSection("account")}
-          >
-            Account Settings
-          </Button>
           <Button
             variant="link"
             className={activeSection === "notifications" ? "active" : ""}
@@ -35,13 +28,13 @@ const SettingsPage = () => {
           >
             Privacy Settings
           </Button>
-          <Button
+          {/* <Button
             variant="link"
             className={activeSection === "subscription" ? "active" : ""}
             onClick={() => setActiveSection("subscription")}
           >
             Subscription & Billing
-          </Button>
+          </Button> */}
           <Button
             variant="link"
             className={activeSection === "support" ? "active" : ""}
@@ -55,11 +48,6 @@ const SettingsPage = () => {
       {/* Render the Active Section */}
       <Row className="settings-content">
         <Col>
-          {activeSection === "account" && (
-            <div>
-              <AccountSettings />
-            </div>
-          )}
           {activeSection === "notifications" && (
             <div>
               <h2>Notification Settings</h2>
@@ -75,9 +63,10 @@ const SettingsPage = () => {
             <div>
               <h2>Privacy Settings</h2>
               <p>Control your privacy preferences and data sharing options.</p>
+              <PrivacySettings />
             </div>
           )}
-          {activeSection === "subscription" && (
+          {/* {activeSection === "subscription" && (
             <div>
               <h2>Subscription & Billing</h2>
               <p>
@@ -85,7 +74,7 @@ const SettingsPage = () => {
                 history.
               </p>
             </div>
-          )}
+          )} */}
           {activeSection === "support" && (
             <div>
               <h2>Support & Help</h2>
