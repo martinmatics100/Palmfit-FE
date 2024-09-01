@@ -62,7 +62,7 @@ const NotificationSettings = () => {
           ...prev,
           [key]: false,
         }));
-      }, 5000); // 5 seconds
+      }, 5000);
     }
   };
 

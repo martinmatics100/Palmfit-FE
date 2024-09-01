@@ -22,6 +22,7 @@
   form .btn {
     background-color: #1A8D8D;
     color: #fff;
+    height: auto;
   }
 
   form .btn:hover {
@@ -79,6 +80,7 @@
   .input-group .toggle-button {
     padding: 5px 10px;
     font-size: 17px;
+    height: auto;
     width: auto;
     background-color: #1A8D8D;
   }
