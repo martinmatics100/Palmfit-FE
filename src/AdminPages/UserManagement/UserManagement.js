@@ -10,7 +10,7 @@ const UserManagement = () => {
     <div>
       <Routes>
         <Route path="/" element={<UserHome />} />
-        <Route path="user/:id" element={<SinglePage />} />
+        <Route path="user/:userId" element={<SinglePage />} />
         <Route
           path="/new-user"
           element={<AddNewUser inputs={userInputs} title="Add New User" />}

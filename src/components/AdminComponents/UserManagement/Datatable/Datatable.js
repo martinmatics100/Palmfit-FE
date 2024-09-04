@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Datatable.scss";
-import DatatableSource from "../../../../utils/DatatableSource";
+import photo from "../../../../Assets/profilePicAvatar.png";
+
 import { Link } from "react-router-dom";
+import { fetchUsers } from "../../../../api/UserServices";
 
 const Datatable = () => {
   const [users, setUsers] = useState([]);
@@ -11,28 +13,18 @@ const Datatable = () => {
   const itemsPerPage = 10;
 
   useEffect(() => {
-    // Simulate fetching data from an API
     const fetchData = async () => {
-      // Using dummy data for now
-      const result = await new Promise((resolve) =>
-        setTimeout(
-          () =>
-            resolve(
-              DatatableSource.map((user, index) => ({
-                ...user,
-                id: index + 1,
-              }))
-            ),
-          1000
-        )
-      );
-      setUsers(result);
+      try {
+        const result = await fetchUsers();
+        setUsers(result);
+      } catch (error) {
+        console.error("Failed to fetch users:", error);
+      }
     };
 
     fetchData();
   }, []);
 
-  // Calculate the indices for the users to be displayed
   const indexOfLastUser = currentPage * itemsPerPage;
   const indexOfFirstUser = indexOfLastUser - itemsPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
@@ -57,7 +49,6 @@ const Datatable = () => {
     }));
   };
 
-  // Handle next page
   const nextPage = () => {
     if (currentPage < Math.ceil(users.length / itemsPerPage)) {
       setCurrentPage(currentPage + 1);
@@ -66,7 +57,6 @@ const Datatable = () => {
     }
   };
 
-  // Handle previous page
   const prevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
@@ -77,11 +67,10 @@ const Datatable = () => {
 
   const handlePageClick = (number) => {
     setCurrentPage(number);
-    setSelectAll(false); // Reset selectAll when navigating to a new page
-    setCheckedUsers({}); // Reset checkedUsers when navigating to a new page
+    setSelectAll(false);
+    setCheckedUsers({});
   };
 
-  // Generate page numbers with ellipsis logic
   const totalPages = Math.ceil(users.length / itemsPerPage);
   const pageNumbers = [];
   if (totalPages <= 6) {
@@ -113,7 +102,6 @@ const Datatable = () => {
     }
   }
 
-  // Calculate the number of selected users
   const selectedCount = Object.values(checkedUsers).filter(Boolean).length;
 
   return (
@@ -167,16 +155,35 @@ const Datatable = () => {
                   </td>
                   <td>{indexOfFirstUser + index + 1}</td>
                   <td>
-                    <img src={user.avatar} alt="avatar" />
+                    <img src={user.imageUrl || photo} alt="avatar" />
                   </td>
                   <td>
                     <Link to={`/user-management/user/${user.id}`}>
-                      {user.name}
+                      {user.firstName} {user.lastName}
                     </Link>
                   </td>
-                  <td>{user.email}</td>
-                  <td>{user.gender}</td>
-                  <td>{user.username}</td>
+                  <td>
+                    {user.email || (
+                      <span className="default-message">
+                        Email Not Provided
+                      </span>
+                    )}
+                  </td>
+                  <td>
+                    {user.gender === "Male" ? (
+                      "M"
+                    ) : user.gender === "Female" ? (
+                      "F"
+                    ) : (
+                      <span className="default-message">Not available</span>
+                    )}
+                  </td>
+
+                  <td>
+                    {user.userName || (
+                      <span className="default-message">Not available</span>
+                    )}
+                  </td>
                   <td>
                     <button>
                       <i className="fa-solid fa-pen-to-square"></i>
