@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -28,9 +28,12 @@ import Support from "./AdminPages/Support/Support";
 import SinglePage from "./AdminPages/UserSinglePage/SinglePage";
 import AddNewUser from "./components/New/NewUser/AddNewUser";
 import { mealPlanInputs, userInputs } from "./utils/FormSource";
+import axios, { AxiosResponse } from "axios";
+import { urlGetAllUsers } from "./endpoints";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
+
   return (
     <UserProvider>
       <div className={darkMode ? "app dark" : "app"}>
