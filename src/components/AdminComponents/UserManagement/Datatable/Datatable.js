@@ -13,17 +13,21 @@ const Datatable = () => {
   const itemsPerPage = 10;
 
   useEffect(() => {
+    // Ensure fetchData runs only once
     const fetchData = async () => {
       try {
-        const result = await fetchUsers();
-        setUsers(result);
+        if (users.length === 0) {
+          // Ensure that users aren't fetched again if they already exist
+          const result = await fetchUsers();
+          setUsers(result);
+        }
       } catch (error) {
         console.error("Failed to fetch users:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, []); // Empty dependency array ensures this runs once
 
   const indexOfLastUser = currentPage * itemsPerPage;
   const indexOfFirstUser = indexOfLastUser - itemsPerPage;

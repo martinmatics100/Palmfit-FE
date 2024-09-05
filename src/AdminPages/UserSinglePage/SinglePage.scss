@@ -28,14 +28,15 @@
         }
   
         h2 {
-          font-size: 24px;
+          font-size: 25px;
+          font-weight: 700;
           margin: 0;
-          color: #333;
+          color: #1A8D8D;
         }
   
         .user-username {
-          font-size: 16px;
-          color: #777;
+          font-size: 18px;
+          color: #1A8D8D;
           margin-top: 5px;
         }
       }
@@ -45,18 +46,30 @@
           display: flex;
           justify-content: space-between;
           margin-bottom: 15px;
+          background-color: #1a8d8d1a;
+          padding: 10px;
+          border-radius: 10px;
   
           label {
-            font-weight: bold;
-            color: #555;
+            font-weight: 700;
+            font-size: 16px;
+            color: #1A8D8D;
           }
   
           p {
             color: #333;
             margin: 0;
+            font-size: 16px;
+            font-weight: 800;
           }
         }
       }
     }
   }
   
+
+  .not-available {
+    color: #7c131373;
+    font-weight: 700; // Optional: To make it stand out more
+    font-size: 12px;
+  }
