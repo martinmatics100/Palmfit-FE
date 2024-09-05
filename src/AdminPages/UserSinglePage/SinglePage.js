@@ -4,6 +4,8 @@ import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import userPlaceholder from "../../Assets/profilePicAvatar.png";
 import { fetchUserById } from "../../api/UserServices";
 import { useParams } from "react-router-dom";
+import dayjs from "dayjs";
+import ErrorPage from "../../components/Error/ErrorPage";
 
 const SinglePage = () => {
   const { userId } = useParams();
@@ -13,7 +15,7 @@ const SinglePage = () => {
 
   useEffect(() => {
     const getUserData = async () => {
-      setLoading(true); // Set loading to true before fetching data
+      setLoading(true);
       try {
         const user = await fetchUserById(userId);
         setUserDetails(user);
@@ -35,7 +37,7 @@ const SinglePage = () => {
   }
 
   if (error) {
-    return <div className="error-message">{error}</div>;
+    return <ErrorPage message={error} />;
   }
 
   if (!userDetails) {
@@ -70,6 +72,98 @@ const SinglePage = () => {
     lastLogin,
   } = userDetails;
 
+  // Enum descriptions
+  const HeightUnitMap = {
+    1: "Cm",
+    2: "In",
+    3: "Ft",
+  };
+
+  const WeightUnitMap = {
+    1: "Kg",
+    2: "lbs",
+  };
+
+  const WeightGoalMap = {
+    1: "Lose Weight",
+    2: "Maintain Weight",
+    3: "Gain Weight",
+  };
+
+  // Function to map enum values to human-readable text
+  const mapEnumValue = (value, type) => {
+    if (type === "gender") {
+      return value === "1" ? "Male" : value === "2" ? "Female" : null;
+    } else if (type === "accountStatus") {
+      return value === "1" ? "Active" : value === "2" ? "Inactive" : null;
+    } else if (type === "onlineStatus") {
+      return value === "1" ? "Online" : value === "2" ? "Offline" : null;
+    } else if (type === "heightUnit") {
+      return HeightUnitMap[value] || "Not available";
+    } else if (type === "weightUnit") {
+      return WeightUnitMap[value] || "Not available";
+    } else if (type === "weightGoal") {
+      return WeightGoalMap[value] || "Not available";
+    } else {
+      return value || "Not available";
+    }
+  };
+
+  // Utility function to format dates
+  const getDaySuffix = (day) => {
+    if (day >= 11 && day <= 13) {
+      return "th"; // Special case for 11th, 12th, 13th
+    }
+    switch (day % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  };
+
+  // Function to format the date string
+  const formatDate = (dateString) => {
+    if (!dateString || dateString === "0001-01-01T00:00:00") return null;
+
+    const date = dayjs(dateString);
+    const day = date.date(); // Get the day of the month
+    const suffix = getDaySuffix(day); // Determine the suffix
+
+    return date.format(`D${suffix}-MMMM-YYYY`); // Format the date with suffix
+  };
+
+  // Function to render values with appropriate class
+  const renderValue = (value, type) => {
+    if (type === "date") {
+      const formattedDate = formatDate(value);
+      return (
+        <span className={!formattedDate ? "not-available" : ""}>
+          {formattedDate || "Not available"}
+        </span>
+      );
+    } else if (type === "height" || type === "weight") {
+      return (
+        <span className={!value || value === 0 ? "not-available" : ""}>
+          {value && value !== 0 ? `${value}` : "Not available"}
+        </span>
+      );
+    } else {
+      const mappedValue = mapEnumValue(value, type);
+      return (
+        <span
+          className={!mappedValue || mappedValue === 0 ? "not-available" : ""}
+        >
+          {mappedValue || "Not available"}
+        </span>
+      );
+    }
+  };
+
   return (
     <div className="single-page-container">
       <div className="user-details">
@@ -79,85 +173,83 @@ const SinglePage = () => {
             alt="User Profile"
             className="user-image"
           />
-          <h2>
-            {firstName} {lastName}
-          </h2>
-          <p className="user-username">@{userName}</p>
+          <h2>{renderValue(`${firstName} ${lastName}`, "text")}</h2>
+          <p className="user-username">{renderValue(userName, "text")}</p>
         </div>
 
         <div className="user-info">
           <div className="info-group">
             <label>Email:</label>
-            <p>{email || "Not available"}</p>
+            <p>{renderValue(email, "text")}</p>
           </div>
           <div className="info-group">
             <label>Gender:</label>
-            <p>
-              {gender === "Male"
-                ? "Male"
-                : gender === "Female"
-                ? "Female"
-                : "Not available"}
-            </p>
+            <p>{renderValue(gender, "gender")}</p>
           </div>
           <div className="info-group">
             <label>Date of Birth:</label>
-            <p>{dateOfBirth || "Not available"}</p>
+            <p>{renderValue(dateOfBirth, "date")}</p>
           </div>
           <div className="info-group">
             <label>Phone Number:</label>
-            <p>{phoneNumber || "Not available"}</p>
+            <p>{renderValue(phoneNumber, "text")}</p>
           </div>
           <div className="info-group">
             <label>Address:</label>
             <p>
-              {street}, {city}, {state}, {postalCode},{" "}
-              {country || "Not available"}
+              {renderValue(
+                `${street || ""}, ${city || ""}, ${state || ""}, ${
+                  postalCode || ""
+                }, ${country || ""}`,
+                "text"
+              )}
             </p>
           </div>
           <div className="info-group">
             <label>Height:</label>
             <p>
-              {height} {heightUnit || "Not available"}
+              {renderValue(height, "height")}{" "}
+              {renderValue(heightUnit, "heightUnit")}
             </p>
           </div>
           <div className="info-group">
             <label>Weight:</label>
             <p>
-              {weight} {weightUnit || "Not available"}
+              {renderValue(weight, "weight")}{" "}
+              {renderValue(weightUnit, "weightUnit")}
             </p>
           </div>
           <div className="info-group">
             <label>Activity Level:</label>
-            <p>{activityLevel || "Not available"}</p>
+            <p>{renderValue(activityLevel, "text")}</p>
           </div>
           <div className="info-group">
             <label>Fitness Level:</label>
-            <p>{fitnessLevel || "Not available"}</p>
+            <p>{renderValue(fitnessLevel, "text")}</p>
           </div>
           <div className="info-group">
             <label>Weight Goal:</label>
-            <p>{weightGoal || "Not available"}</p>
+            <p>{renderValue(weightGoal, "weightGoal")}</p>
           </div>
           <div className="info-group">
             <label>Subscription Plan:</label>
-            <p>{subscriptionPlan || "Not available"}</p>
+            <p>{renderValue(subscriptionPlan, "text")}</p>
           </div>
           <div className="info-group">
             <label>Subscription Expiry:</label>
-            <p>{subscriptionExpiry || "Not available"}</p>
+            <p>{renderValue(subscriptionExpiry, "date")}</p>
           </div>
           <div className="info-group">
             <label>Account Status:</label>
-            <p>{accountStatus || "Not available"}</p>
+            <p>{renderValue(accountStatus, "accountStatus")}</p>
           </div>
           <div className="info-group">
             <label>Online Status:</label>
-            <p>{onlineStatus || "Not available"}</p>
+            <p>{renderValue(onlineStatus, "onlineStatus")}</p>
           </div>
           <div className="info-group">
             <label>Last Login:</label>
-            <p>{lastLogin || "Not available"}</p>
+            <p>{renderValue(lastLogin, "date")}</p>
           </div>
         </div>
       </div>

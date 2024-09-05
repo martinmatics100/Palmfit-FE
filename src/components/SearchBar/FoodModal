@@ -1,0 +1,23 @@
+// Modal.js
+import React from "react";
+import "./SearchBar.scss";
+
+const FoodModal = ({ show, onClose, selectedFood }) => {
+  if (!show) return null;
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal-container">
+        <button className="close-button" onClick={onClose}>
+          &times;
+        </button>
+        <h2>{selectedFood.name}</h2>
+        <p>ID: {selectedFood.id}</p>
+        <p>Email: {selectedFood.email}</p>
+        You can display more details here
+      </div>
+    </div>
+  );
+};
+
+export default FoodModal;

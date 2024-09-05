@@ -1,0 +1,38 @@
+
+.error-page-wrapper {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .error-page {
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #1a8d8d;
+    color: #fff;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .error-page h1 {
+    color: #fff;
+  }
+  
+  .error-page p {
+    margin: 10px 0;
+  }
+  
+  .error-page a {
+    color: #fff;
+    opacity: 0.5;
+    text-decoration: none;
+  }
+  
+  .error-page a:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+  
