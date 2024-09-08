@@ -4,7 +4,7 @@ import "./SearchBar.scss";
 import { json } from "react-router-dom";
 import { fetchFilteredUsers } from "../../api/UserServices";
 
-const SearchBar = ({ setResults }) => {
+const SearchBar = ({ setResults }) => { 
   const [input, setInput] = useState("");
 
   const fetchData = async (value) => {

@@ -10,7 +10,7 @@ const EditProfileModal = ({
 }) => {
   return (
     <Modal show={show} onHide={handleClose} centered className="w-100">
-      <Modal.Header closeButton>
+      <Modal.Header closeButton className="edit-modal">
         <Modal.Title>Edit Profile</Modal.Title>
       </Modal.Header>
       <Modal.Body>

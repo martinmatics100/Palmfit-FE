@@ -82,18 +82,15 @@
     }
 
     @media (max-width: 1199px) {
-
       .toggle-icon {
         color: #fff;
       }
-      
+
       .navmenu ul {
         background-color: #222;
         border: 2px solid #fff;
       }
-  
     }
-    
 
     .navmenu ul li .icon {
       color: #fff;
@@ -428,13 +425,12 @@
         }
       }
     }
-  
-  
-      button {
-        background-color: #222;
-        color: #fff;
-        border: 1px solid #fff;
-      }
+
+    button {
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #fff;
+    }
   }
 
   // CalorieResult.scss
@@ -486,8 +482,284 @@
   // Meal diary
 
   .meal-diary-container {
-
     width: 100%;
     height: 100vh;
-  }  
+  }
+
+  // Users MealPlan styling
+
+  // DetailsPerMealPlan styline
+
+  .mealPlan-details-page {
+    .gender {
+      .gender-btn {
+        color: #fff;
+        background-color: #222;
+        border: 0.0625rem solid #fff;
+
+        &.selected {
+          background-color: #fff;
+          color: #222;
+        }
+      }
+    }
+
+    .plan-details {
+      .plan-info {
+        .calories {
+          font-size: 1rem;
+          color: #ffffff7e;
+        }
+      }
+
+      .get-plan-btn {
+        background-color: #222;
+        color: #fff;
+        border: 1px solid #fff;
+
+        &:hover {
+          background-color: #fff;
+          color: #222;
+        }
+      }
+    }
+  }
+
+  // Daily Meal Plan Details
+
+  .daily-meal-plan-details {
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+
+      thead {
+        background-color: #1a8d8d;
+        color: #ffffff;
+
+        tr {
+          th {
+            padding: 12px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          border-bottom: 1px solid #f0f0f0;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #f5f5f5;
+          }
+
+          td {
+            padding: 12px;
+            font-size: 14px;
+            color: #333333;
+
+            &:first-child {
+              font-weight: bold;
+              color: #1a8d8d;
+            }
+
+            &:last-child {
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      .meal-details {
+        background-color: #f9f9f9;
+        padding: 10px 20px;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+        opacity: 1;
+        max-height: 1000px;
+
+        .food-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0;
+          border-bottom: 1px solid #e0e0e0;
+
+          span {
+            &:first-child {
+              flex: 1;
+              text-align: left;
+              color: #1a8d8d;
+            }
+            &:nth-child(2) {
+              flex: 1;
+              text-align: center;
+            }
+            &:last-child {
+              flex: 1;
+              text-align: right;
+            }
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          span {
+            font-size: 14px;
+            color: #555555;
+          }
+        }
+      }
+
+      .collapsed .meal-details {
+        opacity: 0;
+        max-height: 0;
+      }
+    }
+  }
+
+  // Meal Diary Styling
+
+  .meal-diary-container {
+    .fixed-header {
+      background-color: #222;
+
+      h1 {
+        color: #fff;
+      }
+
+      p {
+        color: #fff;
+      }
+    }
+  }
+
+  .input-Wrapper {
+    background-color: #222;
+    box-shadow: 0px 0px 8px #fff;
+    border: 1px solid #ddd;
+
+    input {
+      background-color: transparent;
+      color: #ddd;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    #search-icon {
+      color: #fff;
+    }
+  }
+
+  .result-list {
+    background-color: #222;
+    color: #fff;
+    border-top: none;
+  }
+
+  .search-result {
+    padding: 10px 20px;
+
+    &:hover {
+      background-color: #ddd;
+      color: #222;
+      cursor: pointer;
+    }
+  }
+
+  .food-category {
+    background-color: #222;
+    box-shadow: 0 2px 5px #fff;
+    border: 1px solid #fff;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .category-name {
+      color: #fff;
+    }
+
+    .category-foods {
+      color: #ffffff80;
+    }
+  }
+
+  // User Profile Styling
+
+  .card Button {
+    background-color: #222;
+    border: 1px solid #fff;
+    outline: none;
+  }
+
+  .card Button:hover {
+    background-color: #fff;
+    border: 1px solid #222;
+    color: #001a1a;
+    font-weight: 700;
+  }
+
+  .label {
+    color: #ddd;
+  }
+
+  .profile-icon-container {
+    background-color: #222;
+  }
+
+  .profile-icon {
+    color: #fff;
+  }
+
+  .edit-icon-container {
+    color: #fff;
+    background-color: transparent;
+  }
+
+  .custom-input {
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: #dddddd88;
+  }
+
+  .custom-input:focus {
+    outline: none;
+    border-color: none;
+    overlay: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .referral-section .referral-text h4,
+  .referral-section .referral-link h4 {
+    color: #fff;
+  }
+
+  .referral-section .referral-icons span:nth-child(1) {
+    color: green;
+  }
+
+  .referral-section .referral-icons span:nth-child(2) {
+    color: #395185;
+  }
+
+  .referral-section .referral-icons span:nth-child(3) {
+    color: #55acee;
+  }
+
+  .referral-section .referral-icons span:nth-child(1):hover,
+  .referral-section .referral-icons span:nth-child(2):hover,
+  .referral-section .referral-icons span:nth-child(3):hover {
+    opacity: 1;
+  }
+
+  .edit-modal .edit-modal {
+    background-color: red;
+  }
 }

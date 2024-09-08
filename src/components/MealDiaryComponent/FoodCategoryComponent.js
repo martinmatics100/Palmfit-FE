@@ -11,4 +11,4 @@ const FoodCategoryComponent = ({ name, image, foods }) => {
   );
 };
 
-export default FoodCategoryComponent;
+export default FoodCategoryComponent; 

@@ -1,4 +1,8 @@
-/* .profile-picture {
+.container-content {
+  height: 100%;
+}
+
+.profile-picture {
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -39,9 +43,24 @@
   text-transform: uppercase;
 }
 
+.profile-icon-container {
+  background-color: #fff;
+}
+
+.profile-icon {
+  color: #1a8d8d;
+}
+
+.edit-icon-container {
+  color: #1a8d8d;
+  background-color: transparent;
+}
+
 .custom-input {
-  font-size: 1.2rem;
-  background-color: red;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #000;
+  font-weight: 600;
 }
 
 .custom-input:focus {
@@ -50,6 +69,10 @@
   overlay: none;
   box-shadow: none;
   background-color: transparent;
+}
+
+.referral-section {
+  margin-top: 15%;
 }
 
 .referral-section .referral-text h4,
@@ -81,4 +104,17 @@
 .referral-section .referral-icons span:nth-child(2):hover,
 .referral-section .referral-icons span:nth-child(3):hover {
   opacity: 1;
-} */
+}
+
+@media (max-width: 768px) {
+  .referral-section {
+    margin-top: 50rem;
+  }
+}
+
+
+@media (max-width: 780px) {
+  .referral-section {
+    margin-top: 50rem;
+  }
+}

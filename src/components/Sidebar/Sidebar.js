@@ -17,6 +17,8 @@ import FeedbackIcon from "@mui/icons-material/Feedback";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import MoreVertIcon from "@mui/icons-material/MoreVert"; // Import the three dots icon
+import { Menu, MenuItem } from "@mui/material"; // Import Menu and MenuItem from Material UI
 import { DarkModeContext } from "../../Context/darkModeContext";
 import { useUser } from "../../Context/UserContext";
 
@@ -27,6 +29,19 @@ const Sidebar = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [role, setRole] = useState(localStorage.getItem("userRole"));
   const location = useLocation();
+
+  // State for dropdown menu
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  // Handle opening and closing the dropdown
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   const isActive = (path) => location.pathname.startsWith(path);
 
@@ -102,7 +117,7 @@ const Sidebar = () => {
         <AutoStoriesIcon className="nav-link-logo" />
         <span className="nav-link-name">Meal Plan Admin</span>
       </Link>
-      <Link
+      {/* <Link
         to="/content-management"
         className={`nav-link ${
           isActive("/content-management") ? "active" : ""
@@ -117,7 +132,7 @@ const Sidebar = () => {
       >
         <ReportIcon className="nav-link-logo" />
         <span className="nav-link-name">Reports Admin</span>
-      </Link>
+      </Link> */}
       <Link
         to="/feedback"
         className={`nav-link ${isActive("/feedback") ? "active" : ""}`}
@@ -125,13 +140,13 @@ const Sidebar = () => {
         <FeedbackIcon className="nav-link-logo" />
         <span className="nav-link-name">Feedback</span>
       </Link>
-      <Link
+      {/* <Link
         to="/support"
         className={`nav-link ${isActive("/support") ? "active" : ""}`}
       >
         <SupportAgentIcon className="nav-link-logo" />
         <span className="nav-link-name">Support</span>
-      </Link>
+      </Link> */}
       <Link
         to="/settings"
         className={`nav-link ${isActive("/settings") ? "active" : ""}`}
@@ -168,12 +183,47 @@ const Sidebar = () => {
               {/* <span>Martin{user?.firstName}</span> */}
             </h5>
           </div>
+
+          {/* Three dots (ellipsis) for dropdown menu */}
           <div className="item">
+            <MoreVertIcon
+              className="icon notShowOnMobile"
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleMenuClick}
+              style={{ cursor: "pointer" }}
+            />
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={open}
+              onClose={handleMenuClose}
+            >
+              <MenuItem onClick={handleMenuClose}>
+                <div>
+                  <div>
+                    <Link to="/profile">Profile</Link>
+                  </div>
+                  <div>
+                    <Link to="/profile">Toggle bar</Link>
+                  </div>
+                  <div className="item">
+                    <DarkModeIcon
+                      className="icon notShowOnMobile"
+                      onClick={() => dispatch({ type: "TOGGLE" })}
+                    />
+                  </div>
+                </div>
+              </MenuItem>
+            </Menu>
+          </div>
+          {/* <div className="item">
             <DarkModeIcon
               className="icon notShowOnMobile"
               onClick={() => dispatch({ type: "TOGGLE" })}
             />
-          </div>
+          </div> */}
         </div>
       </header>
 
@@ -190,7 +240,7 @@ const Sidebar = () => {
             </div>
           </div>
 
-          <Link to="/logout" className="nav-link">
+          <Link to="./login" className="nav-link">
             <LogoutIcon className="nav-link-logo" />
             <span className="nav-link-name">Logout</span>
           </Link>

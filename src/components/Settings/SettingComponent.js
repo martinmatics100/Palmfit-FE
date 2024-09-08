@@ -21,13 +21,13 @@ const SettingsPage = () => {
           >
             Notification Settings
           </Button>
-          <Button
+          {/* <Button
             variant="link"
             className={activeSection === "privacy" ? "active" : ""}
             onClick={() => setActiveSection("privacy")}
           >
             Privacy Settings
-          </Button>
+          </Button> */}
           {/* <Button
             variant="link"
             className={activeSection === "subscription" ? "active" : ""}
@@ -59,13 +59,13 @@ const SettingsPage = () => {
               <NotificationSettings />
             </div>
           )}
-          {activeSection === "privacy" && (
+          {/* {activeSection === "privacy" && (
             <div>
               <h2>Privacy Settings</h2>
               <p>Control your privacy preferences and data sharing options.</p>
               <PrivacySettings />
             </div>
-          )}
+          )} */}
           {/* {activeSection === "subscription" && (
             <div>
               <h2>Subscription & Billing</h2>
