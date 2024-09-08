@@ -200,15 +200,18 @@ const Sidebar = () => {
               open={open}
               onClose={handleMenuClose}
             >
-              <MenuItem onClick={handleMenuClose}>
-                <div>
-                  <div>
+              <MenuItem
+                onClick={handleMenuClose}
+                className="menu-items-container"
+              >
+                <div className="menu-items">
+                  <div className="menu-item">
                     <Link to="/profile">Profile</Link>
                   </div>
-                  <div>
+                  <div className="menu-item">
                     <Link to="/profile">Toggle bar</Link>
                   </div>
-                  <div className="item">
+                  <div className="item menu-item">
                     <DarkModeIcon
                       className="icon notShowOnMobile"
                       onClick={() => dispatch({ type: "TOGGLE" })}

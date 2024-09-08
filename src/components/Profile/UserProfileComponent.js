@@ -30,22 +30,22 @@ const UserProfileComponent = () => {
     bmi: "",
   });
 
-  // State to manage which field is being edited
-  const [isEditing, setIsEditing] = useState({
-    firstName: false,
-    lastName: false,
-  });
+  // // State to manage which field is being edited
+  // const [isEditing, setIsEditing] = useState({
+  //   firstName: false,
+  //   lastName: false,
+  // });
 
-  // Function to toggle edit mode
-  const handleEditToggle = (field) => {
-    setIsEditing({ ...isEditing, [field]: !isEditing[field] });
-  };
+  // // Function to toggle edit mode
+  // const handleEditToggle = (field) => {
+  //   setIsEditing({ ...isEditing, [field]: !isEditing[field] });
+  // };
 
-  // Function to handle input changes
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setProfile({ ...profile, [name]: value });
-  };
+  // // Function to handle input changes
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setProfile({ ...profile, [name]: value });
+  // };
 
   const copyToClipboard = () => {
     const referralLink = "palmfit.com/referrals=1579292074940";
@@ -67,7 +67,7 @@ const UserProfileComponent = () => {
           <Form className="mt-3">
             <Row>
               {/* First Name */}
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formFirstName">
                   <Form.Label className="label">First Name</Form.Label>
                   <InputGroup>
@@ -78,30 +78,15 @@ const UserProfileComponent = () => {
                       type="text"
                       name="firstName"
                       value={profile.firstName}
-                      onChange={handleInputChange}
-                      readOnly={!isEditing.firstName} // Conditionally make it editable
+                      readOnly
                       className="custom-input"
                     />
-                    <InputGroup.Text className="edit-icon-container">
-                      {isEditing.firstName ? (
-                        <CheckIcon
-                          className="edit-icon"
-                          onClick={() => handleEditToggle("firstName")}
-                          style={{ cursor: "pointer" }}
-                        />
-                      ) : (
-                        <EditIcon
-                          onClick={() => handleEditToggle("firstName")}
-                          style={{ cursor: "pointer" }}
-                        />
-                      )}
-                    </InputGroup.Text>
                   </InputGroup>
                 </Form.Group>
               </Col>
 
               {/* Last Name */}
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formLastName">
                   <Form.Label className="label">Last Name</Form.Label>
                   <InputGroup>
@@ -112,30 +97,13 @@ const UserProfileComponent = () => {
                       type="text"
                       name="lastName"
                       value={profile.lastName}
-                      onChange={handleInputChange}
-                      readOnly={!isEditing.lastName}
+                      readOnly
                       className="custom-input"
                     />
-                    <InputGroup.Text className="edit-icon-container">
-                      {isEditing.lastName ? (
-                        <CheckIcon
-                          onClick={() => handleEditToggle("lastName")}
-                          style={{ cursor: "pointer" }}
-                        />
-                      ) : (
-                        <EditIcon
-                          onClick={() => handleEditToggle("lastName")}
-                          style={{ cursor: "pointer" }}
-                        />
-                      )}
-                    </InputGroup.Text>
                   </InputGroup>
                 </Form.Group>
               </Col>
-            </Row>
-
-            <Row>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formEmail">
                   <Form.Label className="label">Email</Form.Label>
                   <InputGroup>
@@ -152,7 +120,7 @@ const UserProfileComponent = () => {
                   </InputGroup>
                 </Form.Group>
               </Col>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formUserName">
                   <Form.Label className="label">Username</Form.Label>
                   <InputGroup>
@@ -171,7 +139,7 @@ const UserProfileComponent = () => {
               </Col>
             </Row>
             <Row>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formUserBio">
                   <Form.Label className="label">Bio</Form.Label>
                   <InputGroup>
@@ -188,7 +156,7 @@ const UserProfileComponent = () => {
                   </InputGroup>
                 </Form.Group>
               </Col>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formPhoneNumber">
                   <Form.Label className="label">Phone Number</Form.Label>
                   <InputGroup>
@@ -205,9 +173,7 @@ const UserProfileComponent = () => {
                   </InputGroup>
                 </Form.Group>
               </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formAddress">
                   <Form.Label className="label">Address</Form.Label>
                   <InputGroup>
@@ -224,7 +190,7 @@ const UserProfileComponent = () => {
                   </InputGroup>
                 </Form.Group>
               </Col>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formGender">
                   <Form.Label className="label">Gender</Form.Label>
                   <InputGroup>
@@ -242,8 +208,9 @@ const UserProfileComponent = () => {
                 </Form.Group>
               </Col>
             </Row>
+            <Row></Row>
             <Row>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formAddress">
                   <Form.Label className="label">Date of Birth</Form.Label>
                   <InputGroup>
@@ -260,7 +227,7 @@ const UserProfileComponent = () => {
                   </InputGroup>
                 </Form.Group>
               </Col>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formGender">
                   <Form.Label className="label">Height</Form.Label>
                   <InputGroup>
@@ -277,9 +244,7 @@ const UserProfileComponent = () => {
                   </InputGroup>
                 </Form.Group>
               </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formAddress">
                   <Form.Label className="label">Activity Level</Form.Label>
                   <InputGroup>
@@ -296,7 +261,7 @@ const UserProfileComponent = () => {
                   </InputGroup>
                 </Form.Group>
               </Col>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formGender">
                   <Form.Label className="label">Fitness Level</Form.Label>
                   <InputGroup>
@@ -315,7 +280,7 @@ const UserProfileComponent = () => {
               </Col>
             </Row>
             <Row>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formAddress">
                   <Form.Label className="label">Weight Goal</Form.Label>
                   <InputGroup>
@@ -332,7 +297,7 @@ const UserProfileComponent = () => {
                   </InputGroup>
                 </Form.Group>
               </Col>
-              <Col md={6}>
+              <Col md={3}>
                 <Form.Group controlId="formGender">
                   <Form.Label className="label">
                     BMI (Body Mass Index)
@@ -354,9 +319,41 @@ const UserProfileComponent = () => {
             </Row>
           </Form>
         </div>
+        <div className="referral-section p-4">
+          <Row>
+            <Col md={6} className="referral-text">
+              <h4>Referral</h4>
+              <p>Refer your friends and let them join you on this journey.</p>
+            </Col>
+            <Col md={6} className="referral-link">
+              <h4 className="share-referral-link">Share referral link</h4>
+              <InputGroup>
+                <Form.Control
+                  type="text"
+                  readOnly
+                  value="palmfit.com/referrals=1579292074940" // Replace with your actual referral link
+                />
+                <Button variant="secondary" onClick={copyToClipboard}>
+                  Copy Link
+                </Button>
+              </InputGroup>
+              <div className="mt-4 referral-icons">
+                <span className="mr-4 whatsapp">
+                  <WhatsAppIcon />
+                </span>
+                <span className="mr-4 facebook">
+                  <FacebookIcon />
+                </span>
+                <span className="mr-4 twitter">
+                  <TwitterIcon />
+                </span>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </div>
 
-      <div className="referral-section p-4">
+      {/* <div className="referral-section p-4">
         <Row>
           <Col md={6} className="referral-text">
             <h4>Referral</h4>
@@ -387,7 +384,7 @@ const UserProfileComponent = () => {
             </div>
           </Col>
         </Row>
-      </div>
+      </div> */}
     </div>
   );
 };
