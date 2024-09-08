@@ -11,12 +11,12 @@ const DailyMealPlanDetails = ({ meals }) => {
   return (
     <div className="daily-meal-plan-details">
       <table className="table">
-        <thead>
-          {/* <tr>
+        {/* <thead>
+          <tr>
             <th>Meal</th>
             <th>Total Calories</th>
-          </tr> */}
-        </thead>
+          </tr>
+        </thead> */}
         <tbody>
           {meals.map((meal) => (
             <React.Fragment key={meal.name}>
