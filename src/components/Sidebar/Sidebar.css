@@ -57,7 +57,7 @@ main {
   margin: 0 10px;
 }
 
-.sidebar-header .items .item h5 { 
+.sidebar-header .items .item h5 {
   color: #fff;
   font-weight: 700;
 }
@@ -117,7 +117,7 @@ main {
 .nav-logo,
 .nav-link {
   display: grid;
-  grid-template-columns: max-content max-content; 
+  grid-template-columns: max-content max-content;
   column-gap: 2rem;
   padding: 0.5rem 0 0.5rem 1.5rem;
 }
@@ -167,6 +167,29 @@ main {
 
 .show {
   left: 0;
+}
+
+.menu-items-container {
+  background-color: #f2f2f2;
+  width: 20rem;
+  height: 20rem;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  background-color: #1a8d8d;
+  padding: 35%;
+}
+
+.menu-item {
+  margin: 20px 0 20px 0;
+}
+
+.menu-item a {
+  color: red;
 }
 
 .space-toggle {

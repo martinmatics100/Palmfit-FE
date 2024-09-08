@@ -16,35 +16,36 @@
   object-fit: cover;
 }
 
-.card {
-  border: none;
-  width: 100%;
-  height: 100vh;
-  margin-top: 30px;
-}
+// .card {
+//   border: none;
+//   width: 100%;
+//   height: 100vh;
+//   margin-top: 30px;
+// }
 
-.card Button {
-  background-color: #1a8d8d;
-  border: none;
-  outline: none;
-}
+// .card Button {
+//   background-color: #1a8d8d;
+//   border: none;
+//   outline: none;
+// }
 
-.card Button:hover {
-  background-color: #fff;
-  border: 1px solid #1a8d8d;
-  color: #001a1a;
-  font-weight: 600;
-}
+// .card Button:hover {
+//   background-color: #fff;
+//   border: 1px solid #1a8d8d;
+//   color: #001a1a;
+//   font-weight: 600;
+// }
 
 .label {
   color: #1a8d8d;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .profile-icon-container {
   background-color: #fff;
+  height: 100%;
 }
 
 .profile-icon {
@@ -54,13 +55,17 @@
 .edit-icon-container {
   color: #1a8d8d;
   background-color: transparent;
+  height: 100%;
 }
 
 .custom-input {
-  font-size: 1rem;
+  font-size: 12px;
   background-color: transparent;
   color: #000;
   font-weight: 600;
+  height: 100%;
+  border: none;
+  outline: none;
 }
 
 .custom-input:focus {
@@ -71,15 +76,16 @@
   background-color: transparent;
 }
 
-.referral-section {
-  margin-top: 15%;
-}
-
 .referral-section .referral-text h4,
 .referral-section .referral-link h4 {
-  color: #001a1a;
+  color: #1a8d8d;
   font-weight: 600;
   font-size: 18px;
+}
+
+.referral-section .referral-text p {
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .referral-section .referral-icons span:nth-child(1) {
@@ -106,15 +112,15 @@
   opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .referral-section {
-    margin-top: 50rem;
-  }
-}
+// @media (max-width: 768px) {
+//   .referral-section {
+//     margin-top: 50rem;
+//   }
+// }
 
 
-@media (max-width: 780px) {
-  .referral-section {
-    margin-top: 50rem;
-  }
-}
+// @media (max-width: 780px) {
+//   .referral-section {
+//     margin-top: 50rem;
+//   }
+// }

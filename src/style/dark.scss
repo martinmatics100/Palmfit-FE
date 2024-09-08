@@ -723,7 +723,6 @@
   }
 
   .custom-input {
-    font-size: 1.2rem;
     background-color: transparent;
     color: #dddddd88;
   }
@@ -739,6 +738,10 @@
   .referral-section .referral-text h4,
   .referral-section .referral-link h4 {
     color: #fff;
+  }
+
+  .referral-section .referral-text p {
+    color: #dddddd88;
   }
 
   .referral-section .referral-icons span:nth-child(1) {
