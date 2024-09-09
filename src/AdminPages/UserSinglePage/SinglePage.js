@@ -93,7 +93,7 @@ const SinglePage = () => {
   // Function to map enum values to human-readable text
   const mapEnumValue = (value, type) => {
     if (type === "gender") {
-      return value === "1" ? "Male" : value === "2" ? "Female" : null;
+      return value === 1 ? "Male" : value === 2 ? "Female" : null;
     } else if (type === "accountStatus") {
       return value === "1" ? "Active" : value === "2" ? "Inactive" : null;
     } else if (type === "onlineStatus") {
@@ -111,18 +111,14 @@ const SinglePage = () => {
 
   // Utility function to format dates
   const getDaySuffix = (day) => {
-    if (day >= 11 && day <= 13) {
-      return "th"; // Special case for 11th, 12th, 13th
-    }
-    switch (day % 10) {
-      case 1:
-        return "st";
-      case 2:
-        return "nd";
-      case 3:
-        return "rd";
-      default:
-        return "th";
+    if (day === 1 || day === 21 || day === 31) {
+      return "st";
+    } else if (day === 2 || day === 22) {
+      return "nd";
+    } else if (day === 3 || day === 23) {
+      return "rd";
+    } else {
+      return "th";
     }
   };
 
@@ -134,7 +130,7 @@ const SinglePage = () => {
     const day = date.date(); // Get the day of the month
     const suffix = getDaySuffix(day); // Determine the suffix
 
-    return date.format(`D${suffix}-MMMM-YYYY`); // Format the date with suffix
+    return `${day}${suffix}-${date.format("MMMM-YYYY")}`; // Format the date with the correct suffix
   };
 
   // Function to render values with appropriate class
