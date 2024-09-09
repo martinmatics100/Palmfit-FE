@@ -174,10 +174,10 @@ const Datatable = () => {
                     )}
                   </td>
                   <td>
-                    {user.gender === "Male" ? (
-                      "M"
-                    ) : user.gender === "Female" ? (
-                      "F"
+                    {user.gender === 1 ? (
+                      "Male"
+                    ) : user.gender === 2 ? (
+                      "Female"
                     ) : (
                       <span className="default-message">Not available</span>
                     )}
