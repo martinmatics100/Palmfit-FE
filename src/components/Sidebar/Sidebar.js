@@ -17,8 +17,8 @@ import FeedbackIcon from "@mui/icons-material/Feedback";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import MoreVertIcon from "@mui/icons-material/MoreVert"; // Import the three dots icon
-import { Menu, MenuItem } from "@mui/material"; // Import Menu and MenuItem from Material UI
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { Menu, MenuItem } from "@mui/material";
 import { DarkModeContext } from "../../Context/darkModeContext";
 import { useUser } from "../../Context/UserContext";
 
@@ -170,11 +170,9 @@ const Sidebar = () => {
           <DoubleArrowIcon
             style={{ transform: show ? "rotate(180deg)" : "rotate(0deg)" }}
           />
-          {isHovered && (
-            <span className="custom-tooltip">
-              {show ? "Collapse sidebar" : "Expand sidebar"}
-            </span>
-          )}
+          {/* {isHovered && (
+            <span className="custom-tooltip">{show ? "" : ""}</span>
+          )} */}
         </div>
         <div className="items">
           <div className="item">
