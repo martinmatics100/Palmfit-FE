@@ -28,6 +28,7 @@ const Sidebar = () => {
   const { user } = useUser();
   const [show, setShow] = useState(false);
   const [role, setRole] = useState(localStorage.getItem("userRole"));
+  const [userName, setUserName] = useState(localStorage.getItem("userName"));
   const location = useLocation();
 
   const isActive = (path) => location.pathname.startsWith(path);
@@ -158,7 +159,7 @@ const Sidebar = () => {
           <div className="item">
             <h5>
               Hi <WavingHandIcon />
-              <span> Martin Nwatu{user?.firstName}</span>
+              <span> {userName ? userName : "Welcome"}</span>
             </h5>
           </div>
           {openProfile && <DropDownProfile />}

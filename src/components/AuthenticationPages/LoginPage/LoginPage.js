@@ -43,6 +43,7 @@ const LoginPage = () => {
 
     const backendData = [
       {
+        name: "Admin",
         email: "admin@gmail.com",
         password: "85465955",
         role: "admin",
@@ -50,6 +51,7 @@ const LoginPage = () => {
         status: "online",
       },
       {
+        name: "User",
         email: "user@gmail.com",
         password: "85465955",
         role: "user",
@@ -72,6 +74,8 @@ const LoginPage = () => {
 
         setTimeout(() => {
           setButtonLoading(false);
+          localStorage.setItem("userRole", user.role);
+          localStorage.setItem("userName", user.name);
           if (user.role === "admin") {
             navigate("/admin-dashboard");
           } else {
