@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Validations from "../Validations";
 import LoadingPage from "../../LoadingPage/LoadingPage";
 import Message from "../../Messages/Message";
+import Toast from "../../../Toast/Toast";
 
 const RegisterPage = () => {
   const [errors, setErrors] = useState({});
@@ -30,6 +31,12 @@ const RegisterPage = () => {
       setLoading(false);
     }, 3000);
   }, []);
+
+  const [toast, setToast] = useState({
+    showToast: false,
+    message: "",
+    type: "",
+  });
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
@@ -68,11 +75,14 @@ const RegisterPage = () => {
     for (const key in validationErrors) {
       if (validationErrors.hasOwnProperty(key)) {
         setErrors({ [key]: validationErrors[key] });
-        setGlobalError(validationErrors[key]); // Set global error message
+        setToast({
+          showToast: true,
+          message: validationErrors[key],
+          type: "error",
+        });
 
-        // Clear global error message after 5 seconds
         setTimeout(() => {
-          setGlobalError("");
+          setToast({ showToast: false, message: "", type: "" });
         }, 5000);
         return; // Stop at the first error found
       }
@@ -84,28 +94,44 @@ const RegisterPage = () => {
         ...prevErrors,
         termsAccepted: "Please accept the terms and conditions",
       }));
+      setToast({
+        showToast: true,
+        message: "Please accept the terms and conditions",
+        type: "error",
+      });
 
       // Clear global error message after 5 seconds
       setTimeout(() => {
-        setGlobalError("");
+        setToast({ showToast: false, message: "", type: "" });
       }, 5000);
 
       return; // Stop if terms are not accepted
     }
 
     // Clear global error message if validations pass
-    setGlobalError("");
+    setToast({ showToast: false, message: "", type: "" });
 
     setIsSubmitting(true); // Start loading
 
     try {
       // Simulate an API call
       await new Promise((resolve) => setTimeout(resolve, 5000)); // Simulate delay
-      navigate("/verify-email"); // Navigate on success
-    } catch (error) {
-      setGlobalError("Registration failed. Please try again.");
+      setToast({
+        showToast: true,
+        message: "Registration successful! Redirecting...",
+        type: "success",
+      });
       setTimeout(() => {
-        setGlobalError("");
+        navigate("/verify-email");
+      }, 5000); // Delay navigation to show success message
+    } catch (error) {
+      setToast({
+        showToast: true,
+        message: "Registration failed. Please try again.",
+        type: "error",
+      });
+      setTimeout(() => {
+        setToast({ showToast: false, message: "", type: "" });
       }, 5000);
     } finally {
       setIsSubmitting(false); // Stop loading
@@ -122,8 +148,13 @@ const RegisterPage = () => {
             <div className="col-md-6 signup-image"></div>
             <div className="col-md-6 p-5">
               <h3 className="text-center mb-4">Register For Palmfit</h3>
-              {/* Display global error message using Message component */}
-              {globalError && <Message type="error" message={globalError} />}
+              {toast.showToast && (
+                <Toast
+                  setToast={setToast}
+                  message={toast.message}
+                  type={toast.type}
+                />
+              )}
               <form onSubmit={handleValidations}>
                 <div className="mb-3">
                   <label htmlFor="firstName" className="form-label">
@@ -152,9 +183,6 @@ const RegisterPage = () => {
                       onChange={handleInput}
                     />
                   </div>
-                  {errors.firstName && (
-                    <Message type="error" message={errors.firstName} />
-                  )}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="lastName" className="form-label">
@@ -183,9 +211,6 @@ const RegisterPage = () => {
                       onChange={handleInput}
                     />
                   </div>
-                  {errors.lastName && (
-                    <Message type="error" message={errors.lastName} />
-                  )}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
@@ -214,9 +239,6 @@ const RegisterPage = () => {
                       onChange={handleInput}
                     />
                   </div>
-                  {errors.email && (
-                    <Message type="error" message={errors.email} />
-                  )}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">
@@ -252,9 +274,6 @@ const RegisterPage = () => {
                       {showPassword ? "Hide" : "Show"}
                     </button>
                   </div>
-                  {errors.password && (
-                    <Message type="error" message={errors.password} />
-                  )}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="verifyPassword" className="form-label">
@@ -290,9 +309,6 @@ const RegisterPage = () => {
                       {showConfirmPassword ? "Hide" : "Show"}
                     </button>
                   </div>
-                  {errors.verifyPassword && (
-                    <Message type="error" message={errors.verifyPassword} />
-                  )}
                 </div>
                 <div className="mb-3 form-check">
                   <input
@@ -307,9 +323,6 @@ const RegisterPage = () => {
                     I accept the <a href="#">terms and conditions</a>{" "}
                     <span className="text-danger">*</span>
                   </label>
-                  {errors.termsAccepted && (
-                    <Message type="error" message={errors.termsAccepted} />
-                  )}
                 </div>
                 <button
                   type="submit"
