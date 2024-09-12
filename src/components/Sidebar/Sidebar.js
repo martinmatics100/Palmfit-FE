@@ -16,32 +16,19 @@ import ReportIcon from "@mui/icons-material/Assessment";
 import FeedbackIcon from "@mui/icons-material/Feedback";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import MoreVertIcon from "@mui/icons-material/MoreVert"; // Import the three dots icon
-import { Menu, MenuItem } from "@mui/material"; // Import Menu and MenuItem from Material UI
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { Menu, MenuItem } from "@mui/material";
 import { DarkModeContext } from "../../Context/darkModeContext";
 import { useUser } from "../../Context/UserContext";
+import DropDownProfile from "./DropDownProfile";
+import { Prev } from "react-bootstrap/esm/PageItem";
+import WavingHandIcon from "@mui/icons-material/WavingHand";
 
 const Sidebar = () => {
-  const { dispatch } = useContext(DarkModeContext);
   const { user } = useUser();
   const [show, setShow] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const [role, setRole] = useState(localStorage.getItem("userRole"));
   const location = useLocation();
-
-  // State for dropdown menu
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-
-  // Handle opening and closing the dropdown
-  const handleMenuClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
 
   const isActive = (path) => location.pathname.startsWith(path);
 
@@ -157,76 +144,24 @@ const Sidebar = () => {
     </>
   );
 
+  const [openProfile, setOpenProfile] = useState(false);
+
   return (
     <main className={show ? `space-toggle` : null}>
       <header className={`sidebar-header ${show ? `space-toggle` : null}`}>
-        <div
-          className="sidebar-toggle"
-          onClick={() => setShow(!show)}
-          // title={show ? "Collapse sidebar" : "Expand sidebar"}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
+        <div className="sidebar-toggle" onClick={() => setShow(!show)}>
           <DoubleArrowIcon
             style={{ transform: show ? "rotate(180deg)" : "rotate(0deg)" }}
           />
-          {isHovered && (
-            <span className="custom-tooltip">
-              {show ? "Collapse sidebar" : "Expand sidebar"}
-            </span>
-          )}
         </div>
-        <div className="items">
+        <div className="items" onClick={() => setOpenProfile((prev) => !prev)}>
           <div className="item">
             <h5>
-              Welcome
-              {/* <span>Martin{user?.firstName}</span> */}
+              Hi <WavingHandIcon />
+              <span> Martin Nwatu{user?.firstName}</span>
             </h5>
           </div>
-
-          {/* Three dots (ellipsis) for dropdown menu */}
-          <div className="item">
-            <MoreVertIcon
-              className="icon notShowOnMobile"
-              aria-controls="simple-menu"
-              aria-haspopup="true"
-              onClick={handleMenuClick}
-              style={{ cursor: "pointer" }}
-            />
-            <Menu
-              id="simple-menu"
-              anchorEl={anchorEl}
-              keepMounted
-              open={open}
-              onClose={handleMenuClose}
-            >
-              <MenuItem
-                onClick={handleMenuClose}
-                className="menu-items-container"
-              >
-                <div className="menu-items">
-                  <div className="menu-item">
-                    <Link to="/profile">Profile</Link>
-                  </div>
-                  <div className="menu-item">
-                    <Link to="/profile">Toggle bar</Link>
-                  </div>
-                  <div className="item menu-item">
-                    <DarkModeIcon
-                      className="icon notShowOnMobile"
-                      onClick={() => dispatch({ type: "TOGGLE" })}
-                    />
-                  </div>
-                </div>
-              </MenuItem>
-            </Menu>
-          </div>
-          {/* <div className="item">
-            <DarkModeIcon
-              className="icon notShowOnMobile"
-              onClick={() => dispatch({ type: "TOGGLE" })}
-            />
-          </div> */}
+          {openProfile && <DropDownProfile />}
         </div>
       </header>
 

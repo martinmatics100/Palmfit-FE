@@ -60,6 +60,28 @@
   .sidebar-header .items {
     color: #fff;
   }
+  
+  .dropDownProfile {
+    background-color: #222;
+    border: 3px solid #fff;
+  }
+  
+  .dropDownProfile ul {
+    color: #f2f2f2;
+  }
+  
+  
+  .dropDownProfile ul .icon {
+    color: #f2f2f2;
+  }
+  
+  .dropDownProfile::before {
+    content: "";
+    background-color: #222;
+    border-left: 3px solid #fff;
+    border-top: 3px solid #fff;
+  }
+  
 
   //   ends here for sidebar
 

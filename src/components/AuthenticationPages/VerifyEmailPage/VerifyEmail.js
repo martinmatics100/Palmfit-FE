@@ -3,12 +3,19 @@ import LoadingPage from "../../LoadingPage/LoadingPage";
 import "./VerifyEmail.scss";
 import Message from "../../Messages/Message";
 import { useNavigate } from "react-router-dom";
+import Toast from "../../../Toast/Toast";
 
 const VerifyEmail = () => {
   const [loading, setLoading] = useState(false);
   const [otp, setOtp] = useState(new Array(5).fill(""));
   const [message, setMessage] = useState(null);
   const navigate = useNavigate(); // Initialize useNavigate
+
+  const [toast, setToast] = useState({
+    showToast: false,
+    message: "",
+    type: "",
+  });
 
   function handleChange(element, index) {
     if (isNaN(element.target.value)) return false;
@@ -42,14 +49,6 @@ const VerifyEmail = () => {
     if (focusedInput) {
       focusedInput.blur();
     }
-
-    // const lastInput = element.target.parentNode.querySelector(
-    //   'input[type="password"]:last-child'
-    // );
-
-    // if (lastInput) {
-    //   lastInput.focus();
-    // }
   }
 
   const handleVerify = () => {
@@ -59,20 +58,25 @@ const VerifyEmail = () => {
       return;
     }
 
-    // Reset message before setting a new one
-    setMessage(null);
+    // Reset toast message before setting a new one
+    setToast({ showToast: false, message: "", type: "" });
 
     // Simulate an API call
     setTimeout(() => {
       if (otpValue === "12345") {
-        setMessage({ type: "success", content: "OTP verified successfully!" });
+        setToast({
+          showToast: true,
+          message: "OTP verified successfully! Redirecting...",
+          type: "success",
+        });
         setTimeout(() => {
           navigate("/login"); // Redirect to the login page
-        }, 3000); // Short delay to allow the message to be visible
+        }, 5000); // Short delay to allow the message to be visible
       } else {
-        setMessage({
+        setToast({
+          showToast: true,
+          message: "Invalid OTP. Please try again.",
           type: "error",
-          content: "Invalid OTP. Please try again.",
         });
       }
     }, 1000); // Simulate API delay
@@ -96,7 +100,13 @@ const VerifyEmail = () => {
             A verification code was sent to your email. Please enter the code
             below
           </p>
-          {message && <Message type={message.type} message={message.content} />}
+          {toast.showToast && (
+            <Toast
+              setToast={setToast}
+              message={toast.message}
+              type={toast.type}
+            />
+          )}
           <div className="otp-container">
             {otp.map((data, index) => {
               return (
