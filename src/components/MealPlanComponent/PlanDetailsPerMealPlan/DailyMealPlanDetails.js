@@ -25,9 +25,9 @@ const DailyMealPlanDetails = ({ meals }) => {
                 <td>{meal.totalCalories} kcal</td>
                 <td style={{ textAlign: "right", cursor: "pointer" }}>
                   {expandedMeal === meal.name ? (
-                    <span style={{ color: "#1a8d8d" }}>&#9650;</span> // Upward arrow for expanded state
+                    <span style={{ color: "#1a8d8d" }}>&#9650;</span>
                   ) : (
-                    <span style={{ color: "#1a8d8d" }}>&#9660;</span> // Downward arrow for collapsed state
+                    <span style={{ color: "#1a8d8d" }}>&#9660;</span>
                   )}
                 </td>
               </tr>

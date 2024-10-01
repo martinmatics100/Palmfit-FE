@@ -9,9 +9,9 @@ const SearchBar = ({ setResults }) => {
 
   const fetchData = async (value) => {
     try {
-      const results = await fetchFilteredUsers(value); // Call the service function
+      const results = await fetchFilteredUsers(value);
       console.log(results);
-      setResults(results); // Update the results with the filtered users
+      setResults(results);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

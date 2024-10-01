@@ -137,6 +137,20 @@ main {
   color: #fff;
 }
 
+.nav-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.nav-list::-webkit-scrollbar {
+  width: 3px; 
+}
+
+.nav-list::-webkit-scrollbar-thumb {
+  background-color: #fff; 
+  border-radius: 4px;
+}
+
 .nav-link {
   position: relative;
   color: #fff;
@@ -201,6 +215,7 @@ main {
   pointer-events: none;
 }
 
+
 .dropDownProfile {
   position: absolute;
   top: 4.5rem;
@@ -211,6 +226,7 @@ main {
   background-color: #1a8d8d;
   border: 1px solid #1a8d8d;
   box-sizing: border-box;
+  z-index: 999999999;
 }
 
 .dropDownProfile ul {

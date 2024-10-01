@@ -46,3 +46,20 @@ export const fetchFilteredUsers = async (value) => {
     throw error;
   }
 };
+
+
+export const fetchFilteredUsersById = async (id) => {
+  try {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/users/${id}`
+    );
+    if (!response.ok) {
+      throw new Error("User not found");
+    }
+    const user = await response.json();
+    return user; // Return the user object
+  } catch (error) {
+    console.error("Error fetching user by ID:", error);
+    throw error;
+  }
+};
