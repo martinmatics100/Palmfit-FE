@@ -1,10 +1,15 @@
 import React from "react";
 import MealDiaryComponent from "../../../components/MealDiaryComponent/MealDiaryComponent";
+import { Route, Routes } from "react-router-dom";
+import DetailsPagePerMealDiary from "../../../components/MealDiaryComponent/DetailsPagePerMealDiary";
 
 const Mealdiary = () => {
   return (
     <div>
-      <MealDiaryComponent />
+      <Routes>
+        <Route path="/" element={<MealDiaryComponent />} />
+        <Route path="meal/:id" element={<DetailsPagePerMealDiary />} />
+      </Routes>
     </div>
   );
 };

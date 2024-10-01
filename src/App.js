@@ -47,7 +47,7 @@ function App() {
           <Route element={<Sidebar />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/meal-plan/*" element={<MealPlan />} />
-            <Route path="/meal-diary" element={<Mealdiary />} />
+            <Route path="/meal-diary/*" element={<Mealdiary />} />
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/settings" element={<Setting />} />
             <Route path="/subscription" element={<Subscription />} />
