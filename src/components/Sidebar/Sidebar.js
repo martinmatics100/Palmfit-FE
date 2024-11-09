@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import "./Sidebar.css";
-import MenuIcon from "@mui/icons-material/Menu";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import CalculateIcon from "@mui/icons-material/Calculate";
@@ -11,18 +10,12 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
-import ArticleIcon from "@mui/icons-material/Article";
-import ReportIcon from "@mui/icons-material/Assessment";
 import FeedbackIcon from "@mui/icons-material/Feedback";
-import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Menu, MenuItem } from "@mui/material";
-import { DarkModeContext } from "../../Context/darkModeContext";
 import { useUser } from "../../Context/UserContext";
 import DropDownProfile from "./DropDownProfile";
-import { Prev } from "react-bootstrap/esm/PageItem";
 import WavingHandIcon from "@mui/icons-material/WavingHand";
+import KitchenIcon from "@mui/icons-material/Kitchen";
 
 const Sidebar = () => {
   const { user } = useUser();
@@ -50,11 +43,18 @@ const Sidebar = () => {
         <span className="nav-link-name">Meal plan</span>
       </Link>
       <Link
-        to="/meal-diary"
-        className={`nav-link ${isActive("/meal-diary") ? "active" : ""}`}
+        to="/meal-log"
+        className={`nav-link ${isActive("/meal-log") ? "active" : ""}`}
       >
         <AutoStoriesIcon className="nav-link-logo" />
-        <span className="nav-link-name">Meal diary</span>
+        <span className="nav-link-name">Meal Log</span>
+      </Link>
+      <Link
+        to="/food-Info-Center"
+        className={`nav-link ${isActive("/food-Info-Center") ? "active" : ""}`}
+      >
+        <KitchenIcon className="nav-link-logo" />
+        <span className="nav-link-name">Food Info Center</span>
       </Link>
       <Link
         to="/profile"

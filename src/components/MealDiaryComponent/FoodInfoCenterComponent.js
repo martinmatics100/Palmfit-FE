@@ -5,7 +5,7 @@ import FoodCategoryComponent from "./FoodCategoryComponent";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResultList from "../SearchBar/SearchResultList";
 
-const MealDiaryComponent = () => {
+const FoodInfoCenterComponent = () => {
   // const [searchQuery, setSearchQuery] = useState("");
 
   // const handleSearch = (e) => {
@@ -40,4 +40,4 @@ const MealDiaryComponent = () => {
   );
 };
 
-export default MealDiaryComponent;
+export default FoodInfoCenterComponent;

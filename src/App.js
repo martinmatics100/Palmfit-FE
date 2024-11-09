@@ -10,7 +10,7 @@ import ResetPassword from "./components/AuthenticationPages/ResetPasswordPage/Re
 import NewPassword from "./components/AuthenticationPages/ResetPasswordPage/NewPassword";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import UserProfile from "./Pages/Profile/UserProfile";
-import Mealdiary from "./Pages/Meals/MealDiary/Mealdiary";
+import FoodInfoCenter from "./Pages/Meals/MealDiary/FoodInfoCenter";
 import MealPlan from "./Pages/Meals/MealPlans/MealPlan";
 import Setting from "./Pages/Setting/Setting";
 import Subscription from "./Pages/Payment/Subscription";
@@ -18,18 +18,16 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import "../src/style/dark.scss";
 import { DarkModeContext } from "./Context/darkModeContext";
 import { UserProvider } from "./Context/UserContext";
-import AdminDashboard from "./AdminPages/AdminDashboard/AdminDashboard";
-import UserManagement from "./AdminPages/UserManagement/UserManagement";
-import MealPlanManagement from "./AdminPages/MealPlanManagement/MealPlanManagement";
-import ContentManagement from "./AdminPages/ContentManagement/ContentManagement";
-import Report from "./AdminPages/Report/Report";
-import Feedback from "./AdminPages/Feedback/Feedback";
-import Support from "./AdminPages/Support/Support";
-import SinglePage from "./AdminPages/UserSinglePage/SinglePage";
+import AdminDashboard from "./Pages/admin-pages/admin-Dashboard/AdminDashboard";
+import MealPlanManagement from "./Pages/admin-pages/admin-MealPlanManagement/MealPlanManagement";
+import ContentManagement from "./Pages/admin-pages/admin-ContentManagement/ContentManagement";
+import Report from "./Pages/admin-pages/admin-Report/Report";
+import Feedback from "./Pages/admin-pages/admin Feedback/Feedback";
+import Support from "./Pages/admin-pages/admin-Support/Support";
 import AddNewUser from "./components/New/NewUser/AddNewUser";
 import { mealPlanInputs, userInputs } from "./utils/FormSource";
-import axios, { AxiosResponse } from "axios";
-import { urlGetAllUsers } from "./endpoints";
+import MealLog from "./Pages/Meals/MealLog/MealLog";
+import UserManagement from "./Pages/admin-pages/admin-UserManagement/UserManagement";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -47,7 +45,8 @@ function App() {
           <Route element={<Sidebar />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/meal-plan/*" element={<MealPlan />} />
-            <Route path="/meal-diary/*" element={<Mealdiary />} />
+            <Route path="/meal-log/*" element={<MealLog />} />
+            <Route path="/food-Info-Center/*" element={<FoodInfoCenter />} />
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/settings" element={<Setting />} />
             <Route path="/subscription" element={<Subscription />} />

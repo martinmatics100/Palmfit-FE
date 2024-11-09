@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import image from "../../Assets/profilePicAvatar.png";
+// import image from "../../Assets/profilePicAvatar.png";
+import image from "../../../Assets/profilePicAvatar.png";
 
 const MealPlanManagement = () => {
   const [openDay, setOpenDay] = useState(null);

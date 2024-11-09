@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./SinglePage.scss";
-import LoadingPage from "../../components/LoadingPage/LoadingPage";
-import userPlaceholder from "../../Assets/profilePicAvatar.png";
-import { fetchUserById } from "../../api/UserServices";
-import { useParams } from "react-router-dom";
 import dayjs from "dayjs";
-import ErrorPage from "../../components/Error/ErrorPage";
+import LoadingPage from "../../../components/LoadingPage/LoadingPage";
+import userPlaceholder from "../../../Assets/profilePicAvatar.png";
+import { fetchUserById } from "../../../api/UserServices";
+import { useParams } from "react-router-dom";
+import ErrorPage from "../../../components/Error/ErrorPage";
 
 const SinglePage = () => {
   const { userId } = useParams();

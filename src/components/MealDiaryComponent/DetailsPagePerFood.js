@@ -4,7 +4,7 @@ import "../../components/SearchBar/SearchBar.scss";
 import SearchResultList from "../SearchBar/SearchResultList";
 import SearchBar from "../SearchBar/SearchBar";
 
-const DetailsPagePerMealDiary = () => {
+const DetailsPagePerFood = () => {
   const [results, setResults] = useState([]);
 
   return (
@@ -25,4 +25,4 @@ const DetailsPagePerMealDiary = () => {
   );
 };
 
-export default DetailsPagePerMealDiary;
+export default DetailsPagePerFood;
