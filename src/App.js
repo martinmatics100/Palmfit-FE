@@ -18,20 +18,16 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import "../src/style/dark.scss";
 import { DarkModeContext } from "./Context/darkModeContext";
 import { UserProvider } from "./Context/UserContext";
-import AdminDashboard from "./AdminPages/AdminDashboard/AdminDashboard";
-import UserManagement from "./AdminPages/UserManagement/UserManagement";
-import MealPlanManagement from "./AdminPages/MealPlanManagement/MealPlanManagement";
-import ContentManagement from "./AdminPages/ContentManagement/ContentManagement";
-import Report from "./AdminPages/Report/Report";
-import Feedback from "./AdminPages/Feedback/Feedback";
-import Support from "./AdminPages/Support/Support";
-import SinglePage from "./AdminPages/UserSinglePage/SinglePage";
+import AdminDashboard from "./Pages/admin-pages/admin-Dashboard/AdminDashboard";
+import MealPlanManagement from "./Pages/admin-pages/admin-MealPlanManagement/MealPlanManagement";
+import ContentManagement from "./Pages/admin-pages/admin-ContentManagement/ContentManagement";
+import Report from "./Pages/admin-pages/admin-Report/Report";
+import Feedback from "./Pages/admin-pages/admin Feedback/Feedback";
+import Support from "./Pages/admin-pages/admin-Support/Support";
 import AddNewUser from "./components/New/NewUser/AddNewUser";
 import { mealPlanInputs, userInputs } from "./utils/FormSource";
-import axios, { AxiosResponse } from "axios";
-import { urlGetAllUsers } from "./endpoints";
-import MealLogComponent from "./components/MealLog/MealLogComponent";
 import MealLog from "./Pages/Meals/MealLog/MealLog";
+import UserManagement from "./Pages/admin-pages/admin-UserManagement/UserManagement";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);

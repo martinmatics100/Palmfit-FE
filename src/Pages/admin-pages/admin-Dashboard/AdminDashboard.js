@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import AdminHome from "../../components/AdminComponents/AdminDashboard/AdminHome";
-import LoadingPage from "../../components/LoadingPage/LoadingPage";
+import AdminHome from "../../../components/AdminComponents/AdminDashboard/AdminHome";
+import LoadingPage from "../../../components/LoadingPage/LoadingPage";
 
 const AdminDashboard = () => {
   const [loading, setLoading] = useState(false);
