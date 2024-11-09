@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { DataGrid } from "@mui/x-data-grid";
 import Datatable from "./Datatable/Datatable";
 import LoadingPage from "../../LoadingPage/LoadingPage";
 import { Outlet } from "react-router-dom";

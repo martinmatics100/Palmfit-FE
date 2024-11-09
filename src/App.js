@@ -10,7 +10,7 @@ import ResetPassword from "./components/AuthenticationPages/ResetPasswordPage/Re
 import NewPassword from "./components/AuthenticationPages/ResetPasswordPage/NewPassword";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import UserProfile from "./Pages/Profile/UserProfile";
-import Mealdiary from "./Pages/Meals/MealDiary/Mealdiary";
+import FoodInfoCenter from "./Pages/Meals/MealDiary/FoodInfoCenter";
 import MealPlan from "./Pages/Meals/MealPlans/MealPlan";
 import Setting from "./Pages/Setting/Setting";
 import Subscription from "./Pages/Payment/Subscription";
@@ -30,6 +30,8 @@ import AddNewUser from "./components/New/NewUser/AddNewUser";
 import { mealPlanInputs, userInputs } from "./utils/FormSource";
 import axios, { AxiosResponse } from "axios";
 import { urlGetAllUsers } from "./endpoints";
+import MealLogComponent from "./components/MealLog/MealLogComponent";
+import MealLog from "./Pages/Meals/MealLog/MealLog";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -47,7 +49,8 @@ function App() {
           <Route element={<Sidebar />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/meal-plan/*" element={<MealPlan />} />
-            <Route path="/meal-diary/*" element={<Mealdiary />} />
+            <Route path="/meal-log/*" element={<MealLog />} />
+            <Route path="/food-Info-Center/*" element={<FoodInfoCenter />} />
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/settings" element={<Setting />} />
             <Route path="/subscription" element={<Subscription />} />

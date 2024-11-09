@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./dashboard.scss";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
-import { useNavigate } from "react-router-dom";
 import CalorieCalculatorForm from "../../components/CalorieCalculatorForm/CalorieCalculatorForm";
 import CalorieResult from "../../components/CalorieCalculatorForm/CalorieResult";
 
@@ -29,9 +28,6 @@ const Dashboard = () => {
               <CalorieResult />
             </div>
           </div>
-          {/* <div>
-            <Index />
-          </div> */}
         </div>
       )}
     </div>
